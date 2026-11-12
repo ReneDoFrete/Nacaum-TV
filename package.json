@@ -1,0 +1,14 @@
+{
+  "name": "nacaum-tv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plataforma web responsiva Naçaum TV",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
