@@ -1,0 +1,4439 @@
+[
+  {
+    "id": "a-e-1",
+    "name": "A&E",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/ae.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/aee/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "adult-swim-2",
+    "name": "Adult Swim",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/adultswim.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a06m/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/adultswim/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "amc-3",
+    "name": "AMC",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/amc.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a06s/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/amc/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "animal-planet-4",
+    "name": "Animal Planet",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/animalplanet.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/animalplanet/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "band-5",
+    "name": "Band",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/band.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/BAND_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://vipwaytvcdn.multtv.tv.br:5444/TVThathi_Band/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://vipwaytvcdn.multtv.tv.br:5444/TVThathi_Band/720p/index.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cartoon-network-6",
+    "name": "Cartoon Network",
+    "category": "Infantil",
+    "logo": "https://img.faz-o-eli.online/cartoonnetwork.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/CARTOON_NETWORK/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cartoonnetwork/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cnn-brasil-7",
+    "name": "CNN Brasil",
+    "category": "Notícias",
+    "logo": "https://img.faz-o-eli.online/cnnbrasil.png",
+    "sources": [
+      {
+        "url": "https://amg01391-sbtinfast-amg01391c4-lg-br-4597.playouts.now.amagi.tv/playlist/amg01391-addigital-cnnbrasil-lgbr/playlist.m3u8",
+        "quality": "Qualidade não informada",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/CNN_BRASIL/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cnnbrasil/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://d25usgadhphvwi.cloudfront.net/hls/stv-plus1920x1080/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cnn-brasil-money-8",
+    "name": "CNN Brasil Money",
+    "category": "Notícias",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/cnn-brasil-money.png",
+    "sources": [
+      {
+        "url": "https://amg01391-amg01391c57-amgplt0026.playout.now3.amagi.tv/playlist/amg01391-amg01391c57-amgplt0026/playlist.m3u8",
+        "quality": "Qualidade não informada",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "ge-tv-9",
+    "name": "GE TV",
+    "category": "Esportes",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/ge-tv.png",
+    "sources": [
+      {
+        "url": "https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist1080p.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://proxylinkurl.wored85282.workers.dev/https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "https://meufut.top/getv",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a08v/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/getv/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globonews-10",
+    "name": "GloboNews",
+    "category": "Notícias",
+    "logo": "https://img.faz-o-eli.online/globonews.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a08d/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globonews/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globoplay-novelas-11",
+    "name": "Globoplay Novelas",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/globonovelas.prev.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globoplaynovelas/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "gnt-12",
+    "name": "GNT",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/gnt.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a079/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/gnt/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "history-13",
+    "name": "History",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/history.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HISTORY_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a0al/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/HISTORY/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/history/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "history-2-14",
+    "name": "History 2",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/history2.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/history2/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "jovem-pan-news-15",
+    "name": "Jovem Pan News",
+    "category": "Notícias",
+    "logo": "https://www.tvlogo.org/brazil/jovem-pan-news-br.png",
+    "sources": [
+      {
+        "url": "https://amg01391-sbtinfast-amg01391c3-lg-us-8995.playouts.now.amagi.tv/playlist/amg01391-addigital-jovempan-lgus/playlist.m3u8",
+        "quality": "Qualidade não informada",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://amg01391-amg01391c3-tcl-spain-5038.playouts.now.amagi.tv/playlist1080-p.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/jovempannews/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "http://186.219.52.187/jp_news/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "megapix-16",
+    "name": "Megapix",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/megapix.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a057/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/megapix/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "multishow-17",
+    "name": "Multishow",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/multishow.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/multishow/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-2-18",
+    "name": "Premiere 2",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/premiere.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere2/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-3-19",
+    "name": "Premiere 3",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/premiere.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere3/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-4-20",
+    "name": "Premiere 4",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/premiere.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere4/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-5-21",
+    "name": "Premiere 5",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/premiere.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere5/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-6-22",
+    "name": "Premiere 6",
+    "category": "Esportes",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/premiere.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a05j/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere6/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-7-23",
+    "name": "Premiere 7",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/premiere.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a05k/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere7/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-8-24",
+    "name": "Premiere 8",
+    "category": "Esportes",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/premiere.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a05l/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere8/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "premiere-clubes-25",
+    "name": "Premiere Clubes",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/premiere.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiereclubes/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sbt-26",
+    "name": "SBT",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/sbt.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/SBT_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://aovivo.maissbt.com/indexMobile.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sbt-news-27",
+    "name": "SBT News",
+    "category": "Notícias",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/sbt-news.png",
+    "sources": [
+      {
+        "url": "https://sbtnews.maissbt.com/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://sbtnews.maissbt.com/3.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://dai.google.com/linear/hls/event/1XSOdtQ0SH2G8OEmEfGgjQ/master.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sony-channel-28",
+    "name": "Sony Channel",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/sonychannel.png",
+    "sources": [
+      {
+        "url": "http://170.83.16.50/SONY_CHANNEL/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sonychannel/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sportv-29",
+    "name": "SporTV",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportv/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sportv-2-30",
+    "name": "SporTV 2",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv2.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a05f/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportv2/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sportv-3-31",
+    "name": "SporTV 3",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv3.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a06v/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportv3/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-off-32",
+    "name": "Canal OFF",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/off.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a07t/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/canaloff/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "telecine-action-33",
+    "name": "Telecine Action",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/telecineaction.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a058/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tcaction/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "telecine-pipoca-34",
+    "name": "Telecine Pipoca",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/telecinepipoca.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a08g/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tcpipoca/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "telecine-premium-35",
+    "name": "Telecine Premium",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/telecinepremium.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tcpremium/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-brasil-36",
+    "name": "TV Brasil",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/tv-brasil.png",
+    "sources": [
+      {
+        "url": "https://tvbrasil-stream.ebc.com.br/index.m3u8",
+        "quality": "SD · 576x324",
+        "referer": "https://meufut.top/tv-brasil",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/TV_BRASIL/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "universal-reality-37",
+    "name": "Universal Reality",
+    "category": "Filmes e Séries",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/universal-reality.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a08c/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "warner-38",
+    "name": "Warner",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/warnerchannel.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/warner/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "impd-39",
+    "name": "IMPD",
+    "category": "Variedades",
+    "logo": "https://d5pgibznjcs0s.cloudfront.net/46d92cf6-4807-45c6-9bfd-b38f80288c86/en/images/logo_full.png",
+    "sources": [
+      {
+        "url": "https://igrejamundial.nuvemplay.live/hls/stream.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-sp-40",
+    "name": "Globo SP",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globosp/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cartoonito-41",
+    "name": "Cartoonito",
+    "category": "Infantil",
+    "logo": "https://img.faz-o-eli.online/cartoonito.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a0ae/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cartoonito/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cinemax-42",
+    "name": "Cinemax",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/cinemax.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/CINEMAX/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a081/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cinemax/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-channel-43",
+    "name": "Discovery Channel",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/discoverychannel.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/DISCOVERY_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoverychannel/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-kids-44",
+    "name": "Discovery Kids",
+    "category": "Infantil",
+    "logo": "https://img.faz-o-eli.online/discoverykids.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/DISCOVERY_KIDS_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a0ad/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoverykids/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-theater-45",
+    "name": "Discovery Theater",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/discoverytheater.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/DISCOVERY_THEATER_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a085/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoverytheater/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "espn-46",
+    "name": "ESPN",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/espn.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/ESPN_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://181.78.197.59:8000/play/a07z/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/ESPN_BRASIL/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "espn-2-47",
+    "name": "ESPN 2",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/espn2.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/ESPN2_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn2/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "espn-4-48",
+    "name": "ESPN 4",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/espn4.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/ESPN4_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://181.78.197.59:8000/play/a07n/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a05m/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/ESPN_4/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn4/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "espn-5-49",
+    "name": "ESPN 5",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/espn5.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a05n/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn5/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "espn-6-50",
+    "name": "ESPN 6",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/espn6.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a084/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn6/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo-51",
+    "name": "HBO",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/hbo.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HBO/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbo/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo2-52",
+    "name": "HBO2",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/hbo2.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HBO2/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a08o/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbo2/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo-family-53",
+    "name": "HBO Family",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/hbofamily.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HBO_FAMILY/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbofamily/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo-mundi-54",
+    "name": "HBO Mundi",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/hbomundi.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HBO_MUNDI_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbomundi/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo-plus-55",
+    "name": "HBO Plus",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/hboplus.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HBO_PLUS/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hboplus/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo-pop-56",
+    "name": "HBO Pop",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/hbopop.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HBO_POP_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a08s/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbopop/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo-signature-57",
+    "name": "HBO Signature",
+    "category": "Filmes e Séries",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/hbo-signature.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/HBO_SIGNATURE/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbosignature/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "hbo-xtreme-58",
+    "name": "HBO Xtreme",
+    "category": "Filmes e Séries",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/hbo-xtreme.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a083/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hboxtreme/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "record-59",
+    "name": "Record",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/record-tv.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/RECORD/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "space-60",
+    "name": "Space",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/space.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/SPACE_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/SPACE/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/space/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tnt-61",
+    "name": "TNT",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/tnt.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/TNT_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/TNT/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tnt/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tnt-series-62",
+    "name": "TNT Séries",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/tntseries.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tntseries/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "universal-tv-63",
+    "name": "Universal TV",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/universaltv.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a0af/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/universaltv/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-turbo-64",
+    "name": "Discovery Turbo",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/discoveryturbo.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/DISCOVERY_TURBO_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a07z/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/DISCOVERY_TURBO/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryturbo/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "usa-network-65",
+    "name": "USA Network",
+    "category": "Filmes e Séries",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/usa.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/usa/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "telecine-fun-66",
+    "name": "Telecine Fun",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/telecinefun.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a059/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tcfun/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "telecine-cult-67",
+    "name": "Telecine Cult",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/telecinecult.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a05a/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tccult/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "telecine-touch-68",
+    "name": "Telecine Touch",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/telecinetouch.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tctouch/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sony-movies-69",
+    "name": "SONY Movies",
+    "category": "Filmes e Séries",
+    "logo": "https://www.tvlogo.org/brazil/sony-movies-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/SONY_MOVIES/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-70",
+    "name": "Globo",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/globo.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/GLOBO_HD/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tooncast-71",
+    "name": "Tooncast",
+    "category": "Infantil",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/tooncast.png",
+    "sources": [
+      {
+        "url": "http://170.83.16.50:80/TOONCAST/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tooncast/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "arte-1-72",
+    "name": "Arte 1",
+    "category": "Variedades",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/arte1.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/ARTE1/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tnt-novelas-73",
+    "name": "TNT Novelas",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/tntnovelas.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tntnovelas/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-science-74",
+    "name": "Discovery Science",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/discoveryscience.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/DISCOVERY_SCIENCE_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryscience/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "axn-75",
+    "name": "AXN",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/axn.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/AXN_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.49.66:8083/AXNHD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/AXN/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/axn/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "band-news-76",
+    "name": "Band News",
+    "category": "Notícias",
+    "logo": "https://img.faz-o-eli.online/bandnews.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/BAND_NEWS/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/bandnews/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "band-sports-hd-77",
+    "name": "BAND SPORTS HD",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/bandsports.png",
+    "sources": [
+      {
+        "url": "http://170.83.49.66:8083/BANDSPORTSHD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/BAND_SPORTS/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/BAND_SPORTS/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/bandsports/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "redetv-78",
+    "name": "RedeTV!",
+    "category": "TV Aberta",
+    "logo": "https://www.tvlogo.org/brazil/rede-tv-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/REDE_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/REDE_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/redetv/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://tv01.zas.media:1936/redetvparana/redetvparana/chunklist_w1074634538.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-cultura-79",
+    "name": "TV Cultura",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/cultura.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tvcultura/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://v-us-01.wisestream.io/memfs/e8740862-7a1f-45f3-acb2-4f357e144059.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8",
+        "quality": "SD · 960x540",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://5b33b873179a2.streamlock.net:1443/live/livestream/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "terra-viva-80",
+    "name": "Terra Viva",
+    "category": "Variedades",
+    "logo": "https://www.tvlogo.org/brazil/terraviva-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/TERRAVIVA/index.m3u8",
+        "quality": "HD · 1080x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://9ada494d.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctYnJfVXBseW5rLU5ld2NvX0hMUw/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "woohoo-81",
+    "name": "Woohoo",
+    "category": "Esportes",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/woohoo.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/WOOHOO/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/WOOHOO/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "espn-3-82",
+    "name": "ESPN 3",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/espn3.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/ESPN3_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://181.78.197.59:8000/play/a081/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn3/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-gazeta-83",
+    "name": "TV Gazeta",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/tv-gazeta.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/GAZETA/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/TV_GAZETA/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://video08.logicahost.com.br/tvc21/tvc21/chunklist_w930922724.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "record-news-84",
+    "name": "Record News",
+    "category": "Notícias",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/recordnews.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/RECORD_NEWS/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=5431",
+        "quality": "HD · 1280x720",
+        "referer": "https://meufut.top/record-news",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recordnews/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://rnw-rn-samsungtvplus.otteravision.com/rnw/rn/rnw_rn.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://rnw-rn.otteravision.com/rnw/rn/rnw_rn.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://rnw-rn-soultv.otteravision.com/rnw/rn/rnw_rn.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://run-rnw-rn.otteravision.com/rnw/rn/rnw_rn_720p_high.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cancao-nova-85",
+    "name": "Canção Nova",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/cancaonova.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/CANCAO_NOVA/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cancaonova/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova.stream_720p/playlist.m3u8",
+        "quality": "HD",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-aparecida-86",
+    "name": "TV Aparecida",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/tv-aparecida.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/TV_APARECIDA/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://cdn.live.br1.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tvaparecida/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "rede-vida-87",
+    "name": "Rede Vida",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/redevida.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/redevida/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://d12e4o88jd8gex.cloudfront.net/out/v1/cea3de0b76ac4e82ab8ee0fd3f17ce12/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://186.219.52.187/rede_vida/index.m3u8",
+        "quality": "SD · 720x576",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d12e4o88jd8gex.cloudfront.net/out/v1/cea3de0b76ac4e82ab8ee0fd3f17ce12/index_1.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-id-88",
+    "name": "Discovery ID",
+    "category": "Documentários",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/investigacao-discovery.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/ID_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/DISCOVERY_ID/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryid/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "fish-tv-89",
+    "name": "Fish TV",
+    "category": "Esportes",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/fish-tv.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/FISH_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/FISH_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "x-sports-90",
+    "name": "X Sports",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/xsports.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/xsports/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "n-sports-91",
+    "name": "N SPORTS",
+    "category": "Esportes",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/nsports.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/nsports/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "band-sp-92",
+    "name": "Band SP",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/band.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/bandsp/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sbt-sp-93",
+    "name": "SBT SP",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/sbt.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sbtsp/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "record-sp-94",
+    "name": "Record SP",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/record.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recordsp/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-rural-95",
+    "name": "Canal Rural",
+    "category": "Variedades",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/canal-rural-br.png",
+    "sources": [
+      {
+        "url": "http://170.83.49.66:8083/CANALRURALHD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://186.219.52.187/canal_rural/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "agro-mais-96",
+    "name": "Agro Mais",
+    "category": "Variedades",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/agro-mais-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/AGROMAIS/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cnt-97",
+    "name": "CNT",
+    "category": "TV Aberta",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/rede-cnt-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/CNT/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-pai-eterno-98",
+    "name": "TV Pai Eterno",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/tvpaieterno.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/TV_PAI_ETERNO/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/paieterno/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://video09.logicahost.com.br/paieterno/paieterno/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "https://meufut.top/tv-pai-eterno",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://video09.logicahost.com.br/paieterno/paieterno/chunklist_w1610240856.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "playtv-99",
+    "name": "PlayTV",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/Ikrj3lk.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/PLAY_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://isaocorp.cloudecast.com/playtv/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "rede-brasil-100",
+    "name": "Rede Brasil",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/TXJKwzZ.png",
+    "sources": [
+      {
+        "url": "https://redebrasil.nuvemplay.live/hls/stream.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://video09.logicahost.com.br/redebrasiloficial/redebrasiloficial/playlist.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "rede-gospel-101",
+    "name": "Rede Gospel",
+    "category": "Variedades",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/rede-gospel-br.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/redegospel/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://redegospel-aovivo.nuvemplay.live/hls/stream.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "trace-brazuca-102",
+    "name": "Trace Brazuca",
+    "category": "Variedades",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/trace-brazuca.png",
+    "sources": [
+      {
+        "url": "https://amg01131-tracetv-tracebrazuca-xiaomi-vvr19.amagi.tv/playlist/amg01131-tracetv-tracebrazuca-xiaomi/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracebrazuca-samsungbr/playlist.m3u8",
+        "quality": "Qualidade não informada",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-camara-103",
+    "name": "TV Câmara",
+    "category": "TV Aberta",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/tv-camara-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/TV_CAMARA/index.m3u8",
+        "quality": "SD · 718x480",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://stream3.camara.gov.br/tv1/manifest.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-evangelizar-104",
+    "name": "TV Evangelizar",
+    "category": "Variedades",
+    "logo": "https://i.imgur.com/IrYR7Kp.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/EVANGELIZAR/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/TV_EVANGELIZAR/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tvevangelizar/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-justica-105",
+    "name": "TV Justiça",
+    "category": "TV Aberta",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/tv-justica.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/TV_JUSTICA/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/TV_JUSTICA/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-novo-tempo-106",
+    "name": "TV Novo Tempo",
+    "category": "Variedades",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/novo-tempo-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/NOVO_TEMPO/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/novotempo/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://streamtv.novotempo.com/CDN-TV-PT/smil:tvnovotempo.smil/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-senado-107",
+    "name": "TV Senado",
+    "category": "TV Aberta",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/tv-senado-br.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/TV_SENADO/index.m3u8",
+        "quality": "SD · 718x480",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/TV_SENADO/index.m3u8",
+        "quality": "HD · 1310x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "rit-108",
+    "name": "RIT",
+    "category": "Variedades",
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/brazil/rit-br.png",
+    "sources": [
+      {
+        "url": "https://acesso.ecast.site:3648/live/ritlive.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://stream.ecast.com.br/rit-tv/tracks-v1a1/mono.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-home-health-109",
+    "name": "Discovery Home & Health",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/discoveryhh.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/DISCOVERY_H_H/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryhh/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-agro-110",
+    "name": "Canal Agro",
+    "category": "Variedades",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/agromais.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/AGRO_CANAL/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://aovivo.equipea.com.br:5443/aovivort/streams/pshRLrnv6isXq7RG4747567774043229.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "blits-tv-111",
+    "name": "Blits TV",
+    "category": "Variedades",
+    "logo": "https://i.imgur.com/FO4QTRf.jpeg",
+    "sources": [
+      {
+        "url": "https://stmv1.transmissaodigital.com/blitstv/blitstv/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "com-brasil-112",
+    "name": "Com Brasil",
+    "category": "Variedades",
+    "logo": "https://i.imgur.com/GrjGwKM.png",
+    "sources": [
+      {
+        "url": "https://br5093.streamingdevideo.com.br/abc/abc/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "https://meufut.top/com-brasil",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/NewCo/New_Brasil_BR/New_Brasil.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sesc-tv-113",
+    "name": "SESC TV",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/Mu8O6CV.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/SESC_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tvideonews-114",
+    "name": "TVideoNews",
+    "category": "Notícias",
+    "logo": "https://i.imgur.com/vstHOYx.png",
+    "sources": [
+      {
+        "url": "https://video01.logicahost.com.br/tvideonews/tvideonews/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://video01.logicahost.com.br/tvideonews/tvideonews/chunklist_w1659802033.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-educacao-115",
+    "name": "Canal Educacao",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/OOB7nrS.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/CANAL_EDUCACAO/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://canaleducacao-stream.ebc.com.br/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-futura-116",
+    "name": "Canal Futura",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/LgynEBC.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/FUTURA/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/FUTURA/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://186.219.52.187/futura/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-gov-117",
+    "name": "Canal Gov",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/rHPY0Yv.png",
+    "sources": [
+      {
+        "url": "https://canalgov-stream.ebc.com.br/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-uol-118",
+    "name": "Canal UOL",
+    "category": "Notícias",
+    "logo": "https://conteudo.imguol.com.br/c/play/logo_canaluol_2024.svg",
+    "sources": [
+      {
+        "url": "https://video24.mais.uol.com.br/live/6146.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-do-boi-119",
+    "name": "Canal do Boi",
+    "category": "Variedades",
+    "logo": "https://i.imgur.com/pVM5MhS.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/CANAL_DO_BOI/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/CANAL_DO_BOI/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cultura-fast-120",
+    "name": "Cultura Fast",
+    "category": "TV Aberta",
+    "logo": "https://eitv6.cdn.broadpeak.io/account351-i1438/channel/53/quadrada_-3-_pequeno-1723832301.png",
+    "sources": [
+      {
+        "url": "https://fpa-gateway.tvcultura.com.br:8181/memfs/606caef0-a290-413d-9f1f-8fcdb3a73831.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "dumdum-121",
+    "name": "DumDum",
+    "category": "Infantil",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c0/DumDum_logo.svg",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/ZOOMOO_KIDS/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.185.11.126:8000/play/a078/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://186.219.52.187/zoomoo/index.m3u8",
+        "quality": "SD · 720x576",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "masterchef-122",
+    "name": "MasterChef",
+    "category": "24 Horas",
+    "logo": "https://images.pluto.tv/channels/6077045b6031bd00078de127/colorLogoPNG_1785430539950.png",
+    "sources": [
+      {
+        "url": "https://amg00627-amg00627c9-runtime-latam-2613.playouts.now.amagi.tv/ts-us-w2-n1/playlist/amg00627-banijayfast-masterchefbrazil-runtimelatam/cb543d167c6c618784cb3760cef342a0f94b1fde1d6988693eb5518975d1073edce2a59caa08ff16388f1ede7f0a66413a3e951fda77118fd87eb141453c5728cfffe729a2c05616b7db083429b56a062a866a68ac39437ed0e21f48a238b6720a5aa82a66443d80b846ac7352db80148b61299bce8c37683f03409a5e5afba358b38ab50a5ad969a1af1c56953145f59647c0dd4ebdd4d20883448e7fa7099c93a68ace42d381c77efc02b036510f7a2fc98528cbfbb5d7b0eb01b321c2493c7c77d4e1f5dc5c3d9c4e4f2e8095a98c448fdd4a1447fb0d04b4158c47c411876eb800a4e034d1c52c03f0204bcef7f8a228e0d5a19ff73a71c90e6a7e5bbc011eaac66e1174c86298122a2d9cf28173eea645c7e673d5e62e7559b158362bb90a43b810f4f8fc9ba8aec6bf9d083f4209079454a19b22e828d24798cf062d5377e3ccf048e989c3573c6e4ec9d5108453538ed28587d019288a4e2f1ab930970b5e2cfb3d622ab176b9826a38c0662b952531fe6f308269f5ac63a0f48cab556df596ec6acb42c3f94adeff09ac2d1b5c01b8fd651f66446fdfe36342612c930bb49d9aaf274933edf1ccecc91c6d546e59015acbc7e377d4df957953468f03683006657dfc33df67db0f5e136e984ea1cb2740c5577163b6dd703733419fcba38e94d9cc50c716fec6fe2b20285665a9496b036ad4b3cd14bd0f42707e52971c262499024949fe9ad9effad13a9b7c05109ca8a6054b0f3f8d3f8d662d6d5d57dc5c82626e/145/1920x1080_6046040/index.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "mytime-movie-network-123",
+    "name": "MyTime Movie Network",
+    "category": "Filmes e Séries",
+    "logo": "https://i.imgur.com/aiGQtzI.png",
+    "sources": [
+      {
+        "url": "https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "nickonline-124",
+    "name": "NickOnline",
+    "category": "Infantil",
+    "logo": "https://x1colegal.com/logo.png",
+    "sources": [
+      {
+        "url": "https://x1colegal.com/hls/stream.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://x1colegal.com/hls/0/stream.m3u8",
+        "quality": "",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "nicktoons-brasil-125",
+    "name": "NickToons Brasil",
+    "category": "Infantil",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Nicktoons_logo_%282023%29.svg/330px-Nicktoons_logo_%282023%29.svg.png",
+    "sources": [
+      {
+        "url": "https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8",
+        "quality": "SD · 854x480",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "nickelodeon-126",
+    "name": "Nickelodeon",
+    "category": "Infantil",
+    "logo": "https://img.faz-o-eli.online/nickelodeon.png",
+    "sources": [
+      {
+        "url": "https://stmv2.srvif.com/gafeab/gafeab/playlist.m3u8",
+        "quality": "SD · 854x480",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "rede-tv-127",
+    "name": "Rede TV!",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/ZJgD38F.png",
+    "sources": [
+      {
+        "url": "http://45.162.64.114/REDE_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://170.83.16.50/REDE_TV/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "https://meufut.top/rede-tv",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://tv01.zas.media:1936/redetvparana/redetvparana/chunklist_w1074634538.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "runtime-128",
+    "name": "Runtime",
+    "category": "Filmes e Séries",
+    "logo": "https://images.pluto.tv/channels/62c5d32e2c48f9000715b6e9/colorLogoPNG.png",
+    "sources": [
+      {
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=2153",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "amazon-prime-video-01-129",
+    "name": "Amazon Prime Video 01",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/primevideo.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/amazonprimevideo/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "amazon-prime-video-02-130",
+    "name": "Amazon Prime Video 02",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/primevideo.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/amazonprimevideo02/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "canal-goat-jogo-1-131",
+    "name": "Canal GOAT (Jogo 1)",
+    "category": "Esportes",
+    "logo": "http://logos.appscms.xyz/logos/2025/canalgoat.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/canalgoat/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "combate-132",
+    "name": "Combate",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/combate.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/combate/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "dazn-jogo-1-133",
+    "name": "DAZN (Jogo 1)",
+    "category": "Esportes",
+    "logo": "http://logos.appscms.xyz/logos/2025/dazn.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/dazn/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-01-134",
+    "name": "Disney+ 01",
+    "category": "Esportes",
+    "logo": "http://www.fontedecanais.me/logos/canais/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-02-135",
+    "name": "Disney+ 02",
+    "category": "Esportes",
+    "logo": "http://www.fontedecanais.me/logos/canais/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus02/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "paramount-jogo-1-136",
+    "name": "Paramount+ (Jogo 1)",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/paramountplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/paramountplus/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "paramount-jogo-2-137",
+    "name": "Paramount+ (Jogo 2)",
+    "category": "Esportes",
+    "logo": "https://www.fontedecanais.gs/logos/canais/paramountplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/paramountplus02/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "paramount-jogo-3-138",
+    "name": "Paramount+ (Jogo 3)",
+    "category": "Esportes",
+    "logo": "https://www.fontedecanais.gs/logos/canais/paramountplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/paramountplus03/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "max-02-139",
+    "name": "MAX 02",
+    "category": "Filmes e Séries",
+    "logo": "http://www.fontedecanais.gs/logos/canais/max.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/max02/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "studio-universal-140",
+    "name": "Studio Universal",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/studiouniversal.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/studiouniversal/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "gloob-141",
+    "name": "Gloob",
+    "category": "Infantil",
+    "logo": "https://img.faz-o-eli.online/gloob.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/gloob/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "gloobinho-142",
+    "name": "Gloobinho",
+    "category": "Infantil",
+    "logo": "https://logos.imperioapps.top/GLOBINHO.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/gloobinho/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-ra-tim-bum-143",
+    "name": "TV Rá Tim Bum",
+    "category": "Infantil",
+    "logo": "https://logos.imperioapps.top/TV_RA_TIM_BUM.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tvratimbum/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tve-bahia-144",
+    "name": "TVE Bahia",
+    "category": "TV Aberta",
+    "logo": "http://i.imgur.com/IWGyp65.jpeg",
+    "sources": [
+      {
+        "url": "http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "bis-145",
+    "name": "BIS",
+    "category": "Variedades",
+    "logo": "http://www.fontedecanais.me/logos/canais/bis.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a07w/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "food-network-146",
+    "name": "Food Network",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/foodnetwork.png",
+    "sources": [
+      {
+        "url": "http://45.185.11.126:8000/play/a06j/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/foodnetwork/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "24h-naruto-classico-147",
+    "name": "24H Naruto Clássico",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": [
+      {
+        "url": "https://jmp2.uk/plu-5f6df5a173d7340007c559f7.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "discovery-world-148",
+    "name": "Discovery World",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/discoveryworld.png",
+    "sources": [
+      {
+        "url": "http://138.204.86.4:8080/DISCOVERY_WORLD_HD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "http://45.162.64.114/DISCOVERY_WORLD/index.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryworld/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cazetv-1-149",
+    "name": "CazeTV 1",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/cazetv.png",
+    "sources": [
+      {
+        "url": "https://amg01391-amg01391c10-tcl-br-9630.playouts.now.amagi.tv/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cazetv/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cazetv-2-150",
+    "name": "CazeTV 2",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/cazetv.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cazetv2/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sportynet-1-151",
+    "name": "SportyNet+ 1",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportynet.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportynet1/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sportynet-2-152",
+    "name": "SportyNet+ 2",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportynet.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportynet2/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sportynet-3-153",
+    "name": "SportyNet+ 3",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportynet.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportynet3/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-es-154",
+    "name": "Globo ES",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globoes/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-rj-155",
+    "name": "Globo RJ",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globorj.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globorj/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-rs-156",
+    "name": "Globo RS",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globors/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "record-mg-157",
+    "name": "Record MG",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/record.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recordmg/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "record-rj-158",
+    "name": "Record RJ",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/record.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recordrj/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cazetv-3-159",
+    "name": "CazeTV 3",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/cazetv.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cazetv3/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-df-160",
+    "name": "Globo DF",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globodf/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-mg-161",
+    "name": "Globo MG",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globomg/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "max-03-162",
+    "name": "MAX 03",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/max.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/max03/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sportynet-163",
+    "name": "SportyNet",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportynet.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportynet/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "paramount-4-164",
+    "name": "Paramount + 4",
+    "category": "Variedades",
+    "logo": "https://vipcanais.net/images/paramountplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/paramountplus04/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "anime-channel-tv-165",
+    "name": "Anime Channel TV",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/eHw2M6p.png",
+    "sources": [
+      {
+        "url": "https://stmv2.painelvideocast.com.br/animetv/animetv/playlist.m3u8",
+        "quality": "SD · 640x360",
+        "referer": "https://meufut.top/anime-tv",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "otaku-sign-tv-166",
+    "name": "Otaku Sign TV",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/eHw2M6p.png",
+    "sources": [
+      {
+        "url": "https://stmv1.srvif.com/anime/anime/playlist.m3u8",
+        "quality": "SD · 1024x576",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "geekdot-167",
+    "name": "Geekdot",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/jML1u4O.png",
+    "sources": [
+      {
+        "url": "https://stream.ichibansys.com:3764/hybrid/play.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "nbx-tv-kids-168",
+    "name": "NBX TV Kids",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/SRX6EPY.png",
+    "sources": [
+      {
+        "url": "https://stmv4.voxtvhd.com.br/bnxkids/bnxkids/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sbc-kids-169",
+    "name": "SBC Kids",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/SRX6EPY.png",
+    "sources": [
+      {
+        "url": "https://video01.brascast.com/rede1220/rede1220/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "rede-criancas-170",
+    "name": "Rede Crianças",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/SRX6EPY.png",
+    "sources": [
+      {
+        "url": "https://video08.logicahost.com.br/kanucatv/kanucatv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "kuriakos-kids-171",
+    "name": "Kuriakos Kids",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/SRX6EPY.png",
+    "sources": [
+      {
+        "url": "https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "gospel-cartoon-172",
+    "name": "Gospel Cartoon",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/yxjPno5.png",
+    "sources": [
+      {
+        "url": "https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8",
+        "quality": "SD · 640x360",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "jetsons-tv-173",
+    "name": "Jetsons TV",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/PZcTfqV.png",
+    "sources": [
+      {
+        "url": "https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8",
+        "quality": "SD · 640x480",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "24h-os-smurfs-174",
+    "name": "24H Os Smurfs",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": [
+      {
+        "url": "https://d144py1prrd7ns.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-affg2ev32s0dq/smrfe.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "https://meufut.top/the-smurfs-tv",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-a-critica-175",
+    "name": "TV A Crítica",
+    "category": "TV Aberta",
+    "logo": "https://i.imgur.com/j51rBro.png",
+    "sources": [
+      {
+        "url": "https://video01.brascast.com/bdctv/bdctv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "https://meufut.top/tv-a-critica",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "fifa-portugues-176",
+    "name": "FIFA+ Português",
+    "category": "Esportes",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/fifa-plus.png",
+    "sources": [
+      {
+        "url": "https://c2657533.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleC1icl9GSUZBUGx1c1BvcnR1Z3Vlc2VfSExT/playlist.m3u8",
+        "quality": "SD · 384x216",
+        "referer": "https://meufut.top/fifa",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://e3be9ac5.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctYnJfRklGQVBsdXNQb3J0dWd1ZXNlX0hMUw/playlist.m3u8",
+        "quality": "SD",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "globo-bahia-177",
+    "name": "Globo Bahia",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globo.png",
+    "sources": [
+      {
+        "url": "http://hls1.sua.tv/live/globotvbahiafhdbr2/s.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "runtime-acao-178",
+    "name": "Runtime Ação",
+    "category": "Filmes e Séries",
+    "logo": "https://i.imgur.com/3rM8nL2.png",
+    "sources": [
+      {
+        "url": "https://run-rt-ra.otteravision.com/run/rt_ra/rt_ra_720.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "top-tv-179",
+    "name": "Top TV",
+    "category": "Músicas",
+    "logo": "https://i.imgur.com/aKbHjFO.png",
+    "sources": [
+      {
+        "url": "https://isaocorp.cloudecast.com/toptv/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "moviesphere-brazil-180",
+    "name": "MovieSphere Brazil",
+    "category": "Filmes e Séries",
+    "logo": "https://i.imgur.com/c6uFj7A.png",
+    "sources": [
+      {
+        "url": "https://amg00353-amg00353c29-plex-us-3205.playouts.now.amagi.tv/ts-us-e2-n2/playlist/amg00353-lionsgatetvfast-moviespherebrazil-plexus/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "trace-urban-181",
+    "name": "Trace Urban",
+    "category": "Músicas",
+    "logo": "https://i.imgur.com/DLIbUMx.png",
+    "sources": [
+      {
+        "url": "https://amg01076-lightningintern-traceurban-xiaomi-m78n3.amagi.tv/playlist/amg01076-lightningintern-traceurban-xiaomi/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "sony-one-classics-182",
+    "name": "Sony One Classics",
+    "category": "Filmes e Séries",
+    "logo": "https://mondrian.claro.com.br/channels/inverse/sony-movies.png",
+    "sources": [
+      {
+        "url": "https://spt-sonyoneclassicas-1-br.samsung.wurl.tv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "classique-faroeste-183",
+    "name": "Classique Faroeste",
+    "category": "Filmes e Séries",
+    "logo": "https://i.imgur.com/c6uFj7A.png",
+    "sources": [
+      {
+        "url": "https://amogonetworx-grjngo-1-eu.plex.wurl.tv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "loading-tv-184",
+    "name": "Loading TV",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/R0aflu1.png",
+    "sources": [
+      {
+        "url": "https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "retro-cartoon-185",
+    "name": "Retrô Cartoon",
+    "category": "Infantil",
+    "logo": "https://i.imgur.com/hIlEfhl.png",
+    "sources": [
+      {
+        "url": "https://stmv1.video.brstream.com.br/retrotv/retrotv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "retro-music-186",
+    "name": "Retro Music",
+    "category": "Músicas",
+    "logo": "https://i.imgur.com/pyOjdZs.png",
+    "sources": [
+      {
+        "url": "https://newstream.mediawork.cz/retrotv/smil:retrotv_new.smil/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "now-rock-187",
+    "name": "Now Rock",
+    "category": "Músicas",
+    "logo": "https://i.imgur.com/GuM4GnX.png",
+    "sources": [
+      {
+        "url": "https://lightning-now90s-rakuten.amagi.tv/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "tv-classicos-188",
+    "name": "TV Clássicos",
+    "category": "Filmes e Séries",
+    "logo": "https://i.imgur.com/c6uFj7A.png",
+    "sources": [
+      {
+        "url": "https://stmv2.painelvideocast.com.br/multicanais/multicanais/playlist.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "apple-tv-01-189",
+    "name": "Apple TV 01",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/appletv1.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/appletv01/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "apple-tv-02-190",
+    "name": "Apple TV 02",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/appletv1.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/appletv02/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "apple-tv-03-191",
+    "name": "Apple TV 03",
+    "category": "Esportes",
+    "logo": "https://vipcanais.net/images/appletv1.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/appletv03/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "apple-tv-04-192",
+    "name": "Apple TV 04",
+    "category": "Esportes",
+    "logo": "https://vipcanais.net/images/appletv1.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/appletv04/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "apple-tv-05-193",
+    "name": "Apple TV 05",
+    "category": "Esportes",
+    "logo": "https://vipcanais.net/images/appletv1.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/appletv05/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "apple-tv-06-194",
+    "name": "Apple TV 06",
+    "category": "Esportes",
+    "logo": "https://vipcanais.net/images/appletv1.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/appletv06/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "cazetv-4-195",
+    "name": "CazeTV 4",
+    "category": "Esportes",
+    "logo": "https://vipcanais.net/images/cazetv.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cazetv4/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-07-196",
+    "name": "Disney+ 07",
+    "category": "Esportes",
+    "logo": "https://vipcanais.net/images/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus07/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-08-197",
+    "name": "Disney+ 08",
+    "category": "Esportes",
+    "logo": "https://vipcanais.net/images/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus08/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-03-198",
+    "name": "Disney+ 03",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus03/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-05-199",
+    "name": "Disney+ 05",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus05/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-06-200",
+    "name": "Disney+ 06",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus06/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "max-04-201",
+    "name": "MAX 04",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/max.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/max04/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "max-05-202",
+    "name": "MAX 05",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/max.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/max05/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "amc-series-203",
+    "name": "AMC Séries",
+    "category": "Filmes e Séries",
+    "logo": "https://vipcanais.net/images/amcseries.png",
+    "sources": [
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/amcseries/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "record-df-204",
+    "name": "Record DF",
+    "category": "TV Aberta",
+    "logo": "https://1.embedcanaisdetv.com/images/record.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recorddf/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "record-es-205",
+    "name": "Record ES",
+    "category": "TV Aberta",
+    "logo": "https://1.embedcanaisdetv.com/images/record.png",
+    "sources": [
+      {
+        "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recordes/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "disney-04-206",
+    "name": "Disney+ 04",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/disneyplus.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/disneyplus04/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "max-207",
+    "name": "Max",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/max.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/max/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "max-06-208",
+    "name": "Max 06",
+    "category": "Esportes",
+    "logo": "https://1.embedcanaisdetv.com/images/max.png",
+    "sources": [
+      {
+        "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/max06/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "mtv-209",
+    "name": "MTV",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/mtv.png",
+    "sources": [
+      {
+        "url": "https://jmp2.uk/plu-5f1212fb81e85c00077ae9ef.m3u8",
+        "quality": "HD · 1280x720",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "id": "24h-chaves-210",
+    "name": "24H Chaves",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": []
+  },
+  {
+    "id": "24h-dragon-ball-z-211",
+    "name": "24H Dragon Ball Z",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": []
+  },
+  {
+    "id": "24h-friends-212",
+    "name": "24H Friends",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": []
+  },
+  {
+    "id": "24h-os-simpsons-213",
+    "name": "24H Os Simpsons",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": []
+  },
+  {
+    "id": "24h-pica-pau-214",
+    "name": "24H Pica Pau",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": []
+  },
+  {
+    "id": "24h-todo-mundo-odeia-o-cris-215",
+    "name": "24H Todo Mundo Odeia o Cris",
+    "category": "24 Horas",
+    "logo": "https://img.faz-o-eli.online/24h.png",
+    "sources": []
+  },
+  {
+    "id": "a-fazenda-18-1-216",
+    "name": "A Fazenda 18 1",
+    "category": "PPV",
+    "logo": "https://img.faz-o-eli.online/afazenda2.png",
+    "sources": []
+  },
+  {
+    "id": "a-fazenda-18-2-217",
+    "name": "A Fazenda 18 2",
+    "category": "PPV",
+    "logo": "https://img.faz-o-eli.online/afazenda2.png",
+    "sources": []
+  },
+  {
+    "id": "a-fazenda-18-3-218",
+    "name": "A Fazenda 18 3",
+    "category": "PPV",
+    "logo": "https://img.faz-o-eli.online/afazenda2.png",
+    "sources": []
+  },
+  {
+    "id": "a-fazenda-18-4-219",
+    "name": "A Fazenda 18 4",
+    "category": "PPV",
+    "logo": "https://img.faz-o-eli.online/afazenda2.png",
+    "sources": []
+  },
+  {
+    "id": "a-fazenda-18-5-220",
+    "name": "A Fazenda 18 5",
+    "category": "PPV",
+    "logo": "https://img.faz-o-eli.online/afazenda2.png",
+    "sources": []
+  },
+  {
+    "id": "band-rj-221",
+    "name": "Band RJ",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/band.png",
+    "sources": []
+  },
+  {
+    "id": "curta-222",
+    "name": "Curta",
+    "category": "Documentários",
+    "logo": "https://img.faz-o-eli.online/curta.png",
+    "sources": []
+  },
+  {
+    "id": "disney-plus-1-223",
+    "name": "Disney Plus 1",
+    "category": "Filmes e Séries",
+    "logo": "https://vipcanais.net/images/disneyplus.png",
+    "sources": []
+  },
+  {
+    "id": "globo-am-224",
+    "name": "Globo AM",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": []
+  },
+  {
+    "id": "globo-ce-225",
+    "name": "Globo CE",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": []
+  },
+  {
+    "id": "globo-go-226",
+    "name": "Globo GO",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": []
+  },
+  {
+    "id": "globo-pb-227",
+    "name": "Globo PB",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": []
+  },
+  {
+    "id": "globo-pe-228",
+    "name": "Globo PE",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/globosp.png",
+    "sources": []
+  },
+  {
+    "id": "hgtv-229",
+    "name": "HGTV",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/hgtv.png",
+    "sources": []
+  },
+  {
+    "id": "max-01-230",
+    "name": "MAX 01",
+    "category": "Filmes e Séries",
+    "logo": "http://www.fontedecanais.gs/logos/canais/max.png",
+    "sources": []
+  },
+  {
+    "id": "pt-a-bola-231",
+    "name": "PT - A Bola",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/pt_abola.png",
+    "sources": []
+  },
+  {
+    "id": "pt-benfica-tv-232",
+    "name": "PT - Benfica TV",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/pt_benficatv.prev.png",
+    "sources": []
+  },
+  {
+    "id": "pt-canal-11-233",
+    "name": "PT - Canal 11",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/pt_canal11.prev.png",
+    "sources": []
+  },
+  {
+    "id": "pt-eleven-1-234",
+    "name": "PT - Eleven 1",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/pt_eleven1.prev.png",
+    "sources": []
+  },
+  {
+    "id": "pt-eleven-2-235",
+    "name": "PT - Eleven 2",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/pt_eleven2.prev.png",
+    "sources": []
+  },
+  {
+    "id": "pt-eleven-3-236",
+    "name": "PT - Eleven 3",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/pt_eleven3.prev.png",
+    "sources": []
+  },
+  {
+    "id": "pt-sporttv-1-237",
+    "name": "PT - Sporttv 1",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": []
+  },
+  {
+    "id": "pt-sporttv-2-238",
+    "name": "PT - Sporttv 2",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": []
+  },
+  {
+    "id": "pt-sporttv-3-239",
+    "name": "PT - Sporttv 3",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": []
+  },
+  {
+    "id": "pt-sporttv-4-240",
+    "name": "PT - Sporttv 4",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": []
+  },
+  {
+    "id": "pt-sporttv-5-241",
+    "name": "PT - Sporttv 5",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": []
+  },
+  {
+    "id": "pt-sporttv-6-242",
+    "name": "PT - Sporttv 6",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": []
+  },
+  {
+    "id": "pt-sporttv-7-243",
+    "name": "PT - Sporttv 7",
+    "category": "Esportes",
+    "logo": "https://img.faz-o-eli.online/sportv.png",
+    "sources": []
+  },
+  {
+    "id": "paramount-plus-1-244",
+    "name": "Paramount Plus 1",
+    "category": "Filmes e Séries",
+    "logo": "https://vipcanais.net/images/paramountplus.png",
+    "sources": []
+  },
+  {
+    "id": "record-go-245",
+    "name": "Record GO",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/record.png",
+    "sources": []
+  },
+  {
+    "id": "sbt-rj-246",
+    "name": "SBT RJ",
+    "category": "TV Aberta",
+    "logo": "https://img.faz-o-eli.online/sbt.png",
+    "sources": []
+  },
+  {
+    "id": "tcm-247",
+    "name": "TCM",
+    "category": "Filmes e Séries",
+    "logo": "https://img.faz-o-eli.online/tcm.png",
+    "sources": []
+  },
+  {
+    "id": "tlc-248",
+    "name": "TLC",
+    "category": "Variedades",
+    "logo": "https://img.faz-o-eli.online/tlc.png",
+    "sources": []
+  },
+  {
+    "id": "ufc-fight-pass-249",
+    "name": "UFC Fight Pass",
+    "category": "PPV",
+    "logo": "https://img.faz-o-eli.online/ufcfightpass.png",
+    "sources": []
+  }
+]
