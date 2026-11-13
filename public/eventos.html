@@ -25,7 +25,7 @@
     .events-back svg{width:18px;height:18px}
     @media(max-width:700px){.events-main{min-height:calc(100dvh - 130px);padding:55px 20px 110px}.events-message p{font-size:15px}}
   </style>
-</head>
+<link rel="stylesheet" href="/mobile-fix.css"></head>
 <body>
   <header class="topbar">
     <a class="brand" href="/"><img src="/assets/logo.png" alt=""><span>Naçaum<span class="accent">TV</span></span></a>
@@ -47,13 +47,13 @@
       <a class="events-back" href="/"><i data-lucide="arrow-left"></i> Voltar ao início</a>
     </div>
   </main>
-  <nav class="mobile-nav">
-    <a href="/"><i data-lucide="house"></i><small>Início</small></a>
-    <a href="/live.html"><i data-lucide="tv"></i><small>Ao vivo</small></a>
-    <a class="active" href="/eventos.html"><i data-lucide="calendar-days"></i><small>Eventos</small></a>
-    <a href="/movies.html"><i data-lucide="clapperboard"></i><small>On Demand</small></a>
-    <a href="/favorites.html"><i data-lucide="heart"></i><small>Favoritos</small></a>
-  </nav>
+  <nav class="mobile-nav" aria-label="Navegação principal">
+  <a href="/"><i data-lucide="house"></i><small>Início</small></a>
+  <a href="/live.html"><i data-lucide="tv"></i><small>Ao vivo</small></a>
+  <a class="active" aria-current="page" href="/eventos.html"><i data-lucide="calendar-days"></i><small>Eventos</small></a>
+  <a href="/movies.html"><i data-lucide="clapperboard"></i><small>On Demand</small></a>
+  <a href="/favorites.html"><i data-lucide="heart"></i><small>Favoritos</small></a>
+</nav>
   <script src="/site-polish.js" defer></script>
   <script src="/global-search.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded',()=>window.lucide?.createIcons());</script>

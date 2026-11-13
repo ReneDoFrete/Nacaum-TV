@@ -1,0 +1,112 @@
+/* Naçaum TV — interface mobile unificada. Não modifica o layout desktop. */
+@media (max-width: 800px) {
+  :root { --mobile-nav-height: 72px; }
+  html { scroll-padding-bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom)); }
+  body { padding-bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom)); }
+  body .mobile-nav {
+    position: fixed !important; inset: auto 0 0 0 !important;
+    z-index: 2147483000 !important; display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: stretch; gap: 0; min-height: var(--mobile-nav-height);
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom)) !important;
+    background: rgba(11, 14, 25, .98) !important;
+    border-top: 1px solid rgba(255,255,255,.13);
+    box-shadow: 0 -9px 28px rgba(0,0,0,.55);
+    transform: none !important; opacity: 1 !important; visibility: visible !important;
+    pointer-events: auto !important; isolation: isolate;
+  }
+  body .mobile-nav a {
+    display: flex !important; flex-direction: column; align-items: center;
+    justify-content: center; gap: 5px; min-width: 0;
+    padding: 7px 2px; border-radius: 12px;
+    color: #bfc8d9; text-decoration: none; font-size: inherit;
+    background: transparent;
+  }
+  body .mobile-nav a svg { display: block; width: 22px; height: 22px; stroke-width: 2; flex: none; }
+  body .mobile-nav a small { display: block; font-size: 10px; line-height: 1.15; font-weight: 650; white-space: nowrap; }
+  body .mobile-nav a.active, body .mobile-nav a[aria-current="page"] { color: #22dec2; background: rgba(34,222,194,.10); }
+  body .mobile-nav a.active svg { stroke-width: 2.3; }
+  /* Modal/guia permanecem utilizáveis sem encobrir a navegação principal. */
+  .movie-modal, .full-guide, .search-overlay { max-height: calc(100dvh - var(--mobile-nav-height) - env(safe-area-inset-bottom)); }
+}
+
+/* TV no celular: vídeo em cima, comandos e lista de canais abaixo, sem sobreposição. */
+@media (max-width: 800px) {
+  body:has(#ao-vivo-page) { overflow-x: hidden !important; overflow-y: auto !important; }
+  body:has(#ao-vivo-page) .topbar { display: none !important; }
+  body:has(#ao-vivo-page) #ao-vivo-page { height: auto !important; min-height: 100dvh; overflow: visible !important; }
+  body:has(#ao-vivo-page) #ao-vivo { height: auto !important; padding: 0 0 20px !important; position: relative; }
+  body:has(#ao-vivo-page) .live-layout { display: flex !important; flex-direction: column !important; height: auto !important; overflow: visible; }
+  body:has(#ao-vivo-page) .player-panel {
+    position: relative !important; inset: auto !important; order: 0;
+    width: 100% !important; display: flex; flex-direction: column;
+    overflow: visible !important; background: #090c15 !important;
+    border-radius: 0 !important;
+  }
+  body:has(#ao-vivo-page) .video-wrap {
+    position: relative !important; inset: auto !important;
+    width: 100% !important; height: auto !important;
+    aspect-ratio: 16/9 !important; max-height: none !important;
+    flex: none; background: #000 !important;
+  }
+  body:has(#ao-vivo-page) #video { width: 100%; height: 100%; object-fit: contain; }
+  body:has(#ao-vivo-page) .player-top {
+    position: relative !important; top: auto !important; left: auto !important;
+    right: auto !important; width: auto !important; max-width: none !important;
+    min-width: 0 !important; order: -1; opacity: 1 !important;
+    pointer-events: auto !important; padding: 12px 16px !important;
+    border-radius: 0 !important; background: #0c101c !important;
+  }
+  body:has(#ao-vivo-page).live-ui-visible .player-top { opacity: 1 !important; }
+  body:has(#ao-vivo-page) .player-message,
+  body:has(#ao-vivo-page) .source-selector-bar {
+    position: static !important; opacity: 1 !important; pointer-events: auto !important;
+    width: auto; max-width: 100%; margin: 0 12px 8px;
+    padding: 7px 10px; border-radius: 10px; font-size: 12px;
+    background: #131a29;
+  }
+  body:has(#ao-vivo-page) .source-selector-bar { order: 3; }
+  body:has(#ao-vivo-page) .player-message { order: 2; }
+  body:has(#ao-vivo-page) .live-controls {
+    position: relative !important; inset: auto !important; left: auto !important;
+    bottom: auto !important; top: auto !important; order: 1;
+    transform: none !important; opacity: 1 !important; pointer-events: auto !important;
+    width: calc(100% - 20px) !important; margin: 8px 10px !important;
+    padding: 7px 8px !important; gap: 5px; border-radius: 16px;
+    overflow-x: auto; scrollbar-width: none; flex-shrink: 0;
+    background: #101522 !important;
+  }
+  body:has(#ao-vivo-page) .live-controls::-webkit-scrollbar { display: none; }
+  body:has(#ao-vivo-page) .live-controls .live-icon { flex-shrink: 0; min-width: 36px; }
+  body:has(#ao-vivo-page) .live-controls #liveVolume { min-width: 52px; max-width: 90px; }
+  body:has(#ao-vivo-page) .live-top-actions { display: none !important; }
+  body:has(#ao-vivo-page) .channel-panel {
+    position: relative !important; inset: auto !important; order: 1;
+    display: flex !important; flex-direction: column;
+    width: calc(100% - 24px) !important; height: auto !important;
+    margin: 14px 12px 0; max-height: none !important;
+    transform: none !important; opacity: 1 !important;
+    pointer-events: auto !important; background: #0d111d !important;
+    border: 1px solid rgba(255,255,255,.13); border-radius: 18px;
+    box-shadow: none !important;
+  }
+  body:has(#ao-vivo-page).channels-closed .channel-panel { display: none !important; }
+  body:has(#ao-vivo-page) .panel-title { min-height: 58px; }
+  body:has(#ao-vivo-page) .panel-title #closeChannels { display: none; }
+  body:has(#ao-vivo-page) .channel-list {
+    flex: none !important; max-height: none !important;
+    height: auto !important; overflow: visible !important;
+    padding-bottom: 12px;
+  }
+  body:has(#ao-vivo-page) .toolbar { position: static !important; }
+  body:has(#ao-vivo-page) .toolbar .filters { overflow-x: auto !important; }
+  body:has(#ao-vivo-page) .guide-panel,
+  body:has(#ao-vivo-page).guide-open .guide-panel {
+    position: relative !important; inset: auto !important; order: 4;
+    display: none; width: calc(100% - 24px) !important;
+    max-height: 45vh; margin: 8px 12px;
+  }
+  body:has(#ao-vivo-page).guide-open .guide-panel { display: block !important; }
+  body:has(#ao-vivo-page) .full-guide { position: fixed !important; bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom)); }
+  body:has(#ao-vivo-page) .live-multiview:not([hidden]) { position: absolute; top: 0; height: 50vh; }
+}

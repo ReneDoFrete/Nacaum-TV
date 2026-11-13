@@ -9,7 +9,7 @@
   <link rel="icon" href="/assets/logo.png">
   <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/discover.css">
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
-<link rel="stylesheet" href="/enhancements.css"><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script><script src="/enhancements.js" defer></script><link rel="stylesheet" href="/live-redesign.css"><link rel="stylesheet" href="/site-polish.css"><link rel="stylesheet" href="/global-search.css"></head>
+<link rel="stylesheet" href="/enhancements.css"><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script><script src="/enhancements.js" defer></script><link rel="stylesheet" href="/live-redesign.css"><link rel="stylesheet" href="/site-polish.css"><link rel="stylesheet" href="/global-search.css"><link rel="stylesheet" href="/mobile-fix.css"></head>
 <body>
   <header class="topbar">
     <a class="brand" href="/"><img src="/assets/logo.png" alt="Naçaum TV"><span>Naçaum<span class="accent">TV</span></span></a>
@@ -81,9 +81,13 @@
 
   <footer><div class="footer-brand"><img src="/assets/logo.png" alt=""> Naçaum TV</div><p>Projeto independente. Disponibilize somente conteúdos próprios ou devidamente licenciados.</p><span>© <span id="year"></span> Naçaum TV</span></footer>
 
-  <nav class="mobile-nav">
-    <a href="/">⌂<small>Início</small></a><a class="active" href="/live.html">▣<small>Ao vivo</small></a><a href="/eventos.html">◉<small>Eventos</small></a><a href="/movies.html">▤<small>On Demand</small></a><a href="/favorites.html">♡<small>Favoritos</small></a>
-  </nav>
+  <nav class="mobile-nav" aria-label="Navegação principal">
+  <a href="/"><i data-lucide="house"></i><small>Início</small></a>
+  <a class="active" aria-current="page" href="/live.html"><i data-lucide="tv"></i><small>Ao vivo</small></a>
+  <a href="/eventos.html"><i data-lucide="calendar-days"></i><small>Eventos</small></a>
+  <a href="/movies.html"><i data-lucide="clapperboard"></i><small>On Demand</small></a>
+  <a href="/favorites.html"><i data-lucide="heart"></i><small>Favoritos</small></a>
+</nav>
   <script src="/app.js"></script><script src="/live-controls.js" defer></script>
 <script src="/discover.js" defer></script><script src="/site-polish.js" defer></script><script src="/global-search.js" defer></script></body>
 </html>
