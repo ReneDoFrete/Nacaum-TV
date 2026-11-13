@@ -63,6 +63,22 @@ app.get('/api/catalog-details', async (_req, res) => {
   }
 });
 
+// Contador local: uma identidade por navegador, ativa por 75s.
+// Em produção, Cloudflare Pages usa D1 em functions/api/online.js.
+const onlineSessions = new Map();
+app.post('/api/online', express.json({ limit: '1kb' }), (req, res) => {
+  const id = req.body?.id;
+  if (typeof id !== 'string' || !/^[a-f0-9-]{36}$/.test(id)) {
+    return res.status(400).json({ error: 'Identificador inválido' });
+  }
+  const now = Date.now();
+  for (const [key, lastSeen] of onlineSessions) {
+    if (now - lastSeen > 75000) onlineSessions.delete(key);
+  }
+  onlineSessions.set(id, now);
+  res.set('Cache-Control', 'no-store').json({ online: onlineSessions.size });
+});
+
 app.use(express.static('public',{maxAge:'1h'}));
 app.get('/api/guide',async(req,res)=>{try{const channels=JSON.parse(fs.readFileSync(path.resolve('public/channels.json'),'utf8'));res.json(await getGuide(channels))}catch(e){res.status(503).json({error:'Guia temporariamente indisponível'})}});
 
