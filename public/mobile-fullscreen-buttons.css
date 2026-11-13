@@ -1,0 +1,18 @@
+/* Na tela cheia mobile, oculta apenas os atalhos de canais e guias.
+   Os demais controles (play, volume, fullscreen, PiP etc.) permanecem. */
+@media (max-width: 800px) {
+  body.nacaum-mobile-fullscreen #toggleChannels,
+  body.nacaum-mobile-fullscreen #toggleGuide,
+  body.nacaum-mobile-fullscreen #toggleCurrentSchedule,
+  body.nacaum-mobile-fullscreen #toggleMulti,
+  .video-wrap:fullscreen #toggleChannels,
+  .video-wrap:fullscreen #toggleGuide,
+  .video-wrap:fullscreen #toggleCurrentSchedule,
+  .video-wrap:fullscreen #toggleMulti,
+  .video-wrap:-webkit-full-screen #toggleChannels,
+  .video-wrap:-webkit-full-screen #toggleGuide,
+  .video-wrap:-webkit-full-screen #toggleCurrentSchedule,
+  .video-wrap:-webkit-full-screen #toggleMulti {
+    display: none !important;
+  }
+}
