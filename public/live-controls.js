@@ -119,10 +119,29 @@
   $('previousChannel').onclick = () => switchChannel(-1);
   $('nextChannel').onclick = () => switchChannel(1);
   $('toggleFullscreen').onclick = async () => {
-    try { if (document.fullscreenElement) await document.exitFullscreen(); else await $('ao-vivo').requestFullscreen(); }
-    catch (e) { console.warn('Tela cheia indisponível:', e); }
+    const isMobile = window.matchMedia('(max-width: 800px)').matches;
+    const wrapper = document.querySelector('.video-wrap');
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      } else if (isMobile && wrapper?.requestFullscreen) {
+        // Fullscreen somente do player, incluindo a barra de controles.
+        await wrapper.requestFullscreen();
+      } else if (video.requestFullscreen) {
+        await video.requestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      }
+    } catch (error) {
+      // iOS Safari: fallback para fullscreen nativo do vídeo.
+      if (video.webkitEnterFullscreen) {
+        try { video.webkitEnterFullscreen(); }
+        catch (fallbackError) { console.warn('Tela cheia indisponível:', fallbackError); }
+      } else console.warn('Tela cheia indisponível:', error);
+    }
     showUI();
   };
+
   $('togglePip').onclick = async () => {
     try {
       if (document.pictureInPictureElement) await document.exitPictureInPicture();
