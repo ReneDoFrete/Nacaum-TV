@@ -70,25 +70,51 @@ const shortName=s=>normalize(s).replace(/\b(fc|cf|sc|ac|club|clube|de|do|da|the)
 function sameTeam(a,b){const x=shortName(a),y=shortName(b);return !!x&&!!y&&(x===y||(x.length>=5&&y.length>=5&&(x.startsWith(y)||y.startsWith(x))));}
 function matchSlug(slug,event){const p=slug.split('/').filter(Boolean),i=p.indexOf('vs');if(i<1||i>=p.length-1)return false;let h=p[i-1].replace(/-/g,' '),a=p[i+1].replace(/-/g,' ');try{h=decodeURIComponent(h);a=decodeURIComponent(a)}catch{}return sameTeam(h,event.home)&&sameTeam(a,event.away)}
 function scoreOf(m){const text=String(m?.score1??m?.score??'');const x=text.match(/(\d+)\s*[-:x×]\s*(\d+)/i);return x?`${x[1]} - ${x[2]}`:null}
+// Segue o mesmo princípio do monitor.js: transição in_play true -> false,
+// is_ended explícito e persistência do último placar.
+// Quando a partida desaparece, exigimos duas leituras válidas consecutivas
+// para não confundir uma falha transitória do feed com fim de jogo.
+function ended(m){
+ const state=normalize(m?.status||m?.state||m?.match_status||'');
+ return m?.is_ended===true||m?.finished===true||m?.is_finished===true||m?.isFinished===true||
+   /^(ft|finished|full time|final|ended|encerrado|after penalties|aet)$/.test(state);
+}
 async function monitor(events){
- const now=Date.now(),active=events.filter(e=>e.status!=='finished'&&Number.isFinite(Date.parse(e.utcTime))&&Date.parse(e.utcTime)<=now+60000);
+ const now=Date.now();
+ const active=events.filter(e=>e.status!=='finished'&&Number.isFinite(Date.parse(e.utcTime))&&Date.parse(e.utcTime)<=now+60000);
  if(!active.length)return events;
- let matches={};
- try{const data=await getJson('https://www.futbol24.com/api/in_play?_'+Date.now(),FUTBOL_HEADERS);matches=data?.inplay?.matches||data?.matches||{}}catch(err){console.warn('[FUTBOL24]',err.message);return events}
+ let matches;
+ try{
+  const data=await getJson('https://www.futbol24.com/api/in_play?_='+Date.now(),FUTBOL_HEADERS);
+  matches=data?.inplay?.matches||data?.matches;
+  if(!matches||typeof matches!=='object')throw Error('Resposta sem matches');
+ }catch(err){console.warn('[FUTBOL24]',err.message);return events}
  const entries=Object.entries(matches);
  for(const e of active){
-  const found=entries.find(([slug])=>matchSlug(slug,e));if(!found)continue;
-  const [slug,m]=found;const score=scoreOf(m);if(score)e.score=score;
-  if(m.in_play===true){e.status='live';e.minute=m.minute||m.time||null;continue}
-  // A API in_play inclui partidas encerradas. Exigir um indicativo real de encerramento,
-  // em vez de considerar qualquer partida que saiu do feed como finalizada.
-  const state=normalize(m.status||m.state||m.match_status||'');
-  if(m.finished===true||m.is_finished===true||m.isFinished===true||/^(ft|finished|full time|final|ended|encerrado|after penalties|aet)$/.test(state)){
-   e.status='finished';e.minute=null;
-  }else if(e.status==='live'&&m.in_play===false&&score){e.status='finished';e.minute=null}
+  const found=entries.find(([slug])=>matchSlug(slug,e));
+  if(found){
+   const [,m]=found;
+   const score=scoreOf(m);
+   if(score)e.score=score;
+   e._missingPolls=0;
+   if(ended(m)){
+    e.status='finished';e.minute=null;e._seenLive=true;
+   }else if(m.in_play===true){
+    e.status='live';e._seenLive=true;e.minute=m.minute??m.time??null;
+   }else if(e._seenLive===true && m.in_play===false && e.score){
+    // Condição de fim de jogo utilizada no monitor.js original.
+    e.status='finished';e.minute=null;
+   }
+  }else if(e._seenLive===true && e.status==='live'){
+   // O jogo estava ao vivo e saiu do /in_play. Duas confirmações
+   // reduzem falsos positivos por oscilação temporária da API.
+   e._missingPolls=(e._missingPolls||0)+1;
+   if(e._missingPolls>=2 && e.score){e.status='finished';e.minute=null}
+  }
  }
  return events;
 }
+
 export async function onRequestGet({env}){
  if(!env.DB)return Response.json({error:'Vincule o D1 com o nome DB.'},{status:503});
  try{
