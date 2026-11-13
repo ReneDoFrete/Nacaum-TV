@@ -46,8 +46,20 @@ function flatten(data,date){const result=[];for(const [key,leagues] of Object.en
  const names=[...new Set((m.channels||[]).map(c=>channelName(c.name)).filter(Boolean))];if(!names.length)continue;
  result.push({id:String(m.id),home:m.home?.name||'',away:m.away?.name||'',league:m.leagueName||league.leagueName||'',utcTime:m.utcTime,channels:names,status:'scheduled',score:null});
  }return result}
+async function fetchFotmob(env) {
+ // Cloudflare pode receber 403 na origem. Usa ScraperAPI somente quando necessário.
+ try { return await getJson(FOTMOB); }
+ catch (directError) {
+  if (!env.SCRAPERAPI_KEY) throw new Error(`FotMob direto falhou (${directError.message}); configure SCRAPERAPI_KEY na Cloudflare.`);
+  const api = new URL('https://api.scraperapi.com/');
+  api.searchParams.set('api_key', env.SCRAPERAPI_KEY);
+  api.searchParams.set('url', FOTMOB);
+  try { return await getJson(api.toString()); }
+  catch (proxyError) { throw new Error(`FotMob direto: ${directError.message}; ScraperAPI: ${proxyError.message.replace(/api_key=[^&]+/, 'api_key=[redacted]')}`); }
+ }
+}
 async function snapshot(env,date){
- const data=await getJson(FOTMOB);const events=flatten(data,date);
+ const data=await fetchFotmob(env);const events=flatten(data,date);
  for(const e of events)await enrichSofa(env,e);
  await env.DB.prepare('INSERT INTO event_snapshots (day,events,updated_at) VALUES (?,?,?) ON CONFLICT(day) DO UPDATE SET events=excluded.events, updated_at=excluded.updated_at').bind(date,JSON.stringify(events),Date.now()).run();
  return events;
