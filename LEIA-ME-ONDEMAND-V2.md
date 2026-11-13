@@ -1,6 +1,6 @@
 # Naçaum TV — On Demand v2
 
-Essa versão mantém a TV ao vivo e substitui a página `public/movies.html` por uma interface responsiva com categorias, catálogo, perfis TMDB, temporadas e episódios e player em tela inteira com controles customizados.
+Esta versão mantém a TV ao vivo e substitui a página `public/movies.html` por uma interface responsiva com categorias, catálogo, perfis TMDB, temporadas e episódios e player em tela inteira com controles customizados.
 
 ## Testar no Windows (CMD)
 

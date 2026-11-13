@@ -1,1 +1,34 @@
 #onlineVisitors{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:#e9f8f5;background:#17232a;border:1px solid #2b4849;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;line-height:1}#onlineVisitors .online-dot{width:8px;height:8px;flex:none;border-radius:50%;background:#2fe0b6;box-shadow:0 0 9px #2fe0b677}#onlineVisitors.unavailable .online-dot{background:#89939c;box-shadow:none}#onlineVisitors [data-online-count]{font-variant-numeric:tabular-nums;color:#37e3c4}@media(max-width:1100px){#onlineVisitors{padding:7px 9px;font-size:11px}}@media(max-width:800px){#onlineVisitors{display:none}}
+/* Mobile: manter a contagem visível, sem comprimir logo e busca. */
+@media (max-width: 800px) {
+  body:not(:has(#ao-vivo-page)) .topbar #onlineVisitors {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 9px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  body:not(:has(#ao-vivo-page)) .topbar .top-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    flex: 0 0 auto;
+  }
+}
+@media (max-width: 620px) {
+  body:not(:has(#ao-vivo-page)) .topbar { padding-left: 10px; padding-right: 10px; gap: 5px; }
+  body:not(:has(#ao-vivo-page)) .topbar .brand { min-width: 0; gap: 5px; font-size: 14px; white-space: nowrap; }
+  body:not(:has(#ao-vivo-page)) .topbar .brand img { width: 29px; height: 29px; flex: 0 0 auto; }
+  body:not(:has(#ao-vivo-page)) .topbar .top-actions #clock { display: none !important; }
+  body:not(:has(#ao-vivo-page)) .topbar .header-search-button { padding: 8px 9px; gap: 4px; font-size: 12px; }
+  body:not(:has(#ao-vivo-page)) .topbar #onlineVisitors { font-size: 10px; padding: 7px 8px; }
+}
+@media (max-width: 360px) {
+  body:not(:has(#ao-vivo-page)) .topbar .header-search-button { font-size: 0; padding: 8px; }
+  body:not(:has(#ao-vivo-page)) .topbar .header-search-button svg { width: 18px; height: 18px; }
+}
