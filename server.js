@@ -79,6 +79,13 @@ app.post('/api/online', express.json({ limit: '1kb' }), (req, res) => {
   res.set('Cache-Control', 'no-store').json({ online: onlineSessions.size });
 });
 
+// API local de eventos: arquivo persistente no Node (em produção use D1).
+import { onRequestGet as eventsHandler } from './functions/api/events.js';
+const snapshotsPath=path.resolve('data/event-snapshots.json');
+let snapshotStore={};try{snapshotStore=JSON.parse(fs.readFileSync(snapshotsPath,'utf8'))}catch{}
+const localDb={prepare(sql){let args=[];return {bind(...a){args=a;return this},async first(){return snapshotStore[args[0]]?{events:snapshotStore[args[0]]}:null},async run(){if(sql.startsWith('INSERT'))snapshotStore[args[0]]=args[1];else if(sql.startsWith('UPDATE'))snapshotStore[args[1]]=args[0];fs.writeFileSync(snapshotsPath,JSON.stringify(snapshotStore));return {success:true}}}}};
+app.get('/api/events',async(req,res)=>{const response=await eventsHandler({env:{DB:localDb,SCRAPERAPI_KEY:process.env.SCRAPERAPI_KEY,SOFA_CHANNEL_IDS:process.env.SOFA_CHANNEL_IDS}});res.status(response.status).json(await response.json())});
+
 app.use(express.static('public',{maxAge:'1h'}));
 app.get('/api/guide',async(req,res)=>{try{const channels=JSON.parse(fs.readFileSync(path.resolve('public/channels.json'),'utf8'));res.json(await getGuide(channels))}catch(e){res.status(503).json({error:'Guia temporariamente indisponível'})}});
 

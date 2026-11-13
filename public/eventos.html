@@ -25,7 +25,7 @@
     .events-back svg{width:18px;height:18px}
     @media(max-width:700px){.events-main{min-height:calc(100dvh - 130px);padding:55px 20px 110px}.events-message p{font-size:15px}}
   </style>
-<link rel="stylesheet" href="/mobile-fix.css"><link rel="stylesheet" href="/online-counter.css"></head>
+<link rel="stylesheet" href="/mobile-fix.css"><link rel="stylesheet" href="/online-counter.css"><link rel="stylesheet" href="/events.css"></head>
 <body>
   <header class="topbar">
     <a class="brand" href="/"><img src="/assets/logo.png" alt=""><span>Naçaum<span class="accent">TV</span></span></a>
@@ -39,14 +39,7 @@
     </nav>
     <div class="top-actions"><span id="onlineVisitors" class="unavailable" aria-label="Visitantes online" title="Carregando visitantes"><span class="online-dot" aria-hidden="true"></span><span data-online-count>—</span> online</span><span id="clock" aria-label="Horário atual"></span></div>
   </header>
-  <main class="events-main">
-    <div class="events-message">
-      <div class="events-icon"><i data-lucide="construction"></i></div>
-      <h1>Página ainda em desenvolvimento...</h1>
-      <p>Estamos preparando a área de eventos do Naçaum TV. Volte em breve!</p>
-      <a class="events-back" href="/"><i data-lucide="arrow-left"></i> Voltar ao início</a>
-    </div>
-  </main>
+  <main class="events-main"><div class="events-head"><h1>Eventos <span>esportivos</span></h1><p>Jogos de hoje, placares e canais de transmissão</p></div><div class="events-toolbar"><div class="events-filters" id="eventFilters"></div><span class="events-date" id="eventsDate"></span></div><div class="events-grid" id="eventsGrid"><div class="events-empty">Carregando eventos...</div></div></main>
   <nav class="mobile-nav" aria-label="Navegação principal">
   <a href="/"><i data-lucide="house"></i><small>Início</small></a>
   <a href="/live.html"><i data-lucide="tv"></i><small>Ao vivo</small></a>
@@ -57,5 +50,5 @@
   <script src="/site-polish.js" defer></script>
   <script src="/global-search.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded',()=>window.lucide?.createIcons());</script>
-<script src="/online-counter.js" defer></script></body>
+<script src="/online-counter.js" defer></script><script src="/events.js" defer></script></body>
 </html>

@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS event_snapshots (day TEXT PRIMARY KEY, events TEXT NOT NULL, updated_at INTEGER NOT NULL);
