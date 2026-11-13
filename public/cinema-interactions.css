@@ -1,0 +1,13 @@
+/* Controles cinematográficos: visibilidade baseada em inatividade */
+.cinema .cinema-header,.cinema .cinema-controls,.cinema .cinema-center-play{transition:opacity .22s ease,transform .22s ease}
+.cinema.controls-hidden .cinema-header,.cinema.controls-hidden .cinema-controls,.cinema.controls-hidden .cinema-center-play{opacity:0!important;pointer-events:none!important}
+.cinema.controls-hidden{cursor:none}
+.cinema:not(.controls-hidden){cursor:default}
+.cinema .cinema-center-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5;width:76px;height:76px;display:grid;place-items:center;border:1px solid #ffffff55;border-radius:50%;background:#050c12a8;color:#17d6b1;backdrop-filter:blur(9px);cursor:pointer;box-shadow:0 6px 32px #0008}
+.cinema .cinema-center-play svg{width:35px;height:35px;fill:currentColor;stroke-width:1.6}
+.cinema .cinema-center-play:hover{background:#0c2526e8;transform:translate(-50%,-50%) scale(1.08)}
+.cinema .cinema-skip-feedback{position:absolute;z-index:5;top:50%;transform:translateY(-50%);padding:16px 22px;border-radius:30px;background:#050c12b8;color:#17d6b1;font-size:20px;font-weight:750;pointer-events:none;opacity:0;transition:opacity .16s}
+.cinema .cinema-skip-feedback.left{left:12%}.cinema .cinema-skip-feedback.right{right:12%}.cinema .cinema-skip-feedback.visible{opacity:1}
+/* Neutraliza a antiga regra que mantinha os controles visíveis enquanto o mouse estivesse sobre o player. */
+@media(hover:hover) and (pointer:fine){.cinema:not(.controls-hidden) .cinema-header,.cinema:not(.controls-hidden) .cinema-controls{opacity:1!important}}
+@media(max-width:650px){.cinema .cinema-center-play{width:64px;height:64px}.cinema .cinema-center-play svg{width:30px;height:30px}.cinema .cinema-skip-feedback.left{left:6%}.cinema .cinema-skip-feedback.right{right:6%}}
