@@ -50,6 +50,19 @@ app.get('/api/movie-sources', async (req, res) => {
   }
 });
 
+// Mesmo endpoint de metadados do Cloudflare Pages no ambiente local.
+app.get('/api/catalog-details', async (_req, res) => {
+  try {
+    const upstream = await fetch('https://filmes-saimo.pages.dev/detalhes.txt', { signal: AbortSignal.timeout(20000) });
+    if (!upstream.ok) throw new Error(`HTTP ${upstream.status}`);
+    res.setHeader('Cache-Control', 'public, max-age=1800');
+    res.type('text/plain; charset=utf-8').send(await upstream.text());
+  } catch (error) {
+    console.warn('[CATALOG DETAILS]', error.message);
+    res.status(502).send('Metadados indisponíveis');
+  }
+});
+
 app.use(express.static('public',{maxAge:'1h'}));
 app.get('/api/guide',async(req,res)=>{try{const channels=JSON.parse(fs.readFileSync(path.resolve('public/channels.json'),'utf8'));res.json(await getGuide(channels))}catch(e){res.status(503).json({error:'Guia temporariamente indisponível'})}});
 
