@@ -5,7 +5,6 @@
   const controls = document.getElementById('liveControls');
   const guide = document.getElementById('liveGuide');
   const section = document.getElementById('ao-vivo');
-  const video = document.getElementById('video');
   if (!player || !controls || !guide || !section) return;
 
   // Marcadores preservam as posições originais ao voltar para o desktop.
@@ -18,11 +17,9 @@
     if (mobile.matches) {
       // Vídeo -> controles deslizáveis -> programação -> lista de canais.
       player.append(controls, guide);
-      if (video) video.controls = true; // controles nativos ao tocar no vídeo
       controls.setAttribute('tabindex', '0');
       controls.setAttribute('aria-label', 'Controles do vídeo; deslize horizontalmente para ver mais opções');
     } else {
-      if (video) video.controls = false; // preserva controles do desktop
       controlsHome.after(controls);
       guideHome.after(guide);
       controls.removeAttribute('tabindex');

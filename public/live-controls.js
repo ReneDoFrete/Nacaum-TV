@@ -119,27 +119,8 @@
   $('previousChannel').onclick = () => switchChannel(-1);
   $('nextChannel').onclick = () => switchChannel(1);
   $('toggleFullscreen').onclick = async () => {
-    try {
-      // No celular, fullscreen deve ser aplicado ao VÍDEO, não à página.
-      if (document.fullscreenElement) {
-        await document.exitFullscreen();
-      } else if (video.webkitDisplayingFullscreen && video.webkitExitFullscreen) {
-        video.webkitExitFullscreen();
-      } else if (video.requestFullscreen) {
-        await video.requestFullscreen();
-      } else if (video.webkitEnterFullscreen) {
-        video.webkitEnterFullscreen();
-      } else {
-        console.warn('Este navegador não oferece tela cheia para o vídeo.');
-      }
-    } catch (e) {
-      // Safari/iOS costuma exigir a API nativa do elemento de vídeo.
-      if (video.webkitEnterFullscreen) {
-        try { video.webkitEnterFullscreen(); } catch (fallbackError) {
-          console.warn('Tela cheia indisponível:', fallbackError);
-        }
-      } else console.warn('Tela cheia indisponível:', e);
-    }
+    try { if (document.fullscreenElement) await document.exitFullscreen(); else await $('ao-vivo').requestFullscreen(); }
+    catch (e) { console.warn('Tela cheia indisponível:', e); }
     showUI();
   };
   $('togglePip').onclick = async () => {
