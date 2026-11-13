@@ -64,12 +64,28 @@ async function snapshot(env,date){
  await env.DB.prepare('INSERT INTO event_snapshots (day,events,updated_at) VALUES (?,?,?) ON CONFLICT(day) DO UPDATE SET events=excluded.events, updated_at=excluded.updated_at').bind(date,JSON.stringify(events),Date.now()).run();
  return events;
 }
-// Futbol24: apenas partidas cujo horário já chegou, com correspondência estrita dos dois times.
-async function monitor(events){const active=events.filter(e=>e.status!=='finished'&&new Date(e.utcTime).getTime()<=Date.now()+60000);if(!active.length)return events;
- let inplay={};try{const data=await getJson('https://www.futbol24.com/api/in_play');inplay=data?.inplay?.matches||data?.matches||{}}catch{return events}
- const entries=Object.entries(inplay);
- for(const e of active){const found=entries.find(([slug])=>{const parts=slug.split('/').filter(Boolean);const i=parts.indexOf('vs');return i>0&&normalize(parts[i-1].replaceAll('-',' '))===normalize(e.home)&&normalize(parts[i+1]?.replaceAll('-',' '))===normalize(e.away)});
- if(found){const match=found[1];const score=String(match.score1||'').match(/^(\d+)\s*[-:x]\s*(\d+)$/i);if(score)e.score=`${score[1]} - ${score[2]}`;if(match.in_play===true)e.status='live';else if(e.status==='live')e.status='finished';}
+// Futbol24: o FotMob define a programação; o Futbol24 atualiza os placares.
+const FUTBOL_HEADERS={Accept:'application/json, text/plain, */*',Referer:'https://www.futbol24.com/pt/','User-Agent':'Mozilla/5.0 (compatible; NacaumTV/1.0)'};
+const shortName=s=>normalize(s).replace(/\b(fc|cf|sc|ac|club|clube|de|do|da|the)\b/g,' ').replace(/\s+/g,' ').trim();
+function sameTeam(a,b){const x=shortName(a),y=shortName(b);return !!x&&!!y&&(x===y||(x.length>=5&&y.length>=5&&(x.startsWith(y)||y.startsWith(x))));}
+function matchSlug(slug,event){const p=slug.split('/').filter(Boolean),i=p.indexOf('vs');if(i<1||i>=p.length-1)return false;let h=p[i-1].replace(/-/g,' '),a=p[i+1].replace(/-/g,' ');try{h=decodeURIComponent(h);a=decodeURIComponent(a)}catch{}return sameTeam(h,event.home)&&sameTeam(a,event.away)}
+function scoreOf(m){const text=String(m?.score1??m?.score??'');const x=text.match(/(\d+)\s*[-:x×]\s*(\d+)/i);return x?`${x[1]} - ${x[2]}`:null}
+async function monitor(events){
+ const now=Date.now(),active=events.filter(e=>e.status!=='finished'&&Number.isFinite(Date.parse(e.utcTime))&&Date.parse(e.utcTime)<=now+60000);
+ if(!active.length)return events;
+ let matches={};
+ try{const data=await getJson('https://www.futbol24.com/api/in_play?_'+Date.now(),FUTBOL_HEADERS);matches=data?.inplay?.matches||data?.matches||{}}catch(err){console.warn('[FUTBOL24]',err.message);return events}
+ const entries=Object.entries(matches);
+ for(const e of active){
+  const found=entries.find(([slug])=>matchSlug(slug,e));if(!found)continue;
+  const [slug,m]=found;const score=scoreOf(m);if(score)e.score=score;
+  if(m.in_play===true){e.status='live';e.minute=m.minute||m.time||null;continue}
+  // A API in_play inclui partidas encerradas. Exigir um indicativo real de encerramento,
+  // em vez de considerar qualquer partida que saiu do feed como finalizada.
+  const state=normalize(m.status||m.state||m.match_status||'');
+  if(m.finished===true||m.is_finished===true||m.isFinished===true||/^(ft|finished|full time|final|ended|encerrado|after penalties|aet)$/.test(state)){
+   e.status='finished';e.minute=null;
+  }else if(e.status==='live'&&m.in_play===false&&score){e.status='finished';e.minute=null}
  }
  return events;
 }
@@ -78,7 +94,8 @@ export async function onRequestGet({env}){
  try{
  const day=today();let row=await env.DB.prepare('SELECT events FROM event_snapshots WHERE day=?').bind(day).first();
  if(!row){const previous=new Date(Date.now()-86400000);const yesterday=today(previous);const old=await env.DB.prepare('SELECT events FROM event_snapshots WHERE day=?').bind(yesterday).first();
- let events=await snapshot(env,day);if(old){const ongoing=JSON.parse(old.events).filter(e=>e.status==='live');events=[...ongoing,...events]};row={events:JSON.stringify(events)};}
+ let events=await snapshot(env,day);// Não misturar jogos de ontem com a programação de hoje.
+ row={events:JSON.stringify(events)};}
  const events=await monitor(JSON.parse(row.events));
  await env.DB.prepare('UPDATE event_snapshots SET events=? WHERE day=?').bind(JSON.stringify(events),day).run();
  return Response.json({date:day,events},{headers:{'Cache-Control':'no-store'}});
