@@ -1,0 +1,23 @@
+/* Player cinematográfico — mantém os controles existentes e suas funções */
+.cinema{background:#000;isolation:isolate;z-index:100000!important;overflow:hidden}
+.cinema video{z-index:0}
+.cinema-header{position:absolute;inset:0 0 auto;z-index:3;padding:clamp(15px,2.5vw,34px);gap:16px;background:linear-gradient(180deg,#000c,transparent);pointer-events:none}
+.cinema-header>*{pointer-events:auto}
+.cinema-header button{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#ffffff13;border:1px solid #ffffff20;backdrop-filter:blur(12px)}
+.cinema-header button:hover,.control-row button:hover{background:#ffffff28}
+.cinema-header strong{font-size:clamp(16px,2vw,24px)}
+.cinema-header #sourceLabel{background:#131922c9;border:1px solid #ffffff24;padding:9px 13px;font-weight:650}
+.cinema-controls{position:absolute;inset:auto 0 0;z-index:3;padding:30px clamp(14px,2.5vw,34px) 20px;background:linear-gradient(0deg,#000e,#0009 55%,transparent)}
+.cinema-controls #seek{width:100%;height:5px;display:block;cursor:pointer;accent-color:#17d6b1;margin:0 0 12px}
+.cinema .control-row{display:flex;align-items:center;gap:clamp(3px,1vw,12px)}
+.cinema .control-row button{min-width:39px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;position:relative;border-radius:9px;transition:background .2s}
+.cinema .control-row button svg,.cinema-header button svg{width:21px;height:21px;flex-shrink:0}
+.cinema .control-row button small{position:absolute;font-size:9px;font-weight:800;top:15px;left:50%;transform:translateX(-50%);pointer-events:none}
+.cinema .control-row #rewind svg,.cinema .control-row #forward svg{width:25px;height:25px}
+.cinema .control-row select{background:#1c2432c9;border:1px solid #ffffff3a;border-radius:10px;padding:10px;color:white}
+.cinema #timeLabel{font-size:13px;color:#d1d5db;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cinema #moviePlayerMsg{margin:6px 0 0;color:#b6e7df;font-size:12px;min-height:0}
+.cinema #moviePlayerMsg:empty{display:none}
+body.watching-movie>.mobile-nav{display:none!important}
+@media(max-width:650px){.cinema{height:100dvh}.cinema-header{padding:14px 12px}.cinema-header button{width:36px;height:36px}.cinema-header strong{font-size:16px}.cinema-header #sourceLabel{font-size:10px}.cinema-controls{padding:22px 9px max(16px,env(safe-area-inset-bottom))}.cinema .control-row{gap:0;flex-wrap:nowrap}.cinema .control-row button{min-width:32px;padding:5px}.cinema .control-row button svg{width:18px;height:18px}.cinema #timeLabel{font-size:10px}.cinema .control-row select{max-width:78px;font-size:11px;padding:7px 3px}.cinema .control-row #pip{display:none}.cinema .control-row .grow{flex:1;min-width:0}}
+@media(hover:hover) and (pointer:fine){.cinema:not(:hover):not(.show-controls) .cinema-controls,.cinema:not(:hover):not(.show-controls) .cinema-header{opacity:0;transition:opacity .2s}.cinema:hover .cinema-controls,.cinema:hover .cinema-header{opacity:1}}
