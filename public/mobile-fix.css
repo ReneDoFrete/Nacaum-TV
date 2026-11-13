@@ -110,3 +110,25 @@
   body:has(#ao-vivo-page) .full-guide { position: fixed !important; bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom)); }
   body:has(#ao-vivo-page) .live-multiview:not([hidden]) { position: absolute; top: 0; height: 50vh; }
 }
+/* Controles imediatamente abaixo do player no celular. */
+@media(max-width:800px){
+body:has(#ao-vivo-page) .player-panel{order:0!important}
+body:has(#ao-vivo-page) .channel-panel{order:1!important}
+body:has(#ao-vivo-page) .player-panel .player-top{order:0!important}
+body:has(#ao-vivo-page) .player-panel .video-wrap{order:1!important}
+body:has(#ao-vivo-page) .player-panel .live-controls{order:2!important;position:relative!important;inset:auto!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;width:calc(100% - 20px)!important;max-width:calc(100vw - 20px)!important;margin:8px 10px 6px!important;padding:7px 8px!important;transform:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;overflow-x:auto!important;overflow-y:hidden!important;flex-wrap:nowrap!important;gap:6px!important;-webkit-overflow-scrolling:touch;scrollbar-width:none;z-index:2!important}
+body:has(#ao-vivo-page) .player-panel .live-controls::-webkit-scrollbar{display:none}
+body:has(#ao-vivo-page) .player-panel .live-controls>*{flex-shrink:0!important}
+body:has(#ao-vivo-page) .player-panel .live-controls .live-spacer{display:none!important}
+body:has(#ao-vivo-page) .player-panel .live-controls #liveVolume{width:65px!important;flex-shrink:0}
+body:has(#ao-vivo-page) .player-panel .live-controls .live-icon{min-width:39px;min-height:39px;display:inline-flex;align-items:center;justify-content:center}
+body:has(#ao-vivo-page) .player-panel .live-controls #toggleGuide span{display:inline!important}
+body:has(#ao-vivo-page) .player-panel .live-controls #toggleGuide{min-width:75px;gap:5px}
+body:has(#ao-vivo-page) .player-panel .player-message{order:3!important}
+body:has(#ao-vivo-page) .player-panel .source-selector-bar{order:4!important}
+body:has(#ao-vivo-page) .player-panel .guide-panel{order:5!important;position:relative!important;inset:auto!important;width:calc(100% - 24px)!important;max-height:320px!important;margin:8px 12px 12px!important;overflow-y:auto!important;background:#111827!important;border:1px solid #ffffff29;border-radius:15px;padding:12px;display:none!important}
+body:has(#ao-vivo-page).guide-open .player-panel .guide-panel{display:block!important}
+body:has(#ao-vivo-page) .player-panel .guide-panel .guide-row{display:flex;flex-direction:column;gap:3px;padding:9px 7px}
+body:has(#ao-vivo-page) .player-panel .guide-panel .guide-now{border-left:3px solid #19d5b6;background:#18d4b416}
+body:has(#ao-vivo-page) .channel-panel .channel-list{padding-bottom:calc(88px + env(safe-area-inset-bottom))!important}
+}
