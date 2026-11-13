@@ -1,0 +1,49 @@
+/* O fullscreen do player inclui controles, grade e programação. */
+body:has(#ao-vivo-page) .video-wrap:fullscreen,
+body:has(#ao-vivo-page) .video-wrap:-webkit-full-screen {
+  position:relative!important; inset:auto!important;
+  width:100vw!important; height:100dvh!important;
+  max-height:none!important; aspect-ratio:auto!important;
+  overflow:hidden!important; background:#000!important;
+}
+body:has(#ao-vivo-page) .video-wrap:fullscreen #video {width:100%!important;height:100%!important;object-fit:contain!important}
+body:has(#ao-vivo-page) .video-wrap:fullscreen .guide-panel {
+  position:absolute!important; top:clamp(12px,8vh,70px)!important;
+  bottom:auto!important; left:auto!important; right:12px!important;
+  width:min(440px,calc(100vw - 24px))!important;
+  max-height:65dvh!important; margin:0!important;
+  overflow:auto!important; z-index:2147483000!important;
+  background:rgba(8,12,22,.96)!important;
+  border:1px solid #ffffff38!important; border-radius:16px!important;
+  padding:14px!important; backdrop-filter:blur(12px);
+}
+body:has(#ao-vivo-page).guide-open .video-wrap:fullscreen .guide-panel {display:block!important}
+body:has(#ao-vivo-page):not(.guide-open) .video-wrap:fullscreen .guide-panel {display:none!important}
+body:has(#ao-vivo-page) .video-wrap:fullscreen .full-guide {
+  position:absolute!important; inset:0!important;
+  width:100%!important;height:100%!important;
+  z-index:2147483500!important; display:flex;
+  padding:clamp(8px,2vw,25px)!important;
+  background:rgba(4,7,14,.96)!important;
+}
+body:has(#ao-vivo-page) .video-wrap:fullscreen .full-guide[hidden] {display:none!important}
+body:has(#ao-vivo-page) .video-wrap:fullscreen .full-guide-box {max-height:100%!important}
+body:has(#ao-vivo-page) .video-wrap:fullscreen .live-controls {z-index:100!important}
+@media(max-width:800px) {
+ body:has(#ao-vivo-page) .video-wrap .guide-panel {
+  position:absolute!important; top:8px!important; right:8px!important;
+  bottom:auto!important; left:auto!important;
+  width:min(380px,calc(100% - 16px))!important;
+  max-height:calc(100% - 80px)!important; margin:0!important;
+  z-index:45!important; background:rgba(8,12,22,.96)!important;
+  overflow:auto!important; padding:12px!important;
+ }
+ body:has(#ao-vivo-page).guide-open .video-wrap .guide-panel {display:block!important}
+ body:has(#ao-vivo-page) .video-wrap .full-guide {
+  position:absolute!important; inset:0!important; width:100%!important;
+  height:100%!important; z-index:95!important; padding:8px!important;
+ }
+ body:has(#ao-vivo-page) .video-wrap .full-guide[hidden] {display:none!important}
+ body:has(#ao-vivo-page) .video-wrap .full-guide-header {flex-wrap:wrap}
+ body:has(#ao-vivo-page) .video-wrap .full-guide-scroll {min-height:0}
+}

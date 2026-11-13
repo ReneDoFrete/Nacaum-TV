@@ -1,4 +1,4 @@
-/* Naçaum TV: barra de controles dentro do player em telas pequenas. */
+/* Controles e programação dentro da superfície fullscreen do player. */
 (() => {
   const mobile = window.matchMedia('(max-width: 800px)');
   const player = document.querySelector('.player-panel');
@@ -6,35 +6,41 @@
   const video = document.getElementById('video');
   const controls = document.getElementById('liveControls');
   const guide = document.getElementById('liveGuide');
-  if (!player || !wrap || !video || !controls || !guide) return;
+  const fullGuide = document.getElementById('fullGuide');
+  if (!player || !wrap || !video || !controls || !guide || !fullGuide) return;
 
-  const controlsHome = document.createComment('controles: posição desktop');
-  const guideHome = document.createComment('programação: posição desktop');
-  controls.before(controlsHome);
-  guide.before(guideHome);
-
+  const homes = new Map();
+  for (const element of [controls, guide, fullGuide]) {
+    const anchor = document.createComment('posição original: ' + element.id);
+    element.before(anchor);
+    homes.set(element, anchor);
+  }
+  function moveToPlayer() {
+    for (const element of [controls, guide, fullGuide]) wrap.append(element);
+  }
+  function restore() {
+    for (const [element, anchor] of homes) anchor.after(element);
+  }
   function updateLayout() {
-    if (mobile.matches) {
-      // O fullscreen deste contêiner inclui vídeo + controles personalizados.
-      wrap.append(controls);
-      player.append(guide);
+    if (mobile.matches || document.fullscreenElement === wrap) {
+      moveToPlayer();
       video.controls = false;
       controls.setAttribute('tabindex', '0');
       controls.setAttribute('aria-label', 'Controles do player; deslize para ver mais opções');
       document.body.classList.add('live-ui-visible');
     } else {
-      controlsHome.after(controls);
-      guideHome.after(guide);
+      restore();
       video.controls = false;
       controls.removeAttribute('tabindex');
       controls.setAttribute('aria-label', 'Controles de TV');
     }
   }
   mobile.addEventListener('change', updateLayout);
+  document.addEventListener('fullscreenchange', updateLayout);
   updateLayout();
 
   wrap.addEventListener('click', event => {
-    if (!mobile.matches || event.target.closest('button,input,.live-controls')) return;
+    if (!mobile.matches || event.target.closest('button,input,.live-controls,.guide-panel,.full-guide')) return;
     document.body.classList.toggle('mobile-player-controls-hidden');
     document.body.classList.add('live-ui-visible');
   });

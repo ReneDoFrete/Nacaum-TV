@@ -119,12 +119,11 @@
   $('previousChannel').onclick = () => switchChannel(-1);
   $('nextChannel').onclick = () => switchChannel(1);
   $('toggleFullscreen').onclick = async () => {
-    const isMobile = window.matchMedia('(max-width: 800px)').matches;
     const wrapper = document.querySelector('.video-wrap');
     try {
       if (document.fullscreenElement) {
         await document.exitFullscreen();
-      } else if (isMobile && wrapper?.requestFullscreen) {
+      } else if (wrapper?.requestFullscreen) {
         // Fullscreen somente do player, incluindo a barra de controles.
         await wrapper.requestFullscreen();
       } else if (video.requestFullscreen) {
