@@ -1,0 +1,31 @@
+
+.topbar .desktop-nav{position:absolute;left:50%;transform:translateX(-50%);max-width:calc(100vw - 360px);white-space:nowrap;align-items:center}
+.desktop-nav .support-nav{display:inline-flex;align-items:center;gap:7px;color:#b8f7ed}
+.desktop-nav .support-nav:hover{color:#fff;background:#174d47}
+.header-search-button{display:inline-flex;align-items:center;gap:7px;border:1px solid #ffffff26;background:#202636;color:#fff;padding:10px 16px;border-radius:24px;cursor:pointer;font-weight:700}
+.header-search-button svg{width:16px;height:16px}
+.favorite-search-panel{position:sticky;top:68px;z-index:18;padding:12px max(4vw,20px);background:#101522f0;border-bottom:1px solid #ffffff18}
+.favorite-search-panel[hidden]{display:none}
+.favorite-search-panel input{display:block;width:min(520px,100%);background:#202636;border:1px solid #ffffff2b;color:#fff;border-radius:24px;padding:12px 17px;outline:none}
+.favorite-search-panel input:focus{border-color:#1bdcb9}
+.nacaum-favorite-card{position:relative;transition:transform .18s ease;isolation:isolate}
+.nacaum-favorite-card:hover,.nacaum-favorite-card:focus-within{z-index:12;transform:translateY(-5px)}
+.nacaum-favorite-card .poster{position:relative}
+.nacaum-favorite-card:is(:hover,:focus-within) .poster{outline:2px solid #20e3c3}
+.nacaum-favorite-card .fav-hover{display:flex!important;flex-direction:column;justify-content:flex-end;gap:7px;position:absolute;inset:0 0 auto 0;top:0;bottom:auto;height:auto;aspect-ratio:2/3;z-index:3;padding:13px;border:0;border-radius:12px;background:linear-gradient(180deg,#05070dca 0%,#05070d3b 30%,#05070ddf 100%);box-shadow:none;opacity:0;visibility:hidden;transform:translateY(5px);transition:opacity .18s ease,transform .18s ease,visibility .18s;pointer-events:none;overflow:hidden}
+.nacaum-favorite-card:is(:hover,:focus-within) .fav-hover{opacity:1;visibility:visible;transform:translateY(0)}
+.nacaum-favorite-card .fav-hover strong{font-size:.94rem;line-height:1.2;margin:0;text-shadow:0 1px 3px #000}
+.nacaum-favorite-card .fav-hover p{font-size:.72rem;line-height:1.35;margin:0;max-height:5.5em;overflow:hidden;color:#d9e3ec}
+.nacaum-favorite-card .fav-hover a{pointer-events:auto;display:inline-block;background:#19d9b8;color:#071812;padding:8px;border-radius:8px;text-align:center;font-size:.73rem;font-weight:800}
+.nacaum-favorite-card .remove-fav{font-size:.77rem}
+@media(max-width:1100px){.topbar .desktop-nav{max-width:calc(100vw - 270px)}.desktop-nav a{padding:9px 8px;font-size:.8rem}}
+@media(max-width:850px){.topbar .desktop-nav{position:static;transform:none;max-width:none}.desktop-nav .support-nav{font-size:0;gap:0}.desktop-nav .support-nav svg{width:19px;height:19px}}
+@media(max-width:620px){.topbar .desktop-nav{display:none}.favorite-search-panel{top:60px}.nacaum-favorite-card .fav-hover{display:none!important}}
+
+.topbar .top-actions #clock{display:inline-flex!important;align-items:center;justify-content:center;min-width:52px;color:#dce2ed;font-size:14px;font-weight:500;white-space:nowrap;opacity:1!important;visibility:visible!important}
+
+.favorite-local-search{display:flex;align-items:center;gap:10px;width:min(460px,100%);margin:18px 0 22px;padding:0 15px;border:1px solid #343e51;border-radius:14px;background:#1b2130;color:#aebbc9}
+.favorite-local-search svg{width:18px;height:18px;flex:none}
+.favorite-local-search input{width:100%;padding:13px 0;background:transparent;border:0;outline:none;color:white;font:inherit}
+.favorite-local-search:focus-within{border-color:#20dfbd}
+.favorite-tile[hidden]{display:none!important}

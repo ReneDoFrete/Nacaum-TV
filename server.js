@@ -1,9 +1,58 @@
+import { getGuide } from './epg.js';
+import { onRequestGet as ondemandHandler } from './functions/api/ondemand.js';
 import express from 'express';
 import fs from 'node:fs';
 import path from 'node:path';
 
 const app = express();
-app.use(express.static('public'));
+// Mesma API usada pela função do Cloudflare Pages, agora também no Express local.
+app.get('/api/ondemand', async (req, res) => {
+  try {
+    const request = new Request(`http://localhost${req.originalUrl}`);
+    const response = await ondemandHandler({ request, env: { ...process.env, TMDB_API_KEY: process.env.TMDB_API_KEY || '15d2ea6d0dc1d476efbca3eba2b9bbfb' } });
+    res.status(response.status);
+    response.headers.forEach((value, name) => res.setHeader(name, value));
+    res.send(await response.text());
+  } catch (error) {
+    console.error('[ON DEMAND]', error);
+    res.status(502).json({ error: 'Falha ao consultar o catálogo remoto.' });
+  }
+});
+
+
+// Catálogo de fontes mantido pelo administrador, dividido pela inicial do filme.
+// Endpoint fixo: não aceita URLs arbitrárias nem expõe um proxy aberto.
+app.get('/api/movie-sources', async (req, res) => {
+  const letter = String(req.query.letter || '').toUpperCase();
+  if (!/^(?:[A-Z]|#)$/.test(letter)) return res.status(400).json({ error: 'Inicial inválida' });
+  try {
+    const file = letter === '#' ? '%23' : letter;
+    const response = await fetch(`https://filmes-saimo.pages.dev/filmes-${file}.txt`, { signal: AbortSignal.timeout(15000) });
+    if (!response.ok) throw new Error(`Fonte HTTP ${response.status}`);
+    const lines = (await response.text()).split(/\r?\n/);
+    const result = [];
+    for (const line of lines) {
+      const [title, ...fields] = line.split('\t');
+      if (!title?.trim()) continue;
+      const entry = { title: title.trim(), dub: [], leg: [] };
+      for (const field of fields) {
+        const match = field.match(/^\s*(dub|leg)=(.*)$/i);
+        if (!match) continue;
+        entry[match[1].toLowerCase()] = match[2].split(',').map(url => url.trim()).filter(url => /^https?:\/\//i.test(url));
+      }
+      result.push(entry);
+    }
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    res.json(result);
+  } catch (error) {
+    console.error('[MOVIE SOURCES]', error.message);
+    res.status(502).json({ error: 'Falha ao consultar fontes de filmes' });
+  }
+});
+
+app.use(express.static('public',{maxAge:'1h'}));
+app.get('/api/guide',async(req,res)=>{try{const channels=JSON.parse(fs.readFileSync(path.resolve('public/channels.json'),'utf8'));res.json(await getGuide(channels))}catch(e){res.status(503).json({error:'Guia temporariamente indisponível'})}});
+
 
 // Retorna a lista exata gerada
 app.get('/api/channels', (req, res) => {

@@ -1,6 +1,7 @@
 const $ = (s) => document.querySelector(s);
 const state = {
   channels: [],
+  guide: {},
   selected: null,
   category: "Todos",
   favorites: new Set(JSON.parse(localStorage.getItem("nacaum-favs") || "[]")),
@@ -32,12 +33,17 @@ async function loadChannels() {
     const response = await fetch("/api/channels");
     if (!response.ok) throw new Error("Falha ao carregar canais");
     state.channels = await response.json();
+    fetch('/api/guide').then(r=>r.ok?r.json():{}).then(g=>{state.guide=g;renderChannels();if(state.selected){const c=state.channels.find(x=>x.id===state.selected);if(c)updateProgramGuide(c)}document.dispatchEvent(new Event('nacaum-guide-updated'))}).catch(()=>{});
     $("#channelCount").textContent = `${state.channels.length} canal(is)`;
     renderFilters();
     renderChannels();
 
     // Verifica se veio algum canal direto pela URL (ex: #band ou #premiere)
-    checkUrlChannel();
+    if (!checkUrlChannel()) {
+      const last = localStorage.getItem("nacaum-last-channel");
+      const initial = state.channels.find(c => c.id === last) || state.channels[0];
+      if (initial) selectChannel(initial.id);
+    }
   } catch (error) {
     $("#channelList").innerHTML = `<div class="empty">${escapeHtml(error.message)}.</div>`;
     $("#channelCount").textContent = "Sem canais";
@@ -47,7 +53,7 @@ async function loadChannels() {
 function checkUrlChannel() {
   const hash = window.location.hash.replace("#", "").trim();
   if (!hash || hash === "ao-vivo" || hash === "inicio" || hash === "eventos" || hash === "favoritos" || hash === "on-demand") {
-    return; // Não toca nada automaticamente se for hash de navegação padrão
+    return false;
   }
 
   // Tenta achar o canal pelo ID exato ou por correspondência no nome/slug
@@ -64,7 +70,9 @@ function checkUrlChannel() {
     setTimeout(() => {
       document.querySelector("#ao-vivo")?.scrollIntoView({ behavior: "smooth" });
     }, 200);
+    return true;
   }
+  return false;
 }
 
 function renderFilters() {
@@ -99,7 +107,7 @@ function renderChannels() {
           (c) => `
     <div class="channel-item ${state.selected === c.id ? "selected" : ""}" data-id="${escapeHtml(c.id)}">
       <div class="channel-logo">${c.logo ? `<img src="${escapeHtml(c.logo)}" alt="" loading="lazy" onerror="this.remove()">` : "NTV"}</div>
-      <div class="channel-info"><strong>${escapeHtml(c.name)}</strong><small>${escapeHtml(c.category || "Outros")}</small></div>
+      <div class="channel-info"><strong>${escapeHtml(c.name)}</strong><small>${escapeHtml(state.guide[c.id]?.title || c.category || "Outros")}</small></div>
       <button class="fav ${state.favorites.has(c.id) ? "on" : ""}" data-fav="${escapeHtml(c.id)}" aria-label="Favoritar">${state.favorites.has(c.id) ? "♥" : "♡"}</button>
     </div>`
         )
@@ -130,12 +138,14 @@ function selectChannel(id) {
   const channel = state.channels.find((c) => c.id === id);
   if (!channel) return;
   state.selected = id;
+  localStorage.setItem("nacaum-last-channel", id);
   state.sourceIndex = 0;
   state.retrying = false;
   renderChannels();
   $("#playingName").textContent = channel.name;
-  $("#playingCategory").textContent = channel.category || "Outros";
+  $("#playingCategory").textContent = state.guide[channel.id]?.title || "Programação indisponível";
   renderSourceButtons(channel);
+  updateProgramGuide(channel);
   playCurrentSource(channel);
 }
 
@@ -199,6 +209,7 @@ function playCurrentSource(channel) {
   const proxiedUrl = buildStreamUrl(source);
 
   placeholder.style.display = "none";
+  document.getElementById("externalFallback")?.remove();
   message.textContent = `Conectando ao ${label} (${state.sourceIndex + 1}/${sources.length})…`;
 
   const tryNextSource = (reason) => {
@@ -218,6 +229,7 @@ function playCurrentSource(channel) {
       placeholder.style.display = "flex";
       message.textContent = `Todas as fontes falharam (${reason}). Selecione outro servidor manualmente abaixo.`;
       state.retrying = false;
+      showExternalFallback(channel, reason);
     }
   };
 
@@ -274,10 +286,6 @@ function playCurrentSource(channel) {
 }
 
 $("#channelSearch").addEventListener("input", renderChannels);
-$("#searchToggle").addEventListener("click", () => {
-  $("#channelSearch-focus")?.focus() || $("#channelSearch").focus();
-  document.querySelector("#ao-vivo").scrollIntoView({ behavior: "smooth" });
-});
 
 function updateClock() {
   $("#clock").textContent = new Intl.DateTimeFormat("pt-BR", {
@@ -290,3 +298,37 @@ $("#year").textContent = new Date().getFullYear();
 updateClock();
 setInterval(updateClock, 30000);
 loadChannels();
+function showExternalFallback(channel, reason) {
+  const wrap = document.querySelector('.video-wrap');
+  document.getElementById('externalFallback')?.remove();
+  const url = (channel.sources || [])[state.sourceIndex]?.url;
+  const box = document.createElement('div');
+  box.id = 'externalFallback';
+  box.className = 'external-fallback';
+  const title = document.createElement('h2'); title.textContent = 'Não foi possível reproduzir este canal aqui';
+  const info = document.createElement('p'); info.textContent = `Todas as fontes falharam (${reason}). Você pode tentar abrir a fonte diretamente em outra guia, caso o provedor permita.`;
+  box.append(title, info);
+  if (url && /^https?:\/\//i.test(url)) {
+    const link = document.createElement('a'); link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.className = 'external-open'; link.textContent = '↗ Abrir em outra página'; box.append(link);
+  }
+  wrap.append(box);
+}
+
+function updateProgramGuide(channel){
+ const root=document.getElementById('programGuide');if(!root)return;
+ const data=state.guide[channel.id];
+ if(!data){root.textContent='Programação não disponível para este canal.';return}
+ root.replaceChildren();
+ const now=Date.now();
+ const programs=Array.isArray(data.schedule)&&data.schedule.length?data.schedule:[data];
+ const relevant=programs.filter(p=>p.end>now).slice(0,12);
+ for(const item of relevant){
+  const row=document.createElement('div');row.className='guide-row';
+  if(item.start<=now&&item.end>now)row.classList.add('guide-now');
+  const time=document.createElement('time');time.textContent=item.start&&item.end?`${new Date(item.start).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})} – ${new Date(item.end).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}`:'AGORA';
+  const label=document.createElement('strong');label.textContent=item.title||'Programa sem título';
+  row.append(time,label);root.append(row);
+ }
+ if(!relevant.length)root.textContent='Sem próximos programas disponíveis.';
+ if(data.description){const p=document.createElement('p');p.textContent=data.description;root.append(p)}
+}

@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)window.lucide.createIcons();const top=document.querySelector('.top-actions');if(top&&!top.textContent.trim())top.style.display='none';});

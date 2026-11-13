@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b13">
+  <meta name="description" content="Naçaum TV — sua televisão online.">
+  <title>Ao vivo • Naçaum TV</title>
+  <link rel="icon" href="/assets/logo.png">
+  <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/discover.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+<link rel="stylesheet" href="/enhancements.css"><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script><script src="/enhancements.js" defer></script><link rel="stylesheet" href="/live-redesign.css"><link rel="stylesheet" href="/site-polish.css"><link rel="stylesheet" href="/global-search.css"></head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><img src="/assets/logo.png" alt="Naçaum TV"><span>Naçaum<span class="accent">TV</span></span></a>
+    <nav class="desktop-nav">
+      <a href="/"><i data-lucide="house"></i> <span>Início</span></a>
+      <a class="active" href="/live.html"><i data-lucide="tv"></i> <span>Ao vivo</span></a>
+      <a href="/eventos.html"><i data-lucide="calendar-days"></i> <span>Eventos</span></a>
+      <a href="/movies.html"><i data-lucide="clapperboard"></i> <span>On Demand</span></a>
+      <a href="/favorites.html"><i data-lucide="heart"></i> <span>Favoritos</span></a>
+      <a class="support-nav" href="https://wa.me/5521976353322" target="_blank" rel="noopener noreferrer" title="Suporte pelo WhatsApp"><i data-lucide="message-circle"></i> <span>Suporte</span></a>
+    </nav>
+    <div class="top-actions"><span id="clock">--:--</span></div>
+  </header>
+
+  <main id="ao-vivo-page">
+
+    <section class="section" id="ao-vivo">
+      <div class="section-heading"><div><p class="eyebrow">PROGRAMAÇÃO</p><h2>Ao vivo agora</h2></div><span id="channelCount" class="muted">Carregando canais…</span></div>
+      <div class="toolbar" id="channelToolbar">
+        <label class="searchbox"><span>⌕</span><input id="channelSearch" type="search" placeholder="Buscar canal…"></label>
+        <div id="categoryFilters" class="filters"></div>
+      </div>
+      <div class="live-layout">
+        <aside class="channel-panel">
+          <div class="panel-title"><h3>Canais <span id="visibleCount">0</span></h3><button id="closeChannels" class="live-icon" aria-label="Fechar lista de canais">✕</button></div>
+          <div id="panelFiltersHost"></div>
+          <div id="channelList" class="channel-list"><div class="empty">Carregando…</div></div>
+        </aside>
+        <section class="player-panel">
+          <div class="player-top"><div><span class="live-dot"></span><strong id="playingName">Selecione um canal</strong></div><span id="playingCategory" class="muted">Programação indisponível</span></div>
+          <div class="video-wrap">
+            <video id="video" playsinline></video>
+            <div id="playerPlaceholder" class="player-placeholder"><img src="/assets/logo.png" alt=""><p>Escolha um canal para começar</p></div>
+          </div>
+          <div id="playerMessage" class="player-message">Selecione um canal da lista.</div>
+          <!-- Seletor manual de servidores/fontes -->
+          <div id="sourceSelectorBar" class="source-selector-bar" style="display:none; margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span style="font-size: 13px; color: var(--muted, #94a3b8);">Servidores:</span>
+            <div id="sourceButtons" style="display: flex; gap: 6px; flex-wrap: wrap;"></div>
+          </div>
+          <div class="guide-panel" id="liveGuide"><div class="current-guide-heading"><h3>Programação do canal</h3><button class="live-icon" id="closeCurrentSchedule" aria-label="Fechar programação">✕</button></div><div id="programGuide">Selecione um canal para consultar a programação.</div></div>
+        </section>
+      </div>
+      <div class="live-top-actions live-overlay" id="liveTopActions"><button class="live-icon" id="openChannels" title="Abrir canais">☰ <span>Canais</span></button><div id="liveCurrentName">Ao vivo</div></div>
+      <div class="live-controls live-overlay" id="liveControls" role="toolbar" aria-label="Controles de TV">
+        <button class="live-icon" id="toggleChannels" title="Abrir ou fechar canais">☰</button>
+        <button class="live-icon" id="previousChannel" title="Canal anterior">⏮</button>
+        <button class="live-icon" id="nextChannel" title="Próximo canal">⏭</button>
+        <button class="live-icon" id="togglePlayback" title="Pausar" aria-label="Pausar"><svg class="control-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button>
+        <span class="live-divider"></span>
+        <button class="live-icon" id="toggleMute" title="Silenciar">🔊</button>
+        <input id="liveVolume" type="range" min="0" max="100" value="100" aria-label="Volume">
+        <span class="live-spacer"></span>
+        <button class="live-icon" id="toggleCurrentSchedule" title="Mostrar programação do canal" aria-label="Mostrar programação do canal" aria-expanded="false"><svg class="control-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button><button class="live-icon" id="toggleGuide" title="Grade completa de todos os canais">▦ <span>Guia</span></button>
+        <button class="live-icon" id="toggleMulti" title="Multitelas" aria-label="Ativar multitelas"><svg class="control-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
+        <button class="live-icon" id="togglePip" title="Picture in Picture" aria-label="Ativar Picture in Picture"><svg class="control-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><rect x="12" y="11" width="8" height="6" rx="1"/></svg></button>
+        <button class="live-icon" id="toggleFullscreen" title="Tela cheia">⛶</button>
+      </div>
+      <div id="fullGuide" class="full-guide" hidden role="dialog" aria-modal="true" aria-label="Guia de programação"><div class="full-guide-box"><header class="full-guide-header"><div><strong>▦ Guia de programação</strong><small id="guideDate">Programação dos canais</small></div><input id="fullGuideSearch" type="search" placeholder="Buscar canal…" aria-label="Buscar canal no guia"><button class="live-icon" id="guideNow" title="Voltar para agora">◷ Agora</button><button class="live-icon" id="closeFullGuide" aria-label="Fechar guia">✕</button></header><div class="full-guide-scroll"><div id="fullGuideGrid" class="full-guide-grid"></div></div></div></div>
+      <div id="multiView" class="live-multiview" hidden><div class="multi-cell"><span class="multi-label">Tela 1</span></div><div class="multi-cell secondary"><div class="multi-head"><span>Tela 2</span><button id="closeSecond" class="live-icon" title="Fechar segunda tela">✕</button></div><video id="secondVideo" playsinline controls></video><div id="secondEmpty"><strong>Escolha um canal para a Tela 2</strong><p>Selecione um canal na lista à esquerda.</p><button id="chooseSecond" class="live-action">Abrir canais</button></div></div></div>
+    </section>
+
+    <section class="section feature-grid" id="eventos">
+      <article class="feature-card"><span class="feature-icon">◉</span><div><p class="eyebrow">ACOMPANHE</p><h2>Eventos</h2><p>Espaço para divulgar transmissões e eventos autorizados.</p></div></article>
+      <article class="feature-card" id="on-demand" onclick="location.href='/movies.html'" style="cursor:pointer"><span class="feature-icon">▤</span><div><p class="eyebrow">ASSISTA QUANDO QUISER</p><h2>On Demand</h2><p>Adicione filmes, séries e vídeos que você possui autorização para disponibilizar.</p></div></article>
+      <article class="feature-card" id="favoritos"><span class="feature-icon">♡</span><div><p class="eyebrow">SUA LISTA</p><h2>Favoritos</h2><p>Marque seus canais preferidos usando o coração em cada canal.</p></div></article>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><img src="/assets/logo.png" alt=""> Naçaum TV</div><p>Projeto independente. Disponibilize somente conteúdos próprios ou devidamente licenciados.</p><span>© <span id="year"></span> Naçaum TV</span></footer>
+
+  <nav class="mobile-nav">
+    <a href="/">⌂<small>Início</small></a><a class="active" href="/live.html">▣<small>Ao vivo</small></a><a href="/eventos.html">◉<small>Eventos</small></a><a href="/movies.html">▤<small>On Demand</small></a><a href="/favorites.html">♡<small>Favoritos</small></a>
+  </nav>
+  <script src="/app.js"></script><script src="/live-controls.js" defer></script>
+<script src="/discover.js" defer></script><script src="/site-polish.js" defer></script><script src="/global-search.js" defer></script></body>
+</html>
