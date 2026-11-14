@@ -4,6 +4,7 @@ const FOTMOB = 'https://www.fotmob.com/api/data/tvguide?country=br&timezone=Amer
 const normalize = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 const today = (date = new Date()) => new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(date);
 const localDate = iso => today(new Date(iso));
+const teamLogo = id => Number.isSafeInteger(Number(id)) && Number(id) > 0 ? `https://images.fotmob.com/image_resources/logo/teamlogo/${Number(id)}.png` : null;
 const channels = ['disney+','prime video','globo','canal goat','sportv','premiere','xsports','redetv','espn','bandsports','ge tv','paramount+','cazetv','record','sportynet','hbo max','space','tnt','nsports','sbt','band'];
 function channelName(raw) {
  const s=normalize(raw);
@@ -44,7 +45,7 @@ async function enrichSofa(env,event){
 function flatten(data,date){const result=[];for(const [key,leagues] of Object.entries(data||{}))for(const league of leagues||[])for(const m of league.matches||[]){
  if(!m.utcTime||localDate(m.utcTime)!==date)continue;
  const names=[...new Set((m.channels||[]).map(c=>channelName(c.name)).filter(Boolean))];if(!names.length)continue;
- result.push({id:String(m.id),home:m.home?.name||'',away:m.away?.name||'',league:m.leagueName||league.leagueName||'',utcTime:m.utcTime,channels:names,status:'scheduled',score:null});
+ result.push({id:String(m.id),home:m.home?.name||'',away:m.away?.name||'',homeTeamId:m.home?.id??null,awayTeamId:m.away?.id??null,homeLogo:teamLogo(m.home?.id),awayLogo:teamLogo(m.away?.id),league:m.leagueName||league.leagueName||'',utcTime:m.utcTime,channels:names,status:'scheduled',score:null});
  }return result}
 async function fetchFotmob(env) {
  // Cloudflare pode receber 403 na origem. Usa ScraperAPI somente quando necessário.
