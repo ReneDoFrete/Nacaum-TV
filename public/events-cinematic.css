@@ -19,3 +19,28 @@ body:has(.events-main) .events-no-channel{color:#9daec0;font-size:13px}
 body:has(.events-main) .events-section{margin-left:clamp(16px,3vw,48px);margin-right:clamp(16px,3vw,48px)}
 @media(max-width:800px){body:has(.events-main) .events-hero .hero-content{width:100%!important;max-width:100%!important;padding:35px 22px!important}body:has(.events-main) .events-hero .hero-crest-home{left:35%;opacity:.20}body:has(.events-main) .events-hero .hero-crest-away{right:-30%;opacity:.22}body:has(.events-main) .events-hero::after{background:linear-gradient(90deg,#080c14 0%,rgba(8,12,20,.90) 62%,rgba(8,12,20,.52) 100%)}}
 @media(max-width:600px){body:has(.events-main) .events-hero{min-height:370px}body:has(.events-main) .events-hero h1{font-size:30px}body:has(.events-main) .events-hero .hero-crest{width:240px;height:240px}body:has(.events-main) .events-hero .hero-crest-home{left:34%}}
+
+/* Mobile: escudos equilibrados e centralizados no plano de fundo. */
+@media (max-width: 800px) {
+  body:has(.events-main) .events-hero .hero-crest-home {
+    left: 30%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    opacity: .24;
+  }
+  body:has(.events-main) .events-hero .hero-crest-away {
+    left: 73%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    opacity: .24;
+  }
+}
+@media (max-width: 600px) {
+  body:has(.events-main) .events-hero .hero-crest {
+    width: min(46vw, 210px);
+    height: min(46vw, 210px);
+    top: 49%;
+  }
+  body:has(.events-main) .events-hero .hero-crest-home { left: 27%; }
+  body:has(.events-main) .events-hero .hero-crest-away { left: 73%; }
+}
