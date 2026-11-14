@@ -1,58 +1,60 @@
 
-/* Controles de TV independentes do catálogo e das fontes existentes. */
+/* ==========================================
+   NAÇAUM TV — CONTROLES DA TV AO VIVO
+   Rolagem automática para o canal atual
+   ========================================== */
+
 (() => {
   'use strict';
 
   const $ = (id) => document.getElementById(id);
+
   const page = document.body;
   const panel = document.querySelector('.channel-panel');
   const toolbar = $('channelToolbar');
   const panelHost = $('panelFiltersHost');
   const video = $('video');
+  const channelList = $('channelList');
 
-  if (!panel || !toolbar || !panelHost || !video) return;
+  if (!panel || !toolbar || !panelHost || !video || !channelList) return;
 
   panelHost.append(toolbar);
 
   let hideTimer;
   let badgeTimer;
 
-  // =====================================================
-  // ROLAGEM AUTOMÁTICA DA LISTA DE CANAIS
-  // =====================================================
+  /* ==========================================
+     ROLAGEM AUTOMÁTICA DOS CANAIS
+     ========================================== */
 
-  const channelList = $('channelList');
-  let channelScrollTimer = null;
-  let lastSelectedChannel = null;
+  let scrollTimer = null;
+  let scrollObserver = null;
+  let lastSelectedId = null;
+  let lastScrollTime = 0;
 
-  function getSelectedChannelId() {
-    return window.state?.selected == null
-      ? null
-      : String(window.state.selected);
-  }
+  const getSelectedId = () => {
+    return String(window.state?.selected ?? '').trim();
+  };
 
-  function getSelectedChannelElement() {
-    const id = getSelectedChannelId();
+  const getSelectedItem = () => {
+    const selectedId = getSelectedId();
 
-    if (!id || !channelList) return null;
+    if (!selectedId) return null;
 
-    return Array.from(
-      channelList.querySelectorAll('.channel-item')
-    ).find((item) => String(item.dataset.id) === id) || null;
-  }
+    return [...channelList.querySelectorAll('.channel-item')]
+      .find(item => String(item.dataset.id) === selectedId) || null;
+  };
 
-  function getScrollContainer(element) {
-    if (!element) return null;
-
-    let current = element.parentElement;
+  const getScrollContainer = (element) => {
+    let current = element?.parentElement;
 
     while (current && current !== document.body) {
       const style = getComputedStyle(current);
       const overflow = style.overflowY;
 
       if (
-        /auto|scroll/.test(overflow) &&
-        current.scrollHeight > current.clientHeight
+        (overflow === 'auto' || overflow === 'scroll') &&
+        current.scrollHeight > current.clientHeight + 2
       ) {
         return current;
       }
@@ -61,18 +63,18 @@
     }
 
     return channelList;
-  }
+  };
 
-  function scrollToCurrentChannel(behavior = 'instant') {
-    if (!panel || page.classList.contains('channels-closed')) {
-      return;
-    }
+  const scrollToSelectedChannel = (smooth = false) => {
+    if (page.classList.contains('channels-closed')) return false;
 
-    const item = getSelectedChannelElement();
-    if (!item) return;
+    const item = getSelectedItem();
+
+    if (!item) return false;
 
     const container = getScrollContainer(item);
-    if (!container) return;
+
+    if (!container) return false;
 
     const containerRect = container.getBoundingClientRect();
     const itemRect = item.getBoundingClientRect();
@@ -80,64 +82,101 @@
     const offset =
       itemRect.top -
       containerRect.top -
-      (container.clientHeight - itemRect.height) / 2;
+      container.clientHeight / 2 +
+      itemRect.height / 2;
 
     const target = Math.max(
       0,
       Math.min(
-        container.scrollHeight - container.clientHeight,
-        container.scrollTop + offset
+        container.scrollTop + offset,
+        container.scrollHeight - container.clientHeight
       )
     );
 
     container.scrollTo({
       top: target,
-      behavior
+      behavior: smooth ? 'smooth' : 'instant'
     });
-  }
 
-  function scheduleChannelScroll(delay = 120) {
-    clearTimeout(channelScrollTimer);
+    lastSelectedId = getSelectedId();
+    lastScrollTime = Date.now();
 
-    channelScrollTimer = setTimeout(() => {
-      requestAnimationFrame(() => {
-        scrollToCurrentChannel();
-      });
-    }, delay);
-  }
+    return true;
+  };
 
-  function checkSelectedChannel() {
-    const selected = getSelectedChannelId();
+  const scheduleChannelScroll = (smooth = false) => {
+    clearTimeout(scrollTimer);
+
+    let attempts = 0;
+
+    const tryScroll = () => {
+      attempts++;
+
+      if (scrollToSelectedChannel(smooth && attempts === 1)) {
+        return;
+      }
+
+      if (attempts < 25) {
+        scrollTimer = setTimeout(tryScroll, 120);
+      }
+    };
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(tryScroll);
+    });
+  };
+
+  const watchSelectedChannel = () => {
+    const selected = getSelectedId();
 
     if (!selected) return;
 
-    if (selected !== lastSelectedChannel) {
-      lastSelectedChannel = selected;
-      scheduleChannelScroll(100);
+    if (selected !== lastSelectedId) {
+      lastSelectedId = selected;
+      scheduleChannelScroll(true);
     }
-  }
+  };
 
-  // Observa mudanças no canal selecionado e na lista.
-  if (channelList) {
-    const channelObserver = new MutationObserver(() => {
-      checkSelectedChannel();
-    });
+  // Observa quando os canais são renderizados ou atualizados.
+  scrollObserver = new MutationObserver(() => {
+    if (!getSelectedId()) return;
 
-    channelObserver.observe(channelList, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: [
-        'class',
-        'aria-selected',
-        'data-id'
-      ]
-    });
-  }
+    const selectedItem = getSelectedItem();
 
-  // =====================================================
-  // INDICADOR DE CANAL
-  // =====================================================
+    if (!selectedItem) return;
+
+    if (getSelectedId() !== lastSelectedId) {
+      scheduleChannelScroll(false);
+    }
+  });
+
+  scrollObserver.observe(channelList, {
+    childList: true,
+    subtree: true
+  });
+
+  // Observa mudanças na seleção do canal.
+  setInterval(watchSelectedChannel, 350);
+
+  // Ao clicar em qualquer canal, acompanha a seleção.
+  channelList.addEventListener('click', (event) => {
+    if (event.target.closest('[data-fav]')) return;
+
+    const item = event.target.closest('.channel-item');
+
+    if (!item) return;
+
+    setTimeout(() => scheduleChannelScroll(true), 100);
+  });
+
+  // Ao carregar a página, localiza o canal inicial.
+  window.addEventListener('load', () => {
+    scheduleChannelScroll(false);
+  });
+
+  /* ==========================================
+     BADGE DO CANAL
+     ========================================== */
 
   const revealBadge = () => {
     page.classList.add('live-badge-visible');
@@ -159,9 +198,9 @@
     { passive: true }
   );
 
-  // =====================================================
-  // INTERFACE
-  // =====================================================
+  /* ==========================================
+     INTERFACE E PAINEL
+     ========================================== */
 
   let multi = false;
   let choosingSecond = false;
@@ -196,7 +235,7 @@
     showUI();
 
     if (open) {
-      scheduleChannelScroll(150);
+      scheduleChannelScroll(false);
     }
   };
 
@@ -208,32 +247,33 @@
   $('closeChannels').onclick = () => setPanel(false);
   $('toggleChannels').onclick = togglePanel;
 
-  // =====================================================
-  // UTILITÁRIOS
-  // =====================================================
+  /* ==========================================
+     UTILITÁRIOS
+     ========================================== */
 
-  const fmt = (t) => new Date(t).toLocaleTimeString(
-    'pt-BR',
-    {
+  const fmt = (t) => {
+    return new Date(t).toLocaleTimeString('pt-BR', {
       hour: '2-digit',
       minute: '2-digit'
-    }
-  );
+    });
+  };
 
-  const esc = (v) => String(v ?? '').replace(
-    /[&<>"']/g,
-    (c) => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;'
-    }[c])
-  );
+  const esc = (v) => {
+    return String(v ?? '').replace(
+      /[&<>"']/g,
+      c => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[c])
+    );
+  };
 
-  // =====================================================
-  // PROGRAMAÇÃO ATUAL
-  // =====================================================
+  /* ==========================================
+     PROGRAMAÇÃO DO CANAL
+     ========================================== */
 
   const currentSchedule = (open) => {
     page.classList.toggle('guide-open', open);
@@ -265,9 +305,9 @@
     currentSchedule(false);
   };
 
-  // =====================================================
-  // GUIA COMPLETO
-  // =====================================================
+  /* ==========================================
+     GUIA COMPLETO
+     ========================================== */
 
   const fullGuide = $('fullGuide');
 
@@ -277,15 +317,13 @@
       .trim()
       .toLocaleLowerCase('pt-BR');
 
-    const channels = (
-      window.state?.channels || state.channels
-    ).filter((c) =>
-      c.name.toLocaleLowerCase('pt-BR').includes(query)
-    );
+    const channels = (window.state?.channels || [])
+      .filter(c =>
+        c.name.toLocaleLowerCase('pt-BR').includes(query)
+      );
 
     const now = Date.now();
     const hour = 30 * 60 * 1000;
-
     const start = Math.floor(now / hour) * hour - hour;
 
     const timeSlots = Array.from(
@@ -296,7 +334,7 @@
     const html = [
       '<div class="epg-channel epg-heading">CANAL</div>',
       ...timeSlots.map(
-        (t) => `<div class="epg-time">${fmt(t)}</div>`
+        t => `<div class="epg-time">${fmt(t)}</div>`
       )
     ].join('');
 
@@ -304,18 +342,16 @@
       const guide = state.guide[channel.id] || {};
 
       const programs =
-        Array.isArray(guide.schedule) &&
-        guide.schedule.length
+        Array.isArray(guide.schedule) && guide.schedule.length
           ? guide.schedule
           : guide.title
             ? [guide]
             : [];
 
-      const cells = timeSlots.map((t) => {
+      const cells = timeSlots.map(t => {
         const item = programs.find(
-          (x) =>
-            x.start <= t + hour / 2 &&
-            x.end > t + hour / 2
+          x => x.start <= t + hour / 2 &&
+               x.end > t + hour / 2
         );
 
         const current =
@@ -328,15 +364,10 @@
             class="epg-program ${current ? 'epg-current' : ''}"
             title="${esc(item?.title || 'Sem programação disponível')}"
           >
-            <strong>
-              ${esc(item?.title || 'Sem programação')}
-            </strong>
-
+            <strong>${esc(item?.title || 'Sem programação')}</strong>
             ${
               item
-                ? `<small>
-                    ${fmt(item.start)} – ${fmt(item.end)}
-                   </small>`
+                ? `<small>${fmt(item.start)} – ${fmt(item.end)}</small>`
                 : ''
             }
           </div>
@@ -349,45 +380,33 @@
           data-channel="${esc(channel.id)}"
         >
           <span>${idx + 1}</span>
-
           ${
             channel.logo
-              ? `<img
-                  src="${esc(channel.logo)}"
-                  alt=""
-                  loading="lazy"
-                >`
+              ? `<img src="${esc(channel.logo)}" alt="" loading="lazy">`
               : ''
           }
-
           <strong>${esc(channel.name)}</strong>
         </button>
-
         ${cells}
       `;
     }).join('');
 
     $('fullGuideGrid').innerHTML =
-      html + rows ||
-      '<p>Não há canais disponíveis.</p>';
+      html + rows || '<p>Não há canais disponíveis.</p>';
 
     $('fullGuideGrid')
       .querySelectorAll('.epg-select')
-      .forEach((button) => {
+      .forEach(button => {
         button.onclick = () => {
-          const id = button.dataset.channel;
-
           history.replaceState(
             null,
             '',
-            `#${encodeURIComponent(id)}`
+            `#${encodeURIComponent(button.dataset.channel)}`
           );
 
-          selectChannel(id);
-
-          scheduleChannelScroll(150);
-
+          selectChannel(button.dataset.channel);
           closeFullGuide();
+          scheduleChannelScroll(true);
         };
       });
 
@@ -412,11 +431,8 @@
   $('toggleGuide').onclick = () => {
     currentSchedule(false);
     renderFullGuide();
-
     fullGuide.hidden = false;
-
     showUI();
-
     $('fullGuideSearch').focus();
   };
 
@@ -441,21 +457,14 @@
   document.addEventListener(
     'nacaum-guide-updated',
     () => {
-      if (!fullGuide.hidden) {
-        renderFullGuide();
-      }
-
+      if (!fullGuide.hidden) renderFullGuide();
       updateProgramBadge();
     }
   );
 
-  // =====================================================
-  // PROGRAMA ATUAL
-  // =====================================================
-
   const updateProgramBadge = () => {
     const channel = state.channels.find(
-      (c) => c.id === state.selected
+      c => c.id === state.selected
     );
 
     if (!channel) return;
@@ -478,16 +487,14 @@
 
   updateProgramBadge();
 
-  // =====================================================
-  // VOLUME
-  // =====================================================
+  /* ==========================================
+     VOLUME
+     ========================================== */
 
   $('liveVolume').oninput = (event) => {
     video.volume = Number(event.target.value) / 100;
     video.muted = false;
-
     $('toggleMute').textContent = '🔊';
-
     showUI();
   };
 
@@ -500,33 +507,23 @@
     showUI();
   };
 
-  // =====================================================
-  // PLAY / PAUSE
-  // =====================================================
+  /* ==========================================
+     PLAY / PAUSE
+     ========================================== */
 
   const playSvg = `
-    <svg
-      class="control-svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linejoin="round"
-      aria-hidden="true"
-    >
+    <svg class="control-svg" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linejoin="round"
+      aria-hidden="true">
       <path d="m8 5 12 7-12 7z"/>
     </svg>
   `;
 
   const pauseSvg = `
-    <svg
-      class="control-svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      aria-hidden="true"
-    >
+    <svg class="control-svg" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor"
+      stroke-width="2" aria-hidden="true">
       <rect x="6" y="4" width="4" height="16" rx="1"/>
       <rect x="14" y="4" width="4" height="16" rx="1"/>
     </svg>
@@ -542,15 +539,8 @@
       ? 'Reproduzir (pausado)'
       : 'Pausar (reproduzindo)';
 
-    button.setAttribute(
-      'aria-label',
-      button.title
-    );
-
-    button.setAttribute(
-      'aria-pressed',
-      String(!paused)
-    );
+    button.setAttribute('aria-label', button.title);
+    button.setAttribute('aria-pressed', String(!paused));
   };
 
   [
@@ -560,11 +550,8 @@
     'ended',
     'emptied',
     'loadedmetadata'
-  ].forEach((event) => {
-    video.addEventListener(
-      event,
-      syncPlaybackIcon
-    );
+  ].forEach(event => {
+    video.addEventListener(event, syncPlaybackIcon);
   });
 
   syncPlaybackIcon();
@@ -574,10 +561,7 @@
       try {
         await video.play();
       } catch (error) {
-        console.warn(
-          'Não foi possível reproduzir:',
-          error
-        );
+        console.warn('Não foi possível reproduzir:', error);
       }
     } else {
       video.pause();
@@ -587,20 +571,18 @@
     showUI();
   };
 
-  // =====================================================
-  // TROCAR CANAL
-  // =====================================================
+  /* ==========================================
+     CANAL ANTERIOR / PRÓXIMO
+     ========================================== */
 
   const switchChannel = (delta) => {
     if (
       !Array.isArray(state.channels) ||
       !state.channels.length
-    ) {
-      return;
-    }
+    ) return;
 
     const index = state.channels.findIndex(
-      (c) => c.id === state.selected
+      c => c.id === state.selected
     );
 
     const next = state.channels[
@@ -617,23 +599,18 @@
 
       selectChannel(next.id);
 
-      scheduleChannelScroll(150);
+      scheduleChannelScroll(true);
     }
 
     showUI();
   };
 
-  $('previousChannel').onclick = () => {
-    switchChannel(-1);
-  };
+  $('previousChannel').onclick = () => switchChannel(-1);
+  $('nextChannel').onclick = () => switchChannel(1);
 
-  $('nextChannel').onclick = () => {
-    switchChannel(1);
-  };
-
-  // =====================================================
-  // TELA CHEIA
-  // =====================================================
+  /* ==========================================
+     TELA CHEIA
+     ========================================== */
 
   $('toggleFullscreen').onclick = async () => {
     const wrapper = document.querySelector('.video-wrap');
@@ -659,19 +636,16 @@
           );
         }
       } else {
-        console.warn(
-          'Tela cheia indisponível:',
-          error
-        );
+        console.warn('Tela cheia indisponível:', error);
       }
     }
 
     showUI();
   };
 
-  // =====================================================
-  // PICTURE IN PICTURE
-  // =====================================================
+  /* ==========================================
+     PICTURE-IN-PICTURE
+     ========================================== */
 
   $('togglePip').onclick = async () => {
     try {
@@ -693,9 +667,9 @@
     showUI();
   };
 
-  // =====================================================
-  // MULTITELA
-  // =====================================================
+  /* ==========================================
+     MULTITELAS
+     ========================================== */
 
   const clearSecond = () => {
     secondHls?.destroy();
@@ -706,7 +680,6 @@
     secondVideo.load();
 
     secondVideo.style.display = 'none';
-
     $('secondEmpty').style.display = 'block';
 
     secondId = null;
@@ -719,18 +692,14 @@
     clearSecond();
 
     $('multiView').hidden = true;
-
     page.classList.remove('multi-active');
-
     $('toggleMulti').classList.remove('active');
 
     showUI();
   };
 
   $('toggleMulti').onclick = () => {
-    if (multi) {
-      return closeMulti();
-    }
+    if (multi) return closeMulti();
 
     multi = true;
     choosingSecond = true;
@@ -738,7 +707,6 @@
     $('multiView').hidden = false;
 
     page.classList.add('multi-active');
-
     $('toggleMulti').classList.add('active');
 
     setPanel(true);
@@ -780,9 +748,7 @@
 
       secondHls.on(
         Hls.Events.MANIFEST_PARSED,
-        () => {
-          secondVideo.play().catch(() => {});
-        }
+        () => secondVideo.play().catch(() => {})
       );
 
       secondHls.on(
@@ -792,9 +758,8 @@
             $('secondEmpty').style.display = 'block';
 
             $('secondEmpty')
-              .querySelector('p')
-              .textContent =
-                'Falha na reprodução da segunda tela.';
+              .querySelector('p').textContent =
+              'Falha na reprodução da segunda tela.';
           }
         }
       );
@@ -808,40 +773,29 @@
     } else {
       $('secondEmpty').style.display = 'block';
 
-      $('secondEmpty')
-        .querySelector('p')
-        .textContent =
-          'Navegador sem suporte a HLS.';
+      $('secondEmpty').querySelector('p').textContent =
+        'Navegador sem suporte a HLS.';
     }
 
     choosingSecond = false;
-
     setPanel(false);
   };
 
-  // =====================================================
-  // SELEÇÃO DE CANAL PARA TELA 2
-  // =====================================================
-
-  $('channelList').addEventListener(
+  channelList.addEventListener(
     'click',
     (event) => {
       if (
         !multi ||
         !choosingSecond ||
         event.target.closest('[data-fav]')
-      ) {
-        return;
-      }
+      ) return;
 
-      const item = event.target.closest(
-        '.channel-item'
-      );
+      const item = event.target.closest('.channel-item');
 
       if (!item) return;
 
       const channel = state.channels.find(
-        (c) => c.id === item.dataset.id
+        c => c.id === item.dataset.id
       );
 
       if (!channel) return;
@@ -853,35 +807,13 @@
     true
   );
 
-  // =====================================================
-  // CLIQUE NORMAL EM UM CANAL
-  // =====================================================
-
-  $('channelList').addEventListener('click', (event) => {
-    if (event.target.closest('[data-fav]')) return;
-
-    if (multi && choosingSecond) return;
-
-    const item = event.target.closest('.channel-item');
-
-    if (!item) return;
-
-    // Aguarda o manipulador original selecionar o canal.
-    setTimeout(() => {
-      checkSelectedChannel();
-      scheduleChannelScroll(100);
-    }, 80);
-  });
-
-  // =====================================================
-  // NOME DO CANAL ATUAL
-  // =====================================================
+  /* ==========================================
+     NOME DO CANAL ATUAL
+     ========================================== */
 
   const updateCurrent = () => {
     $('liveCurrentName').textContent =
       $('playingName')?.textContent || 'Ao vivo';
-
-    checkSelectedChannel();
   };
 
   new MutationObserver(updateCurrent).observe(
@@ -895,9 +827,9 @@
 
   updateCurrent();
 
-  // =====================================================
-  // MOSTRAR CONTROLES
-  // =====================================================
+  /* ==========================================
+     EVENTOS DA INTERFACE
+     ========================================== */
 
   $('ao-vivo').addEventListener(
     'mousemove',
@@ -917,51 +849,25 @@
     { passive: true }
   );
 
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       currentSchedule(false);
       closeFullGuide();
 
-      if (multi) {
-        closeMulti();
-      }
+      if (multi) closeMulti();
     }
 
     showUI();
   });
 
-  // =====================================================
-  // INICIALIZAÇÃO
-  // =====================================================
+  /* ==========================================
+     INICIALIZAÇÃO
+     ========================================== */
 
   setPanel(true);
   showUI();
 
-  // Aguarda o carregamento assíncrono da lista e da seleção.
-  let initialAttempts = 0;
-
-  const initialChannelCheck = setInterval(() => {
-    initialAttempts++;
-
-    checkSelectedChannel();
-
-    const item = getSelectedChannelElement();
-
-    if (item) {
-      scheduleChannelScroll(80);
-      clearInterval(initialChannelCheck);
-    }
-
-    if (initialAttempts >= 40) {
-      clearInterval(initialChannelCheck);
-    }
-  }, 250);
-
-  // Ao voltar para a aba, verifica o canal atual.
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) {
-      checkSelectedChannel();
-    }
-  });
+  // Aguarda o carregamento inicial da lista.
+  scheduleChannelScroll(false);
 
 })();
