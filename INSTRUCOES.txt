@@ -1,0 +1,5 @@
+1. Substitua data/channels.json pelo arquivo deste ZIP.
+2. Copie public/channel-category-scrollbar.css para public/.
+3. Em public/live.html, antes de </head>, adicione:
+<link rel="stylesheet" href="/channel-category-scrollbar.css">
+4. Publique novamente.
