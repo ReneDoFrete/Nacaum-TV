@@ -1,0 +1,37 @@
+/* Barra horizontal visível abaixo das categorias da lista de canais */
+body:has(#ao-vivo-page) #panelFiltersHost .filters,
+body:has(#ao-vivo-page) .channel-panel .filters,
+body:has(#ao-vivo-page) #categoryFilters {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #28d7c4 #202a36 !important;
+  padding-bottom: 11px !important;
+  max-width: 100% !important;
+  overscroll-behavior-x: contain;
+}
+body:has(#ao-vivo-page) #panelFiltersHost .filter,
+body:has(#ao-vivo-page) .channel-panel .filter,
+body:has(#ao-vivo-page) #categoryFilters .filter {
+  flex: 0 0 auto !important;
+}
+body:has(#ao-vivo-page) #panelFiltersHost .filters::-webkit-scrollbar,
+body:has(#ao-vivo-page) .channel-panel .filters::-webkit-scrollbar,
+body:has(#ao-vivo-page) #categoryFilters::-webkit-scrollbar {
+  height: 6px !important;
+  display: block !important;
+}
+body:has(#ao-vivo-page) #panelFiltersHost .filters::-webkit-scrollbar-thumb,
+body:has(#ao-vivo-page) .channel-panel .filters::-webkit-scrollbar-thumb,
+body:has(#ao-vivo-page) #categoryFilters::-webkit-scrollbar-thumb {
+  background: #28d7c4 !important;
+  border-radius: 999px !important;
+}
+body:has(#ao-vivo-page) #panelFiltersHost .filters::-webkit-scrollbar-track,
+body:has(#ao-vivo-page) .channel-panel .filters::-webkit-scrollbar-track,
+body:has(#ao-vivo-page) #categoryFilters::-webkit-scrollbar-track {
+  background: #202a36 !important;
+  border-radius: 999px !important;
+}
