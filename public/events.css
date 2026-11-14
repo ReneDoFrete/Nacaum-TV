@@ -14,3 +14,14 @@
 .team-emblem img[hidden],.emblem-fallback[hidden]{display:none}
 .emblem-fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;background:linear-gradient(145deg,#34465a,#14232d);border:1px solid #5b758577}
 @media(max-width:650px){.hero-content{max-width:100%}.hero-art{opacity:.58}.hero-crest{width:200px;height:200px}.hero-crest-home{right:20%}.hero-crest-away{right:-24%}.events-hero::after{background:linear-gradient(90deg,rgba(10,16,27,.78),rgba(10,16,27,.35))}}
+
+/* Banner aprovado: escudos retos, grandes e em cantos opostos */
+.events-hero{min-height:350px}
+.events-hero .hero-content{width:min(760px,68%);max-width:68%;margin-inline:auto;padding:38px 20px;z-index:3;text-align:left}
+.events-hero .hero-art{inset:0;opacity:1;overflow:hidden;pointer-events:none}
+.events-hero .hero-crest{top:50%;width:clamp(270px,28vw,450px);height:clamp(270px,28vw,450px);max-width:none;max-height:none;opacity:.38;object-fit:contain;filter:drop-shadow(0 14px 28px rgba(0,0,0,.28));transform:translateY(-50%) rotate(0deg)}
+.events-hero .hero-crest-home{left:clamp(-145px,-8vw,-65px);right:auto}
+.events-hero .hero-crest-away{right:clamp(-145px,-8vw,-65px);left:auto}
+.events-hero::after{background:linear-gradient(90deg,rgba(10,16,27,.12) 0%,rgba(10,16,27,.72) 26%,rgba(10,16,27,.78) 73%,rgba(10,16,27,.12) 100%)}
+@media(max-width:900px){.events-hero .hero-content{width:72%;max-width:72%}.events-hero .hero-crest{width:clamp(210px,33vw,320px);height:clamp(210px,33vw,320px);opacity:.31}}
+@media(max-width:650px){.events-hero{min-height:300px}.events-hero .hero-content{width:100%;max-width:100%;padding:28px 22px;text-align:left}.events-hero .hero-crest{width:210px;height:210px;opacity:.22}.events-hero .hero-crest-home{left:-115px;right:auto}.events-hero .hero-crest-away{right:-115px;left:auto}.events-hero::after{background:linear-gradient(90deg,rgba(10,16,27,.60),rgba(10,16,27,.72) 25%,rgba(10,16,27,.72) 75%,rgba(10,16,27,.60))}}
