@@ -17,7 +17,7 @@ function channelName(raw) {
  if (s.includes('canal goat')) return 'Canal GOAT';
  if (s.includes('caze')) return 'CazéTV';
  if (s.includes('paramount')) return 'Paramount+';
- if (/^(?:(?:tv|rede|canal) )?globo(?: (?:rj|sp|mg|df|rs|ba|pe|pr|sc|ce|am|pa|go|es|pb|rn|al|se|pi|ma|mt|ms|ro|rr|ap|ac|to|regional|nacional|brasil))?$/.test(s) || s === 'globoplay tv globo') return 'Globo';
+ if (/^(?:(?:tv|rede|canal) )?globo(?: (?:rj|sp|mg|df|rs|ba|pe|pr|sc|ce|am|pa|go|es|pb|rn|al|se|pi|ma|mt|ms|ro|rr|ap|ac|to|regional|nacional|brasil))?$/.test(s) || /^(?:rede globo de televisao|tv globo rede|globo tv|globoplay tv globo)$/.test(s)) return 'Globo';
  const matched=channels.find(c=>s===normalize(c));
  return matched || null;
 }
@@ -44,7 +44,7 @@ async function enrichSofa(env,event){
 }
 function flatten(data,date){const result=[];for(const [key,leagues] of Object.entries(data||{}))for(const league of leagues||[])for(const m of league.matches||[]){
  if(!m.utcTime||localDate(m.utcTime)!==date)continue;
- const names=[...new Set((m.channels||[]).map(c=>channelName(c.name)).filter(Boolean))];if(!names.length)continue;
+ const names=[...new Set((m.channels||[]).map(c=>channelName(typeof c==='string'?c:(c.name||c.channelName||c.title||c.tvChannel?.name))).filter(Boolean))];if(!names.length)continue;
  result.push({id:String(m.id),home:m.home?.name||'',away:m.away?.name||'',homeTeamId:m.home?.id??null,awayTeamId:m.away?.id??null,homeLogo:teamLogo(m.home?.id),awayLogo:teamLogo(m.away?.id),league:m.leagueName||league.leagueName||'',utcTime:m.utcTime,channels:names,status:'scheduled',score:null});
  }return result}
 async function fetchFotmob(env) {
@@ -68,17 +68,59 @@ async function snapshot(env,date){
 // Futbol24: consulta em tempo real e busca por partida quando não aparece no in_play.
 const FUTBOL_HEADERS={Accept:'application/json, text/plain, */*',Referer:'https://www.futbol24.com/pt/','User-Agent':'Mozilla/5.0 (compatible; NacaumTV/1.0)'};
 const clean=s=>normalize(s).replace(/\b(fc|cf|sc|ac|club|clube|de|do|da|the|futebol|football)\b/g,' ').replace(/\s+/g,' ').trim();
-const alias=s=>clean(s).replace(/\bmanchester utd\b/g,'manchester united').replace(/\binter rs\b/g,'internacional').replace(/\binter de porto alegre\b/g,'internacional').replace(/\b(women|feminino|feminina)\b/g,'w').replace(/\bsp\b|\brj\b|\brs\b|\bmg\b|\bba\b|\bpr\b|\bsc\b/g,'').replace(/\s+/g,' ').trim();
-function teamSimilarity(a,b){const x=alias(a),y=alias(b);if(!x||!y)return 0;if(x===y)return 1;const xw=x.split(' '),yw=y.split(' ');const common=xw.filter(t=>yw.includes(t));const overlap=common.length/Math.max(xw.length,yw.length);return overlap>=.75?.85:0;}
+const alias=s=>clean(s)
+ .replace(/\bmanchester utd\b/g,'manchester united')
+ .replace(/\binter rs\b|\binter de porto alegre\b/g,'internacional')
+ .replace(/\b(women|feminino|feminina)\b/g,'w')
+ .replace(/\b(sc|fc|cf|ac|al|ce|go|mt|pe|sp|rj|rs|mg|ba|pr|pb|rn|pa|df|es|se|ma|pi|to|am|ap|ro|rr)\b/g,' ')
+ .replace(/\s+/g,' ').trim();
+function teamSimilarity(a,b){
+ const x=alias(a),y=alias(b);
+ if(!x||!y)return 0;
+ if(x===y)return 1;
+ // Nomes compostos com abreviações e siglas regionais não devem impedir o match.
+ const xw=x.split(' '),yw=y.split(' ');
+ const common=xw.filter(t=>yw.includes(t));
+ const overlap=common.length/Math.max(xw.length,yw.length);
+ if(overlap>=.75)return .85;
+ if(xw.length>=2&&yw.length>=2&&common.length>=2&&overlap>=.5)return .76;
+ return 0;
+}
 function namesOf(m){return [m?.team1?.name||m?.team1?.name_short||m?.home?.name||m?.home,m?.team2?.name||m?.team2?.name_short||m?.away?.name||m?.away]}
 function slugNames(slug){const parts=String(slug||'').split('/');const i=parts.indexOf('vs');return i>0&&i<parts.length-1?[parts[i-1].replace(/-/g,' '),parts[i+1].replace(/-/g,' ')]:['','']}
-function matchQuality(m,e,slug){const [home,away]=namesOf(m);const [sh,sa]=slugNames(slug||m?.slug);return Math.max(teamSimilarity(home,e.home)*teamSimilarity(away,e.away),teamSimilarity(sh,e.home)*teamSimilarity(sa,e.away));}
+function matchQuality(m,e,slug){const [home,away]=namesOf(m);const [sh,sa]=slugNames(slug||m?.slug);const pairs=[[home,away],[m?.team1?.name_short,m?.team2?.name_short],[sh,sa]];return Math.max(...pairs.map(([h,a])=>Math.min(teamSimilarity(h,e.home),teamSimilarity(a,e.away))));}
 function parseScore(m){const raw=m?.score1??m?.score??null;const text=typeof raw==='string'?raw:(Array.isArray(raw)?raw.join('-'):'');const result=text.match(/(\d+)\s*[-:x×]\s*(\d+)/i);if(result)return `${result[1]} - ${result[2]}`;if(Number.isInteger(m?.homeScore)&&Number.isInteger(m?.awayScore))return `${m.homeScore} - ${m.awayScore}`;return null;}
 function isEnded(m){const status=m?.status||{};const name=normalize(typeof status==='object'?(status.name_short||status.name):status);return status.is_ended===true||m?.is_ended===true||m?.finished===true||/^(ft|aet|ap|finished|full time|final|ended|encerrado)$/.test(name);}
 function isLive(m){return m?.status?.in_play===true||m?.in_play===true;}
-function matchDay(m,e){const target=Date.parse(e.utcTime),actual=Date.parse(m?.date||'');if(!Number.isFinite(target)||!Number.isFinite(actual))return false;return Math.abs(target-actual)<=18*3600000 && localDate(m.date)===localDate(e.utcTime);}
-function bestSearchMatch(rows,e){return (Array.isArray(rows)?rows:rows?.matches||rows?.results||[]).filter(m=>matchDay(m,e)).map(m=>({m,quality:matchQuality(m,e)})).filter(x=>x.quality>=.72).sort((a,b)=>b.quality-a.quality||Math.abs(Date.parse(a.m.date)-Date.parse(e.utcTime))-Math.abs(Date.parse(b.m.date)-Date.parse(e.utcTime)))[0]?.m||null;}
-function applyMatch(e,m,liveEntry){if(!m)return;const score=parseScore(m)||parseScore(liveEntry);if(score)e.score=score;if(m.slug)e.futbolSlug=m.slug;if(m.id)e.futbolId=m.id;e._missingPolls=0;
+function matchDay(m,e){const target=Date.parse(e.utcTime),actual=Date.parse(m?.date||m?.utcTime||'');if(!Number.isFinite(target)||!Number.isFinite(actual))return false;return Math.abs(target-actual)<=18*3600000 && localDate(m.date||m.utcTime)===localDate(e.utcTime);}
+// Fallback: mesmo dia + partida em andamento/encerrada + horário compatível.
+// A busca pode trazer dezenas de jogos: exigir ao menos um nome de equipe
+// reconhecível e horário exato evita associar partidas completamente diferentes.
+function fallbackQuality(m,e){
+ const [home,away]=namesOf(m);
+ const [sh,sa]=slugNames(m?.slug);
+ const teamHit=(a,b)=>{
+  const x=alias(a),y=alias(b);
+  if(!x||!y)return false;
+  if(x===y||x.includes(y)||y.includes(x))return true;
+  const aWords=x.split(' ').filter(w=>w.length>=4),bWords=y.split(' ').filter(w=>w.length>=4);
+  return aWords.some(w=>bWords.includes(w));
+ };
+ return Math.max(Number(teamHit(home,e.home))+Number(teamHit(away,e.away)),Number(teamHit(sh,e.home))+Number(teamHit(sa,e.away)));
+}
+function bestSearchMatch(rows,e){
+ const candidates=(Array.isArray(rows)?rows:rows?.matches||rows?.results||[])
+  .filter(m=>matchDay(m,e))
+  .map(m=>({m,quality:matchQuality(m,e),hits:fallbackQuality(m,e),delta:Math.abs(Date.parse(m.date||m.utcTime)-Date.parse(e.utcTime))}));
+ const exact=candidates.filter(x=>x.quality>=.72).sort((a,b)=>b.quality-a.quality||a.delta-b.delta)[0];
+ if(exact)return exact.m;
+ const fallback=candidates.filter(x=>(isLive(x.m)||isEnded(x.m))&&x.hits>=1&&x.delta<=15*60000)
+  .sort((a,b)=>b.hits-a.hits||a.delta-b.delta);
+ // Com só um nome reconhecido, não aceitar empate entre jogos diferentes.
+ if(fallback.length&&!(fallback[0].hits===1&&fallback[1]&&fallback[1].hits===1&&fallback[1].delta===fallback[0].delta))return fallback[0].m;
+ return null;
+}
+function applyMatch(e,m,liveEntry){if(!m)return;const score=parseScore(m)||parseScore(liveEntry);if(score && (isEnded(m)||isLive(m)||isLive(liveEntry)||e.status!=='live'))e.score=score;if(m.slug)e.futbolSlug=m.slug;if(m.id)e.futbolId=m.id;e._missingPolls=0;
  if(isEnded(m)){e.status='finished';e.minute=null;e._seenLive=true;return;}
  if(isLive(m)||isLive(liveEntry)){e.status='live';e._seenLive=true;e.minute=liveEntry?.minute??liveEntry?.time??m.minute??m.time??null;return;}
  // Dois flags falsos não significam fim. Mantém o estado anterior.
@@ -86,31 +128,63 @@ function applyMatch(e,m,liveEntry){if(!m)return;const score=parseScore(m)||parse
 }
 async function futbolJson(url){return getJson(url,FUTBOL_HEADERS)}
 async function searchMatch(e){
- const queries=[e.home,`${e.home} ${e.away}`,e.away];
- for(const q of queries){
-  try{const url=`https://www.futbol24.com/api/search/match?query=${encodeURIComponent(q)}`;const data=await futbolJson(url);const match=bestSearchMatch(data,e);if(match)return match;}
-  catch(error){console.warn('[FUTBOL24 SEARCH]',q,error.message)}
+ const queries=[e.home,`${e.home} ${e.away}`,e.away,`${e.away} ${e.home}`];
+ for(const q of [...new Set(queries)]){
+  const url=`https://www.futbol24.com/api/search/match?query=${encodeURIComponent(q)}`;
+  try{
+   const data=await futbolJson(url);
+   const match=bestSearchMatch(data,e);
+   if(match)return match;
+  }catch(error){console.warn('[FUTBOL24 SEARCH ERROR]',e.home,e.away,q,error?.message)}
  }
  return null;
 }
+function liveEntries(data){
+ const raw=data?.inplay?.matches??data?.in_play?.matches??data?.matches??data?.inplay??data?.in_play??{};
+ if(Array.isArray(raw))return raw.map(m=>[m?.slug||'',m]);
+ if(raw&&typeof raw==='object')return Object.entries(raw).flatMap(([slug,value])=>{
+  if(Array.isArray(value))return value.map(m=>[m?.slug||slug,m]);
+  return value&&typeof value==='object'?[[slug,value]]:[];
+ });
+ return [];
+}
 async function monitor(events){
- const now=Date.now();const active=events.filter(e=>e.status!=='finished'&&Number.isFinite(Date.parse(e.utcTime))&&Date.parse(e.utcTime)<=now+60000);
+ const now=Date.now();
+ const active=events.filter(e=>e.status!=='finished'&&Number.isFinite(Date.parse(e.utcTime))&&Date.parse(e.utcTime)<=now+60000);
  if(!active.length)return events;
  let entries=[];
- try{const data=await futbolJson(`https://www.futbol24.com/api/in_play?_=${now}`);const matches=data?.inplay?.matches||data?.matches||{};entries=Array.isArray(matches)?matches.map(m=>[m.slug||'',m]):Object.entries(matches)}
- catch(error){console.warn('[FUTBOL24 IN_PLAY]',error.message)}
+ try{
+  const data=await futbolJson(`https://www.futbol24.com/api/in_play?_=${now}`);
+  entries=liveEntries(data);
+ }catch(error){console.warn('[FUTBOL24 IN_PLAY]',error.message)}
+ const unresolved=[];
  for(const e of active){
-  const live=entries.map(([slug,m])=>({slug,m,quality:matchQuality(m,e,slug)})).filter(x=>x.quality>=.72).sort((a,b)=>b.quality-a.quality)[0];
-  if(live){const m={...live.m,slug:live.slug||live.m.slug};applyMatch(e,m,live.m);if(isLive(live.m))continue;}
-  // Pesquisa após o horário de início, inclusive para partidas que nunca foram vistas ao vivo.
-  // Limita consultas a jogos das últimas 18 horas, evitando pesquisar jogos históricos a cada refresh.
-  if(now-Date.parse(e.utcTime)>18*3600000)continue;
-  const found=await searchMatch(e);
-  if(found){
-   const entry=entries.find(([slug,m])=>String(slug)===String(found.slug)||String(m?.id)===String(found.id));
-   applyMatch(e,found,entry?.[1]);
+  const matches=entries.map(([slug,m])=>({slug,m,quality:matchQuality(m,e,slug)}))
+   .filter(x=>x.quality>=.72)
+   .sort((a,b)=>b.quality-a.quality);
+  const live=matches[0];
+  if(live){
+   const m={...live.m,slug:live.slug||live.m.slug};
+   applyMatch(e,m,live.m);
+   if(isLive(live.m)||isEnded(live.m))continue;
   }
+  if(now-Date.parse(e.utcTime)<=18*3600000)unresolved.push(e);
  }
+ // Não pesquisar partidas uma por uma em sequência: 7 partidas com 3 tentativas
+ // podem exceder o tempo de execução do Worker e impedir a atualização.
+ // Até 4 partidas em paralelo, com resultados independentes.
+ const workers=Array.from({length:Math.min(4,unresolved.length)},async()=>{
+  while(unresolved.length){
+   const e=unresolved.shift();
+   try{
+    const found=await searchMatch(e);
+    if(!found){console.warn('[FUTBOL24 UNMATCHED]',e.home,e.away,e.utcTime);continue;}
+    const entry=entries.find(([slug,m])=>String(slug)===String(found.slug)||String(m?.id)===String(found.id));
+    applyMatch(e,found,entry?.[1]);
+   }catch(error){console.warn('[FUTBOL24 MONITOR]',e.home,e.away,error.message)}
+  }
+ });
+ await Promise.all(workers);
  return events;
 }
 
@@ -124,14 +198,17 @@ export async function onRequestGet({env}){
  let saved=JSON.parse(row.events);
  // Atualiza uma vez por dia os nomes das emissoras de snapshots antigos,
  // preservando placares, status e minutos já monitorados.
- if(saved.some(e=>!e._tvNamesV2)){
+ // Reconsulta os canais no máximo a cada 6 horas. Nunca apaga transmissões ou placares já salvos.
+ const refreshDue=saved.some(e=>!e._tvNamesV2 || !e._tvCheckedAt || Date.now()-e._tvCheckedAt>6*3600000);
+ if(refreshDue){
   try{
    const fresh=flatten(await fetchFotmob(env),day);
    const byId=new Map(fresh.map(e=>[String(e.id),e]));
    for(const e of saved){
     const current=byId.get(String(e.id));
-    if(current) e.channels=[...new Set([...(e.channels||[]),...current.channels])];
+    if(current)e.channels=[...new Set([...(e.channels||[]),...current.channels])];
     e._tvNamesV2=true;
+    e._tvCheckedAt=Date.now();
    }
   }catch(error){console.warn('[EVENTS TV CHANNEL REFRESH]',error.message)}
  }
