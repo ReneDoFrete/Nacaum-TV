@@ -1,8 +1,10 @@
 
 /* ==========================================
    NAÇAUM TV — CONTINUE ASSISTINDO
-   Visual igual ao catálogo + botão remover
+   Estilo do catálogo + botão X para remover
    ========================================== */
+
+/* SEÇÃO */
 
 .nacaum-continue-section {
   margin: 26px clamp(16px, 3vw, 48px);
@@ -17,6 +19,7 @@
   font-size: 22px;
   font-weight: 750;
   margin: 0 0 20px;
+  color: #f5f7fb;
 }
 
 /* CARROSSEL */
@@ -34,7 +37,22 @@
   display: none;
 }
 
-/* CARD SEM BORDA EXTERNA */
+/* WRAPPER DO CARD E BOTÃO X */
+
+.nacaum-continue-item {
+  position: relative;
+  flex: 0 0 154px;
+  width: 154px;
+  min-width: 0;
+  scroll-snap-align: start;
+  transition: transform .2s ease;
+}
+
+.nacaum-continue-item:hover {
+  transform: translateY(-4px);
+}
+
+/* CARD — SEM BORDA EXTERNA */
 
 .nacaum-continue-card,
 .nacaum-continue-card:link,
@@ -42,45 +60,46 @@
   appearance: none;
   -webkit-appearance: none;
   box-sizing: border-box;
-  position: relative;
+
   display: block;
-  flex: 0 0 154px;
-  width: 154px;
+  width: 100%;
   min-width: 0;
   margin: 0;
   padding: 0 !important;
+
   border: none !important;
   border-radius: 0;
   background: transparent !important;
   box-shadow: none !important;
+
   color: #f5f7fb !important;
   font: inherit;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
-  scroll-snap-align: start;
-  transition: transform .2s ease;
-}
 
-.nacaum-continue-card:hover {
-  transform: translateY(-4px);
+  transition: none;
 }
 
 .nacaum-continue-card:focus-visible {
   outline: 2px solid #20cbbb;
   outline-offset: 4px;
+  border-radius: 4px;
 }
 
-/* PÔSTER IGUAL AO CATÁLOGO */
+/* PÔSTER — IGUAL AO CATÁLOGO */
 
 .nacaum-continue-poster {
   display: block;
   position: relative;
+
   width: 100%;
   aspect-ratio: 2 / 3;
   height: auto;
+
   overflow: hidden;
   border-radius: 12px;
+
   background: #151b25;
   border: 1px solid #293341;
   box-sizing: border-box;
@@ -94,7 +113,8 @@
   transition: transform .25s ease;
 }
 
-.nacaum-continue-card:hover .nacaum-continue-poster img {
+.nacaum-continue-item:hover
+.nacaum-continue-poster img {
   transform: scale(1.045);
 }
 
@@ -104,8 +124,10 @@
   position: absolute;
   bottom: 0;
   left: 0;
+
   height: 4px;
   max-width: 100%;
+
   background: #22cbb8;
   border-radius: 0 4px 4px 0;
   z-index: 2;
@@ -117,31 +139,39 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+
   overflow: hidden;
   margin: 9px 0 3px;
+
   color: #f5f7fb !important;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
 }
 
+/* SUBTÍTULO */
+
 .nacaum-continue-card small {
   display: block;
   margin: 0;
+
   color: #aeb9c8 !important;
   font-size: 12px;
   line-height: 1.4;
 }
 
 /* ==========================================
-   BOTÃO X — REMOVER DO CONTINUE ASSISTINDO
+   BOTÃO X — REMOVER TÍTULO
    ========================================== */
 
 .nacaum-continue-remove {
+  appearance: none;
+  -webkit-appearance: none;
+
   position: absolute;
   top: 8px;
   right: 8px;
-  z-index: 20;
+  z-index: 30;
 
   display: flex;
   align-items: center;
@@ -151,12 +181,13 @@
   height: 30px;
   padding: 0;
 
-  border: 1px solid rgba(255, 255, 255, .2);
+  border: 1px solid rgba(255, 255, 255, .25);
   border-radius: 50%;
 
-  background: rgba(0, 0, 0, .78);
+  background: rgba(0, 0, 0, .8);
   color: #fff;
 
+  font-family: inherit;
   font-size: 21px;
   font-weight: 400;
   line-height: 1;
@@ -169,24 +200,27 @@
 
   transition:
     opacity .2s ease,
+    visibility .2s ease,
     transform .2s ease,
     background .2s ease,
-    visibility .2s ease;
+    border-color .2s ease;
 
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Aparece ao passar o mouse */
+/* MOSTRAR X AO PASSAR O MOUSE */
 
-.nacaum-continue-card:hover .nacaum-continue-remove,
-.nacaum-continue-card:focus-within .nacaum-continue-remove {
+.nacaum-continue-item:hover
+.nacaum-continue-remove,
+.nacaum-continue-item:focus-within
+.nacaum-continue-remove {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
 }
 
-/* Vermelho ao passar sobre o X */
+/* X VERMELHO NO HOVER */
 
 .nacaum-continue-remove:hover {
   background: #e53935;
@@ -194,7 +228,7 @@
   color: #fff;
 }
 
-/* Acessibilidade */
+/* FOCO PELO TECLADO */
 
 .nacaum-continue-remove:focus-visible {
   opacity: 1;
@@ -209,7 +243,7 @@
    ========================================== */
 
 @media (max-width: 600px) {
-  .nacaum-continue-card {
+  .nacaum-continue-item {
     flex-basis: 130px;
     width: 130px;
   }
@@ -227,7 +261,7 @@
   }
 }
 
-/* Em telas touch, o X fica sempre visível */
+/* EM DISPOSITIVOS TOUCH, X SEMPRE VISÍVEL */
 
 @media (hover: none) {
   .nacaum-continue-remove {
