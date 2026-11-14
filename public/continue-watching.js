@@ -1,0 +1,11 @@
+(()=>{
+'use strict';
+const KEY='nacaum-continue';
+const read=()=>{try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(x)?x:[]}catch{return []}};
+const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+function save(entry){if(!entry?.title)return;const old=read().filter(x=>!(x.type===entry.type&&norm(x.title)===norm(entry.title)));old.unshift({...entry,updatedAt:Date.now()});try{localStorage.setItem(KEY,JSON.stringify(old.slice(0,40)))}catch{}window.dispatchEvent(new Event('nacaum-continue-updated'))}
+window.NacaumContinue={read,save};
+function render(){const target=document.querySelector('#nacaumContinueSection');if(!target)return;const items=read().filter(x=>x.title);target.hidden=!items.length;if(!items.length)return;target.innerHTML='<h2>Continue assistindo</h2><div class="nacaum-continue-rail">'+items.map(x=>{const link='/movies.html?category='+encodeURIComponent(x.category||x.type||'movie')+'&title='+encodeURIComponent(x.title);const poster=x.poster_path&&/^\//.test(x.poster_path)?'https://image.tmdb.org/t/p/w342'+x.poster_path:'';const progress=x.duration>0?Math.min(100,Math.round(x.position/x.duration*100)):0;return '<a class="nacaum-continue-card" href="'+link+'"><div class="nacaum-continue-poster">'+(poster?'<img loading="lazy" src="'+poster+'" alt="">':'<span>▶</span>')+'<div class="nacaum-continue-progress" style="width:'+progress+'%"></div></div><strong>'+String(x.title).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))+'</strong><small>'+(x.episodeLabel||'Continuar reprodução')+'</small></a>'}).join('')+'</div>'}
+function mount(){if(!document.querySelector('#movieVideo')&&!document.querySelector('#discoverHome'))return;let target=document.querySelector('#nacaumContinueSection');if(!target){target=document.createElement('section');target.id='nacaumContinueSection';target.className='nacaum-continue-section';const anchor=document.querySelector('#homeSections')||document.querySelector('#catalogSection')||document.querySelector('#discoverHome');if(anchor)anchor.parentNode.insertBefore(target,anchor)}render()}
+document.addEventListener('DOMContentLoaded',mount);window.addEventListener('nacaum-continue-updated',render);
+})();

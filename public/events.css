@@ -41,3 +41,6 @@
 
 /* Ocultar as setas quando a faixa não pode rolar nessa direção. */
 .events-rail-wrap .rail-arrow[hidden]{display:none!important}
+
+/* Destaque com sinalização de transmissão ao vivo */
+.hero-status.is-live{display:inline-flex;align-items:center;background:#b51e3c;color:white;padding:6px 11px;border-radius:999px;font-size:12px;font-weight:850;letter-spacing:.03em;box-shadow:0 0 16px #b51e3c55}
