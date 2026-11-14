@@ -1,0 +1,17 @@
+(()=>{
+let token=0,indexPromise=null;const cache=new Map();
+const normalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s*\((?:19|20)\d{2}\)\s*$/,'').replace(/[^a-z0-9]+/g,' ').trim();
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function preview(item){if(!item?.title)return;const seq=++token;const hero=document.querySelector('#homeHero')||document.querySelector('.vod-hero')||document.querySelector('.movies-hero')||document.querySelector('.catalog-hero')||document.querySelector('.movies-head');if(!hero)return;
+ try{const list=await(indexPromise??=fetch('/catalog-index.json').then(r=>r.json()));const type=item.type==='movie'?'movie':'tv';const match=list.find(x=>String(x.tmdbId)===String(item.tmdbId)&&item.tmdbId)||list.find(x=>normalize(x.title)===normalize(item.title)&&(type==='movie'?x.type==='movie':x.type!=='movie'));if(!match?.tmdbId)return;const key=type+match.tmdbId;let d=cache.get(key);if(!d){const r=await fetch('/api/ondemand?'+new URLSearchParams({id:match.tmdbId,type}));if(!r.ok)return;d=await r.json();cache.set(key,d)}if(seq!==token)return;
+ const bg=d.backdrop_path?'https://image.tmdb.org/t/p/w1280'+d.backdrop_path:'';if(bg&&window.nacaumSetVodBackdrop)window.nacaumSetVodBackdrop(bg);if(bg&&hero.id==='homeHero')hero.style.backgroundImage=`linear-gradient(90deg,#090b15 0%,rgba(9,11,21,.92) 36%,rgba(9,11,21,.25) 100%),url("${bg}")`;
+ const title=d.title||d.name||item.title,year=(d.release_date||d.first_air_date||item.year||'').slice(0,4);const tags=[type==='movie'?'Filme':item.category==='anime'?'Anime':item.category==='dorama'?'Dorama':'Série',year,d.vote_average?'★ '+Number(d.vote_average).toFixed(1):'',...(d.genres||[]).slice(0,4).map(g=>g.name)].filter(Boolean);
+ const content=hero.querySelector('.home-hero-content')||hero.querySelector('.hero-content')||hero;
+ let titleEl=content.querySelector('h1'),tagsEl=content.querySelector('.hero-tags'),summaryEl=content.querySelector('.hero-summary')||content.querySelector('p');
+ if(titleEl)titleEl.textContent=title;if(hero.classList.contains('movies-head')){let meta=content.querySelector('.vod-hero-meta');if(!meta){meta=document.createElement('div');meta.className='vod-hero-meta';titleEl?.after(meta)}meta.innerHTML=tags.map(t=>`<span>${esc(t)}</span>`).join('');let syn=content.querySelector('.vod-hero-synopsis');if(!syn){syn=document.createElement('p');syn.className='vod-hero-synopsis';meta.after(syn)}syn.textContent=d.overview||'Sinopse indisponível.';if(summaryEl)summaryEl.textContent='';}if(tagsEl)tagsEl.innerHTML=tags.map(t=>`<span>${esc(t)}</span>`).join('');if(summaryEl)summaryEl.textContent=d.overview||'Sinopse indisponível.';
+ }catch(e){console.debug('[Prévia TMDB]',e)}
+}
+window.nacaumPreviewTitle=preview;
+document.addEventListener('pointerover',e=>{const card=e.target.closest('.discover-card[data-movie-title],.movie-card[data-key]');if(!card||card.contains(e.relatedTarget))return;const title=card.dataset.movieTitle||card.querySelector('strong')?.textContent;const type=card.dataset.movieType||new URLSearchParams(location.search).get('category')||'movie';preview({title,type})});
+document.addEventListener('focusin',e=>{const card=e.target.closest('.discover-card[data-movie-title],.movie-card[data-key]');if(card)preview({title:card.dataset.movieTitle||card.querySelector('strong')?.textContent,type:card.dataset.movieType||'movie'})});
+})();
