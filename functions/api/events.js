@@ -65,52 +65,50 @@ async function snapshot(env,date){
  await env.DB.prepare('INSERT INTO event_snapshots (day,events,updated_at) VALUES (?,?,?) ON CONFLICT(day) DO UPDATE SET events=excluded.events, updated_at=excluded.updated_at').bind(date,JSON.stringify(events),Date.now()).run();
  return events;
 }
-// Futbol24: o FotMob define a programação; o Futbol24 atualiza os placares.
+// Futbol24: consulta em tempo real e busca por partida quando não aparece no in_play.
 const FUTBOL_HEADERS={Accept:'application/json, text/plain, */*',Referer:'https://www.futbol24.com/pt/','User-Agent':'Mozilla/5.0 (compatible; NacaumTV/1.0)'};
-const shortName=s=>normalize(s).replace(/\b(fc|cf|sc|ac|club|clube|de|do|da|the)\b/g,' ').replace(/\s+/g,' ').trim();
-function sameTeam(a,b){const x=shortName(a),y=shortName(b);return !!x&&!!y&&(x===y||(x.length>=5&&y.length>=5&&(x.startsWith(y)||y.startsWith(x))));}
-function matchSlug(slug,event){const p=slug.split('/').filter(Boolean),i=p.indexOf('vs');if(i<1||i>=p.length-1)return false;let h=p[i-1].replace(/-/g,' '),a=p[i+1].replace(/-/g,' ');try{h=decodeURIComponent(h);a=decodeURIComponent(a)}catch{}return sameTeam(h,event.home)&&sameTeam(a,event.away)}
-function scoreOf(m){const text=String(m?.score1??m?.score??'');const x=text.match(/(\d+)\s*[-:x×]\s*(\d+)/i);return x?`${x[1]} - ${x[2]}`:null}
-// Segue o mesmo princípio do monitor.js: transição in_play true -> false,
-// is_ended explícito e persistência do último placar.
-// Quando a partida desaparece, exigimos duas leituras válidas consecutivas
-// para não confundir uma falha transitória do feed com fim de jogo.
-function ended(m){
- const state=normalize(m?.status||m?.state||m?.match_status||'');
- return m?.is_ended===true||m?.finished===true||m?.is_finished===true||m?.isFinished===true||
-   /^(ft|finished|full time|final|ended|encerrado|after penalties|aet)$/.test(state);
+const clean=s=>normalize(s).replace(/\b(fc|cf|sc|ac|club|clube|de|do|da|the|futebol|football)\b/g,' ').replace(/\s+/g,' ').trim();
+const alias=s=>clean(s).replace(/\bmanchester utd\b/g,'manchester united').replace(/\binter rs\b/g,'internacional').replace(/\binter de porto alegre\b/g,'internacional').replace(/\b(women|feminino|feminina)\b/g,'w').replace(/\bsp\b|\brj\b|\brs\b|\bmg\b|\bba\b|\bpr\b|\bsc\b/g,'').replace(/\s+/g,' ').trim();
+function teamSimilarity(a,b){const x=alias(a),y=alias(b);if(!x||!y)return 0;if(x===y)return 1;const xw=x.split(' '),yw=y.split(' ');const common=xw.filter(t=>yw.includes(t));const overlap=common.length/Math.max(xw.length,yw.length);return overlap>=.75?.85:0;}
+function namesOf(m){return [m?.team1?.name||m?.team1?.name_short||m?.home?.name||m?.home,m?.team2?.name||m?.team2?.name_short||m?.away?.name||m?.away]}
+function slugNames(slug){const parts=String(slug||'').split('/');const i=parts.indexOf('vs');return i>0&&i<parts.length-1?[parts[i-1].replace(/-/g,' '),parts[i+1].replace(/-/g,' ')]:['','']}
+function matchQuality(m,e,slug){const [home,away]=namesOf(m);const [sh,sa]=slugNames(slug||m?.slug);return Math.max(teamSimilarity(home,e.home)*teamSimilarity(away,e.away),teamSimilarity(sh,e.home)*teamSimilarity(sa,e.away));}
+function parseScore(m){const raw=m?.score1??m?.score??null;const text=typeof raw==='string'?raw:(Array.isArray(raw)?raw.join('-'):'');const result=text.match(/(\d+)\s*[-:x×]\s*(\d+)/i);if(result)return `${result[1]} - ${result[2]}`;if(Number.isInteger(m?.homeScore)&&Number.isInteger(m?.awayScore))return `${m.homeScore} - ${m.awayScore}`;return null;}
+function isEnded(m){const status=m?.status||{};const name=normalize(typeof status==='object'?(status.name_short||status.name):status);return status.is_ended===true||m?.is_ended===true||m?.finished===true||/^(ft|aet|ap|finished|full time|final|ended|encerrado)$/.test(name);}
+function isLive(m){return m?.status?.in_play===true||m?.in_play===true;}
+function matchDay(m,e){const target=Date.parse(e.utcTime),actual=Date.parse(m?.date||'');if(!Number.isFinite(target)||!Number.isFinite(actual))return false;return Math.abs(target-actual)<=18*3600000 && localDate(m.date)===localDate(e.utcTime);}
+function bestSearchMatch(rows,e){return (Array.isArray(rows)?rows:rows?.matches||rows?.results||[]).filter(m=>matchDay(m,e)).map(m=>({m,quality:matchQuality(m,e)})).filter(x=>x.quality>=.72).sort((a,b)=>b.quality-a.quality||Math.abs(Date.parse(a.m.date)-Date.parse(e.utcTime))-Math.abs(Date.parse(b.m.date)-Date.parse(e.utcTime)))[0]?.m||null;}
+function applyMatch(e,m,liveEntry){if(!m)return;const score=parseScore(m)||parseScore(liveEntry);if(score)e.score=score;if(m.slug)e.futbolSlug=m.slug;if(m.id)e.futbolId=m.id;e._missingPolls=0;
+ if(isEnded(m)){e.status='finished';e.minute=null;e._seenLive=true;return;}
+ if(isLive(m)||isLive(liveEntry)){e.status='live';e._seenLive=true;e.minute=liveEntry?.minute??liveEntry?.time??m.minute??m.time??null;return;}
+ // Dois flags falsos não significam fim. Mantém o estado anterior.
+ if(e.status!=='live'&&e.status!=='finished')e.status='scheduled';
+}
+async function futbolJson(url){return getJson(url,FUTBOL_HEADERS)}
+async function searchMatch(e){
+ const queries=[e.home,`${e.home} ${e.away}`,e.away];
+ for(const q of queries){
+  try{const url=`https://www.futbol24.com/api/search/match?query=${encodeURIComponent(q)}`;const data=await futbolJson(url);const match=bestSearchMatch(data,e);if(match)return match;}
+  catch(error){console.warn('[FUTBOL24 SEARCH]',q,error.message)}
+ }
+ return null;
 }
 async function monitor(events){
- const now=Date.now();
- const active=events.filter(e=>e.status!=='finished'&&Number.isFinite(Date.parse(e.utcTime))&&Date.parse(e.utcTime)<=now+60000);
+ const now=Date.now();const active=events.filter(e=>e.status!=='finished'&&Number.isFinite(Date.parse(e.utcTime))&&Date.parse(e.utcTime)<=now+60000);
  if(!active.length)return events;
- let matches;
- try{
-  const data=await getJson('https://www.futbol24.com/api/in_play?_='+Date.now(),FUTBOL_HEADERS);
-  matches=data?.inplay?.matches||data?.matches;
-  if(!matches||typeof matches!=='object')throw Error('Resposta sem matches');
- }catch(err){console.warn('[FUTBOL24]',err.message);return events}
- const entries=Object.entries(matches);
+ let entries=[];
+ try{const data=await futbolJson(`https://www.futbol24.com/api/in_play?_=${now}`);const matches=data?.inplay?.matches||data?.matches||{};entries=Array.isArray(matches)?matches.map(m=>[m.slug||'',m]):Object.entries(matches)}
+ catch(error){console.warn('[FUTBOL24 IN_PLAY]',error.message)}
  for(const e of active){
-  const found=entries.find(([slug])=>matchSlug(slug,e));
+  const live=entries.map(([slug,m])=>({slug,m,quality:matchQuality(m,e,slug)})).filter(x=>x.quality>=.72).sort((a,b)=>b.quality-a.quality)[0];
+  if(live){const m={...live.m,slug:live.slug||live.m.slug};applyMatch(e,m,live.m);if(isLive(live.m))continue;}
+  // Pesquisa após o horário de início, inclusive para partidas que nunca foram vistas ao vivo.
+  // Limita consultas a jogos das últimas 18 horas, evitando pesquisar jogos históricos a cada refresh.
+  if(now-Date.parse(e.utcTime)>18*3600000)continue;
+  const found=await searchMatch(e);
   if(found){
-   const [,m]=found;
-   const score=scoreOf(m);
-   if(score)e.score=score;
-   e._missingPolls=0;
-   if(ended(m)){
-    e.status='finished';e.minute=null;e._seenLive=true;
-   }else if(m.in_play===true){
-    e.status='live';e._seenLive=true;e.minute=m.minute??m.time??null;
-   }else if(e._seenLive===true && m.in_play===false && e.score){
-    // Condição de fim de jogo utilizada no monitor.js original.
-    e.status='finished';e.minute=null;
-   }
-  }else if(e._seenLive===true && e.status==='live'){
-   // O jogo estava ao vivo e saiu do /in_play. Duas confirmações
-   // reduzem falsos positivos por oscilação temporária da API.
-   e._missingPolls=(e._missingPolls||0)+1;
-   if(e._missingPolls>=2 && e.score){e.status='finished';e.minute=null}
+   const entry=entries.find(([slug,m])=>String(slug)===String(found.slug)||String(m?.id)===String(found.id));
+   applyMatch(e,found,entry?.[1]);
   }
  }
  return events;
