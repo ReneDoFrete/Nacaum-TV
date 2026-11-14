@@ -25,3 +25,16 @@
 .events-hero::after{background:linear-gradient(90deg,rgba(10,16,27,.12) 0%,rgba(10,16,27,.72) 26%,rgba(10,16,27,.78) 73%,rgba(10,16,27,.12) 100%)}
 @media(max-width:900px){.events-hero .hero-content{width:72%;max-width:72%}.events-hero .hero-crest{width:clamp(210px,33vw,320px);height:clamp(210px,33vw,320px);opacity:.31}}
 @media(max-width:650px){.events-hero{min-height:300px}.events-hero .hero-content{width:100%;max-width:100%;padding:28px 22px;text-align:left}.events-hero .hero-crest{width:210px;height:210px;opacity:.22}.events-hero .hero-crest-home{left:-115px;right:auto}.events-hero .hero-crest-away{right:-115px;left:auto}.events-hero::after{background:linear-gradient(90deg,rgba(10,16,27,.60),rgba(10,16,27,.72) 25%,rgba(10,16,27,.72) 75%,rgba(10,16,27,.60))}}
+
+/* Duas faixas independentes: ao vivo e programação do dia */
+#eventsGrid.events-rail{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:3px 0 12px}
+#eventsGrid.events-rail::-webkit-scrollbar{display:none}
+#eventsGrid.events-rail .event-card{flex:0 0 clamp(255px,25vw,320px);min-height:210px;scroll-snap-align:start}
+#eventsRail .event-card .card-links{margin-top:12px}
+#eventsRail .event-card .card-links .event-channel{position:relative;z-index:3}
+@media(max-width:650px){
+  .events-rail-wrap .rail-arrow{display:flex;align-items:center;justify-content:center;top:50%;transform:translateY(-50%);width:32px;height:40px}
+  .events-rail-wrap .rail-arrow.prev{left:-8px}
+  .events-rail-wrap .rail-arrow.next{right:-8px}
+  #eventsGrid.events-rail .event-card{flex-basis:min(80vw,300px)}
+}
