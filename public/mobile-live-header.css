@@ -1,0 +1,24 @@
+/* Cabeçalho do Ao vivo somente no mobile, idêntico às demais páginas. */
+@media (max-width: 800px) {
+  body:has(#ao-vivo-page) .topbar {
+    display:flex!important;position:sticky!important;top:0!important;z-index:100!important;
+    width:100%;height:60px;min-height:60px;align-items:center;justify-content:space-between;
+    gap:6px;padding:0 10px;background:rgba(12,16,26,.97);
+    border-bottom:1px solid rgba(255,255,255,.10);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  }
+  body:has(#ao-vivo-page) .topbar .desktop-nav {display:none!important}
+  body:has(#ao-vivo-page) .topbar .brand {display:flex;min-width:0;flex:0 1 auto;align-items:center;gap:5px;font-size:14px;white-space:nowrap}
+  body:has(#ao-vivo-page) .topbar .brand img {width:29px;height:29px;flex:0 0 auto}
+  body:has(#ao-vivo-page) .topbar .top-actions {display:flex!important;align-items:center;gap:7px;min-width:0;flex:0 0 auto}
+  body:has(#ao-vivo-page) .topbar #onlineVisitors {display:inline-flex!important;visibility:visible!important;opacity:1!important;flex:0 0 auto;align-items:center;gap:5px;padding:7px 8px;font-size:10px;white-space:nowrap}
+  body:has(#ao-vivo-page) .topbar #clock {display:none!important}
+  body:has(#ao-vivo-page) .topbar .header-search-button {display:inline-flex!important;align-items:center;gap:4px;padding:8px 9px;font-size:12px}
+  body:has(#ao-vivo-page) #ao-vivo-page {min-height:calc(100dvh - 60px)!important}
+  body:has(#ao-vivo-page) #ao-vivo {padding-top:8px!important}
+  body:has(#ao-vivo-page) .player-panel {margin-top:0!important}
+}
+@media (max-width:360px) {
+  body:has(#ao-vivo-page) .topbar .header-search-button {font-size:0;padding:8px}
+  body:has(#ao-vivo-page) .topbar .header-search-button svg {width:18px;height:18px}
+}
