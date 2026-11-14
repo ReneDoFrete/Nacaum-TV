@@ -7,6 +7,22 @@ const score=e=>e.score||'×';
 const logoUrl=(e,side)=>{const id=e[side+'TeamId'];const direct=e[side+'Logo'];if(typeof direct==='string'&&/^https:\/\/images\.fotmob\.com\/image_resources\/logo\/teamlogo\/\d+\.png$/.test(direct))return direct;if(Number.isSafeInteger(Number(id))&&Number(id)>0)return `https://images.fotmob.com/image_resources/logo/teamlogo/${Number(id)}.png`;return null};
 const emblem=(e,side)=>{const name=side==='home'?e.home:e.away;const src=logoUrl(e,side);return `<span class="team-emblem ${src?'has-logo':''}">${src?`<img src="${safe(src)}" alt="Escudo de ${safe(name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="emblem-fallback" hidden>${safe(name.slice(0,2).toUpperCase())}</span>`:safe(name.slice(0,2).toUpperCase())}</span>`};
 const channels=e=>(e.channels||[]).map(c=>`<a href="/live.html#${encodeURIComponent(slug(c))}" class="event-channel">▶ ${safe(c)}</a>`).join('');
+// Setas acompanham a rolagem real de cada faixa (inclusive touch e resize).
+function updateRailArrows(){
+ for(const [railId,prevId,nextId] of [['eventsRail','eventsPrev','eventsNext'],['eventsGrid','todayPrev','todayNext']]){
+  const rail=$('#'+railId),prev=$('#'+prevId),next=$('#'+nextId);
+  if(!rail||!prev||!next)continue;
+  const maxScroll=Math.max(0,rail.scrollWidth-rail.clientWidth);
+  const canScroll=maxScroll>2;
+  prev.hidden=!canScroll||rail.scrollLeft<=2;
+  next.hidden=!canScroll||rail.scrollLeft>=maxScroll-2;
+ }
+}
+let arrowsFrame=0;
+function scheduleRailArrows(){
+ if(arrowsFrame)return;
+ arrowsFrame=requestAnimationFrame(()=>{arrowsFrame=0;updateRailArrows()});
+}
 const selectedList=()=>all.filter(e=>selected==='Todos'||(selected==='Ao vivo'&&e.status==='live')||(selected==='Encerrados'&&e.status==='finished')||(selected==='Agendados'&&e.status==='scheduled')).sort((a,b)=>Date.parse(a.utcTime)-Date.parse(b.utcTime));
 function showHero(e){featured=e;if(!e){$('#heroTitle').textContent='Os jogos de hoje, em um só lugar.';$('#heroSubtitle').textContent='Acompanhe os horários, placares e canais de transmissão.';$('#heroMeta').textContent='Programação do dia';$('#heroChannels').innerHTML='';$('#heroArt').innerHTML='';return}$('#heroTitle').textContent=`${e.home} × ${e.away}`;$('#heroSubtitle').textContent=e.status==='live'?(e.score||'Partida em andamento'):e.status==='finished'?(e.score||'Partida encerrada'):'Começa em breve';$('#heroMeta').textContent=`${e.league}  •  ${label(e)}`;$('#heroChannels').innerHTML=channels(e);const home=logoUrl(e,'home'),away=logoUrl(e,'away');$('#heroArt').innerHTML=[['home',home,e.home],['away',away,e.away]].map(([side,url,name])=>url?`<img class="hero-crest hero-crest-${side}" src="${safe(url)}" alt="" aria-hidden="true" referrerpolicy="no-referrer" onerror="this.style.display='none'">`:'').join('')}
 function card(e,compact=false){return `<article class="event-card ${featured?.id===e.id?'featured':''}" tabindex="0" data-id="${safe(e.id)}"><div class="card-head"><span class="card-league">${safe(e.league)}</span><span class="card-time ${safe(e.status)}">${safe(label(e))}</span></div><div class="card-match"><div class="team">${emblem(e,'home')}<span>${safe(e.home)}</span></div><strong class="versus">${safe(score(e))}</strong><div class="team">${emblem(e,'away')}<span>${safe(e.away)}</span></div></div><div class="card-footer">${(e.channels||[]).length?`<span>${safe(e.channels.join(' • '))}</span>`:'<span>Sem canal identificado</span>'}</div><div class="card-links">${channels(e)}</div></article>`}
@@ -20,7 +36,11 @@ function render(){
  $('#gridTitle').textContent='Eventos de hoje';
  $('#eventsRail').innerHTML=live.length?live.map(e=>card(e,true)).join(''):'<div class="events-empty">Nenhuma partida ao vivo no momento.</div>';
  $('#eventsGrid').innerHTML=list.length?list.map(e=>card(e)).join(''):'<div class="events-empty">Nenhuma partida nessa categoria.</div>';
+ scheduleRailArrows();
  document.querySelectorAll('.event-card').forEach(el=>{const select=()=>{const e=all.find(x=>String(x.id)===el.dataset.id);if(e){showHero(e);document.querySelectorAll('.event-card').forEach(c=>c.classList.toggle('featured',c.dataset.id===el.dataset.id))}};el.addEventListener('click',ev=>{if(!ev.target.closest('a'))select()});el.addEventListener('keydown',ev=>{if(ev.key==='Enter')select()})});
 }
 async function refresh(){try{const r=await fetch('/api/events',{cache:'no-store'});const d=await r.json();if(!r.ok)throw Error(d.detail||d.error||'Erro na API');all=(d.events||[]).filter(e=>new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(e.utcTime))===d.date);$('#eventsDate').textContent=new Date().toLocaleDateString('pt-BR',{timeZone:TZ,dateStyle:'full'});showHero(all.find(e=>e.status==='live')||all.find(e=>e.status==='scheduled')||all[0]);render()}catch(e){$('#eventsGrid').innerHTML=`<div class="events-empty events-error">${safe(e.message)}</div>`;$('#eventsRail').innerHTML=''}}
-$('#eventsPrev').onclick=()=>$('#eventsRail').scrollBy({left:-350,behavior:'smooth'});$('#eventsNext').onclick=()=>$('#eventsRail').scrollBy({left:350,behavior:'smooth'});$('#todayPrev').onclick=()=>$('#eventsGrid').scrollBy({left:-350,behavior:'smooth'});$('#todayNext').onclick=()=>$('#eventsGrid').scrollBy({left:350,behavior:'smooth'});refresh();setInterval(refresh,60000);
+for(const id of ['eventsRail','eventsGrid'])$('#'+id).addEventListener('scroll',scheduleRailArrows,{passive:true});
+window.addEventListener('resize',scheduleRailArrows);
+if(typeof ResizeObserver!=='undefined'){const railResizeObserver=new ResizeObserver(scheduleRailArrows);for(const id of ['eventsRail','eventsGrid'])railResizeObserver.observe($('#'+id));}
+$('#eventsPrev').onclick=()=>$('#eventsRail').scrollBy({left:-350,behavior:'smooth'});$('#eventsNext').onclick=()=>$('#eventsRail').scrollBy({left:350,behavior:'smooth'});$('#todayPrev').onclick=()=>$('#eventsGrid').scrollBy({left:-350,behavior:'smooth'});$('#todayNext').onclick=()=>$('#eventsGrid').scrollBy({left:350,behavior:'smooth'});scheduleRailArrows();refresh();setInterval(refresh,60000);

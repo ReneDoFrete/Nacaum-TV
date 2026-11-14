@@ -38,3 +38,6 @@
   .events-rail-wrap .rail-arrow.next{right:-8px}
   #eventsGrid.events-rail .event-card{flex-basis:min(80vw,300px)}
 }
+
+/* Ocultar as setas quando a faixa não pode rolar nessa direção. */
+.events-rail-wrap .rail-arrow[hidden]{display:none!important}
