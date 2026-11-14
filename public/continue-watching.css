@@ -270,3 +270,91 @@
     transform: scale(1);
   }
 }
+
+
+/* ==========================================
+   BOTÃO X — VISUAL REFINADO
+   ========================================== */
+
+.nacaum-continue-item .nacaum-continue-remove {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  z-index: 30;
+
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+
+  background: rgba(15, 20, 30, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.85);
+
+  transition:
+    opacity .2s ease,
+    visibility .2s ease,
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+/* Ícone X desenhado e centralizado */
+.nacaum-continue-remove::before,
+.nacaum-continue-remove::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 1.8px;
+  border-radius: 2px;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+}
+
+.nacaum-continue-remove::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nacaum-continue-remove::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Mostrar ao passar o mouse */
+.nacaum-continue-item:hover .nacaum-continue-remove,
+.nacaum-continue-item:focus-within .nacaum-continue-remove {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Hover mais suave */
+.nacaum-continue-item .nacaum-continue-remove:hover {
+  background: rgba(210, 45, 55, 0.75);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
+}
+
+/* Visível no celular */
+@media (hover: none) {
+  .nacaum-continue-item .nacaum-continue-remove {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}
