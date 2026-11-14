@@ -1,17 +1,34 @@
-/* Backdrop cinematográfico compartilhado: Início e Favoritos */
-body:has(#homeHero),body:has(.favorite-page){background:#090b15!important;isolation:isolate}
-body:has(#homeHero) .vod-full-backdrop,body:has(.favorite-page) .vod-full-backdrop{position:fixed;inset:0;z-index:-1;pointer-events:none;background-position:center 22%;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity .65s ease}
-body:has(#homeHero) .vod-full-backdrop.visible,body:has(.favorite-page) .vod-full-backdrop.visible{opacity:1}
-body:has(#homeHero)::before,body:has(.favorite-page)::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(7,9,17,.97) 0%,rgba(7,9,17,.77) 38%,rgba(7,9,17,.35) 100%),linear-gradient(0deg,rgba(7,9,17,.83),transparent 75%)}
-body:has(#homeHero) #homeHero{background:transparent!important}
-body:has(#homeHero) .home-hero-overlay{background:linear-gradient(0deg,rgba(9,11,21,.16),transparent 75%)}
-body:has(#homeHero) main,body:has(.favorite-page) main{background:transparent!important}
-.favorite-preview-hero{position:relative;min-height:350px;display:flex;align-items:flex-end;margin:-22px calc(-1 * max(4vw,20px)) 26px;padding:55px max(4vw,20px) 35px;overflow:hidden}
-.favorite-preview-hero .hero-content{position:relative;z-index:1;max-width:680px}
-.favorite-preview-hero h1{font-size:clamp(30px,4vw,54px);line-height:1.08;letter-spacing:-.04em;margin:14px 0}
-.favorite-preview-hero .hero-tags{display:flex;gap:7px;flex-wrap:wrap}
-.favorite-preview-hero .hero-tags span{border:1px solid #ffffff45;background:#1a2230b0;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:750}
-.favorite-preview-hero .hero-summary{max-width:640px;color:#e1e7ef;font-size:15px;line-height:1.5}
-.favorite-page .nacaum-favorite-card .fav-hover{display:none!important}
-.favorite-page .nacaum-favorite-card:hover .poster{outline:2px solid #21d7bf}
-@media(max-width:650px){.favorite-preview-hero{min-height:290px;padding-top:30px}.favorite-preview-hero h1{font-size:30px}}
+/* Naçaum TV: fundo cinematográfico escurecido no Início e Favoritos. */
+body:has(#homeHero), body:has(.favorite-page) { background:#080b13 !important; }
+body:has(#homeHero) .vod-full-backdrop,
+body:has(.favorite-page) .vod-full-backdrop {
+ position:fixed;inset:0;z-index:0;pointer-events:none;
+ background-position:center 25%;background-size:cover;background-repeat:no-repeat;
+ opacity:0;transition:opacity .65s ease;
+}
+body:has(#homeHero) .vod-full-backdrop::after,
+body:has(.favorite-page) .vod-full-backdrop::after {
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(90deg,rgba(7,9,17,.96) 0%,rgba(7,9,17,.80) 36%,rgba(7,9,17,.53) 100%),
+ linear-gradient(0deg,rgba(7,9,17,.94) 0%,rgba(7,9,17,.36) 60%,rgba(7,9,17,.53) 100%);
+}
+body:has(#homeHero) .vod-full-backdrop.visible,
+body:has(.favorite-page) .vod-full-backdrop.visible {opacity:1}
+body:has(#homeHero) > .topbar,body:has(.favorite-page) > .topbar {position:relative;z-index:10}
+body:has(#homeHero) > main,body:has(.favorite-page) > main {position:relative;z-index:1;background:transparent!important}
+body:has(#homeHero) > footer,body:has(.favorite-page) > footer,
+body:has(#homeHero) > .mobile-nav,body:has(.favorite-page) > .mobile-nav {position:relative;z-index:2}
+body:has(#homeHero) #homeHero {background:transparent!important;background-image:none!important}
+body:has(#homeHero) .home-hero-overlay {background:transparent!important}
+body:has(.favorite-page) .favorite-page {background:transparent!important}
+body:has(.favorite-page) .favorite-preview-hero {min-height:320px;display:flex;align-items:center;margin:0 0 24px;padding:35px 0}
+.favorite-preview-hero .hero-content {max-width:700px}
+.favorite-preview-hero h1 {font-size:clamp(28px,3.5vw,50px);line-height:1.1;margin:12px 0}
+.favorite-preview-hero .hero-tags {display:flex;gap:7px;flex-wrap:wrap}
+.favorite-preview-hero .hero-tags span {border:1px solid #ffffff45;background:#1a2230b0;padding:5px 9px;border-radius:18px;font-size:12px;font-weight:750}
+.favorite-preview-hero .hero-summary {max-width:650px;color:#e1e7ef;font-size:14px;line-height:1.5}
+.favorite-page .nacaum-favorite-card .fav-hover {display:none!important}
+.favorite-page .nacaum-favorite-card:hover .poster {outline:2px solid #21d7bf}
+@media(max-width:650px){body:has(.favorite-page) .favorite-preview-hero{min-height:260px}.favorite-preview-hero h1{font-size:29px}}
+@media(prefers-reduced-motion:reduce){.vod-full-backdrop{transition:none!important}}
+.favorite-preview-hero[hidden]{display:none!important}
