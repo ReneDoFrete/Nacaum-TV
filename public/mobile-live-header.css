@@ -22,3 +22,19 @@
   body:has(#ao-vivo-page) .topbar .header-search-button {font-size:0;padding:8px}
   body:has(#ao-vivo-page) .topbar .header-search-button svg {width:18px;height:18px}
 }
+/* test */
+/* Mantém visível o cabeçalho que o layout do player recolhia via transform. */
+@media (max-width: 800px) {
+  body:has(#ao-vivo-page) .topbar,
+  body:has(#ao-vivo-page) .topbar:hover,
+  body:has(#ao-vivo-page) .topbar:focus-within {
+    transform: none !important;
+    translate: none !important;
+    transition: none !important;
+    display: flex !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  body:has(#ao-vivo-page) #ao-vivo-page { margin-top: 0 !important; }
+}
