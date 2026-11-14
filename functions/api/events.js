@@ -17,7 +17,7 @@ function channelName(raw) {
  if (s.includes('canal goat')) return 'Canal GOAT';
  if (s.includes('caze')) return 'CazéTV';
  if (s.includes('paramount')) return 'Paramount+';
- if (s.includes('globoplay') || s.includes('tv globo')) return 'Globo';
+ if (/^(?:(?:tv|rede|canal) )?globo(?: (?:rj|sp|mg|df|rs|ba|pe|pr|sc|ce|am|pa|go|es|pb|rn|al|se|pi|ma|mt|ms|ro|rr|ap|ac|to|regional|nacional|brasil))?$/.test(s) || s === 'globoplay tv globo') return 'Globo';
  const matched=channels.find(c=>s===normalize(c));
  return matched || null;
 }
@@ -121,7 +121,21 @@ export async function onRequestGet({env}){
  if(!row){const previous=new Date(Date.now()-86400000);const yesterday=today(previous);const old=await env.DB.prepare('SELECT events FROM event_snapshots WHERE day=?').bind(yesterday).first();
  let events=await snapshot(env,day);// Não misturar jogos de ontem com a programação de hoje.
  row={events:JSON.stringify(events)};}
- const events=await monitor(JSON.parse(row.events));
+ let saved=JSON.parse(row.events);
+ // Atualiza uma vez por dia os nomes das emissoras de snapshots antigos,
+ // preservando placares, status e minutos já monitorados.
+ if(saved.some(e=>!e._tvNamesV2)){
+  try{
+   const fresh=flatten(await fetchFotmob(env),day);
+   const byId=new Map(fresh.map(e=>[String(e.id),e]));
+   for(const e of saved){
+    const current=byId.get(String(e.id));
+    if(current) e.channels=[...new Set([...(e.channels||[]),...current.channels])];
+    e._tvNamesV2=true;
+   }
+  }catch(error){console.warn('[EVENTS TV CHANNEL REFRESH]',error.message)}
+ }
+ const events=await monitor(saved);
  await env.DB.prepare('UPDATE event_snapshots SET events=? WHERE day=?').bind(JSON.stringify(events),day).run();
  return Response.json({date:day,events},{headers:{'Cache-Control':'no-store'}});
  }catch(e){console.error('[EVENTS]',e);return Response.json({error:'Não foi possível atualizar os eventos.',detail:e.message},{status:502})}
