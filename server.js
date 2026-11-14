@@ -86,6 +86,27 @@ let snapshotStore={};try{snapshotStore=JSON.parse(fs.readFileSync(snapshotsPath,
 const localDb={prepare(sql){let args=[];return {bind(...a){args=a;return this},async first(){return snapshotStore[args[0]]?{events:snapshotStore[args[0]]}:null},async run(){if(sql.startsWith('INSERT'))snapshotStore[args[0]]=args[1];else if(sql.startsWith('UPDATE'))snapshotStore[args[1]]=args[0];fs.writeFileSync(snapshotsPath,JSON.stringify(snapshotStore));return {success:true}}}}};
 app.get('/api/events',async(req,res)=>{const response=await eventsHandler({env:{DB:localDb,SCRAPERAPI_KEY:process.env.SCRAPERAPI_KEY,SOFA_CHANNEL_IDS:process.env.SOFA_CHANNEL_IDS}});res.status(response.status).json(await response.json())});
 
+// SEO e miniaturas: URLs absolutas para WhatsApp e mecanismos de busca.
+const seoPages = new Set(['/', '/index.html', '/live.html', '/eventos.html', '/movies.html', '/favorites.html']);
+app.get('/robots.txt', (req, res) => {
+  const origin = `${req.protocol}://${req.get('host')}`;
+  res.type('text/plain').send(`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+});
+app.get('/sitemap.xml', (req, res) => {
+  const origin = `${req.protocol}://${req.get('host')}`;
+  const pages = ['/', '/live.html', '/eventos.html', '/movies.html', '/favorites.html'];
+  res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + pages.map(page => `<url><loc>${origin}${page}</loc></url>`).join('\n') + '\n</urlset>');
+});
+app.get(['/', '/index.html', '/live.html', '/eventos.html', '/movies.html', '/favorites.html'], (req, res, next) => {
+  if (!seoPages.has(req.path)) return next();
+  const file = path.join(process.cwd(), 'public', req.path === '/' ? 'index.html' : req.path.slice(1));
+  fs.readFile(file, 'utf8', (err, html) => {
+    if (err) return next(err);
+    const origin = `${req.protocol}://${req.get('host')}`;
+    res.type('html').send(html.replaceAll('__SITE_ORIGIN__', origin));
+  });
+});
+
 app.use(express.static('public',{maxAge:'1h'}));
 app.get('/api/guide',async(req,res)=>{try{const channels=JSON.parse(fs.readFileSync(path.resolve('public/channels.json'),'utf8'));res.json(await getGuide(channels))}catch(e){res.status(503).json({error:'Guia temporariamente indisponível'})}});
 
