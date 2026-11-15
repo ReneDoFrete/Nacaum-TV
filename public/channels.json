@@ -5455,6 +5455,14 @@
     "logo": "https://img.faz-o-eli.online/ufcfightpass.png",
     "sources": [
       {
+        "url": "https://seal-editing-ballet-nations.trycloudflare.com/streams/ufc2/live.m3u8",
+        "quality": "Servidor 2 · HLS Azure"
+      },
+      {
+        "url": "https://seal-editing-ballet-nations.trycloudflare.com/streams/ufc3/live.m3u8",
+        "quality": "Servidor 3 · HLS Azure"
+      },
+      {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/8ed30fb65e011d19401878f7e4b21938/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",

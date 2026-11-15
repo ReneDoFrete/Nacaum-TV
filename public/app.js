@@ -22,6 +22,8 @@ function escapeHtml(value = "") {
 }
 
 function buildStreamUrl(source) {
+  // HLS publicado pelo servidor Azure: carregar diretamente para preservar os segmentos relativos.
+  if (source.url.startsWith('https://seal-editing-ballet-nations.trycloudflare.com/streams/') && source.url.endsWith('/live.m3u8')) return source.url;
   if (/^\/local-hls\/ufc-[23]\/live\.m3u8$/.test(source.url) && ['localhost', '127.0.0.1'].includes(location.hostname)) return source.url;
   const params = new URLSearchParams({ url: source.url });
   if (source.referer) params.set("referer", source.referer);
