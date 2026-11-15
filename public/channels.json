@@ -5461,21 +5461,6 @@
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
-	]
-  },
-  {
-    "id": "sft-combat-250",
-    "name": "SFT Combat",
-    "category": "PPV",
-    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/e52e4eb2683190b28d72dd3f8aeb35d1.webp",
-    "sources": [
-      {
-        "url": "https://hrm-sftc.otteravision.com/hrm/sftc/sftc_720p_high.m3u8",
-        "quality": "HD · 1280x720",
-        "referer": "",
-        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
-        "key": ""
-      }
     ]
   }
 ]

@@ -1,3 +1,6 @@
 node_modules/
 .env
 .DS_Store
+# Stream local: não publicar URL privada nem segmentos
+local-stream.json
+local-hls/

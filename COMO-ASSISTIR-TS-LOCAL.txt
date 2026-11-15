@@ -1,0 +1,11 @@
+Naçaum TV - UFC Fight Pass com servidores locais
+
+1. Instale FFmpeg e confirme com: ffmpeg -version
+2. No terminal da pasta do projeto: npm install && npm start
+3. Abra http://localhost:3000/live.html#ufc-fight-pass-249
+4. No player, selecione Servidor 1, Servidor 2 ou Servidor 3.
+5. Os servidores 2 e 3 usam FFmpeg e podem demorar alguns segundos para carregar.
+6. Consulte http://localhost:3000/api/local-stream-status para diagnóstico.
+
+As URLs das fontes estão em local-stream.json e não devem ser publicadas no GitHub.
+Este recurso funciona apenas no servidor Node local, não na Cloudflare Pages.

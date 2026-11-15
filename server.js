@@ -3,6 +3,7 @@ import { onRequestGet as ondemandHandler } from './functions/api/ondemand.js';
 import express from 'express';
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawn } from 'node:child_process';
 
 const app = express();
 // Mesma API usada pela função do Cloudflare Pages, agora também no Express local.
@@ -111,10 +112,97 @@ app.use(express.static('public',{maxAge:'1h'}));
 app.get('/api/guide',async(req,res)=>{try{const channels=JSON.parse(fs.readFileSync(path.resolve('public/channels.json'),'utf8'));res.json(await getGuide(channels))}catch(e){res.status(503).json({error:'Guia temporariamente indisponível'})}});
 
 
-// Retorna a lista exata gerada
-app.get('/api/channels', (req, res) => {
-  const data = fs.readFileSync(path.resolve('data/channels.json'), 'utf-8');
-  res.type('json').send(data);
+// Fontes MPEG-TS locais do UFC Fight Pass: conversão para HLS no Windows.
+// URLs ficam apenas no arquivo local-stream.json, ignorado pelo Git.
+const localHlsDir = path.resolve('local-hls');
+const localStreamConfig = path.resolve('local-stream.json');
+const localProcesses = new Map();
+const localErrors = new Map();
+const LOCAL_STREAM_IDS = ['ufc-2', 'ufc-3'];
+
+function readLocalStreams() {
+  try {
+    const config = JSON.parse(fs.readFileSync(localStreamConfig, 'utf8'));
+    // Compatível com configuração antiga {url: '...'}.
+    const urls = Array.isArray(config.sources) ? config.sources : [config.url, config.url2];
+    return LOCAL_STREAM_IDS.map((id, i) => ({id, url: urls[i]}))
+      .filter(({url}) => typeof url === 'string' && /^https?:\/\//i.test(url));
+  } catch (error) {
+    console.warn('[HLS LOCAL] Não foi possível ler local-stream.json:', error.message);
+    return [];
+  }
+}
+
+function startLocalStream({id, url}) {
+  const dir = path.join(localHlsDir, id);
+  fs.mkdirSync(dir, {recursive:true});
+  for (const name of fs.readdirSync(dir)) {
+    if (/^(live\.m3u8|segment\d+\.ts)$/.test(name)) {
+      try {fs.unlinkSync(path.join(dir,name));} catch {}
+    }
+  }
+  const args = [
+    '-hide_banner','-loglevel','warning','-nostdin',
+    '-reconnect','1','-reconnect_streamed','1','-reconnect_delay_max','5',
+    '-i',url,
+    '-map','0:v:0','-map','0:a:0?',
+    '-c:v','libx264','-preset','veryfast','-tune','zerolatency',
+    '-pix_fmt','yuv420p','-profile:v','main',
+    '-c:a','aac','-b:a','128k','-ar','48000',
+    '-f','hls','-hls_time','4','-hls_list_size','6',
+    '-hls_flags','delete_segments+omit_endlist+independent_segments',
+    '-hls_segment_filename',path.join(dir,'segment%d.ts'),
+    path.join(dir,'live.m3u8')
+  ];
+  const child=spawn('ffmpeg',args,{windowsHide:true,stdio:['ignore','ignore','pipe']});
+  localProcesses.set(id,child);
+  child.stderr.on('data',chunk=>{
+    const msg=String(chunk).trim();
+    if(msg){localErrors.set(id,msg.slice(-400));console.warn(`[HLS ${id}]`,msg);}
+  });
+  child.on('error',error=>{
+    localErrors.set(id,`Falha ao iniciar FFmpeg: ${error.message}`);
+    console.error(`[HLS ${id}]`,error.message);
+  });
+  child.on('exit',code=>{
+    if(localProcesses.get(id)===child)localProcesses.delete(id);
+    if(code!==0&&code!==null)console.warn(`[HLS ${id}] FFmpeg encerrou:`,code);
+  });
+  console.log(`[HLS ${id}] Gerando /local-hls/${id}/live.m3u8`);
+}
+
+const configuredLocalStreams=readLocalStreams();
+for(const source of configuredLocalStreams)startLocalStream(source);
+for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>{
+  for(const child of localProcesses.values())child.kill();
+  process.exit(0);
+});
+app.get('/api/local-stream-status',(_req,res)=>{
+  const streams=Object.fromEntries(LOCAL_STREAM_IDS.map(id=>[id,{
+    configured:configuredLocalStreams.some(s=>s.id===id),
+    running:!!localProcesses.get(id),
+    ready:fs.existsSync(path.join(localHlsDir,id,'live.m3u8')),
+    error:localErrors.get(id)||''
+  }]));
+  res.set('Cache-Control','no-store').json({streams});
+});
+app.use('/local-hls',express.static(localHlsDir,{
+  setHeaders(res,file){
+    res.setHeader('Cache-Control','no-store, no-cache, must-revalidate');
+    if(file.endsWith('.m3u8'))res.setHeader('Content-Type','application/vnd.apple.mpegurl');
+    if(file.endsWith('.ts'))res.setHeader('Content-Type','video/mp2t');
+  }
+}));
+
+app.get('/api/channels',(_req,res)=>{
+  const channels=JSON.parse(fs.readFileSync(path.resolve('data/channels.json'),'utf8'));
+  const ufc=channels.find(c=>c.id==='ufc-fight-pass-249'||c.name==='UFC Fight Pass');
+  if(ufc){
+    for(const {id} of configuredLocalStreams){
+      ufc.sources.push({url:`/local-hls/${id}/live.m3u8`,quality:id==='ufc-2'?'Servidor 2 · TS local':'Servidor 3 · TS local'});
+    }
+  }
+  res.type('json').send(JSON.stringify(channels));
 });
 
 // Proxy HLS para injetar Referer/User-Agent e evitar erro de CORS/HTTP

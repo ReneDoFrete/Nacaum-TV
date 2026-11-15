@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-type" content="text/html">
+    <meta name="keywords" content="teste iptv, teste iptv grátis, testar iptv">    <meta name="robots" content="index, follow">
+    <meta name="description" content="PhantomHD faça seu teste grátis automático de IPTV e comprove a qualidade, Assine Já. Teste válido por 4 horas..">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Teste PhantomHD - O melhor sistema IPTV">
+    <meta property="og:description" content="PhantomHD faça seu teste grátis automático de IPTV e comprove a qualidade, Assine Já. Teste válido por 4 horas..">
+    <meta property="og:url" content="https://teste.phantomhd.me/">
+    <meta property="og:site_name" content="PhantomTV">
+    <meta property="og:image" content="https://teste.phantomhd.me/img/logo-phantomtv-black.png">
+    <link href="https://teste.phantomhd.me" rel="canonical" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+                <style>
+        /* Mesmo fundo do assinar.php (dono, 08/10): gradiente + estampa de ícones (img/assinar-bg.svg),
+           parado e sem emenda (no html, não no body). O host CNF mantém o tema dele. */
+        html { min-height: 100%; background-color: #2b1366 !important;
+            background-image: url(/img/assinar-bg.svg),
+                radial-gradient(900px 520px at 50% -6%, rgba(236, 72, 153, .38), transparent 62%),
+                radial-gradient(700px 620px at 105% 38%, rgba(56, 189, 248, .22), transparent 60%),
+                radial-gradient(700px 620px at -8% 78%, rgba(168, 85, 247, .30), transparent 60%),
+                linear-gradient(165deg, #5b3fd9 0%, #4a1fa8 42%, #2b1366 100%) !important;
+            background-size: 320px 320px, auto, auto, auto, auto !important;
+            background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat !important; }
+        body { background: transparent !important; }
+        body::before, body::after { display: none !important; }
+        /* Logo pulsando + desfoque do cartão faziam a tela piscar sobre esse fundo (visto no assinar.php). */
+        .card-modern { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+        .logo-container img, .subtitle i { animation: none !important; }
+    </style>
+        <title>Phantom HD - Gerar Teste Gratuito!</title>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                <div class="card-modern">
+                    <div class="logo-container">
+                        <img src="https://teste.phantomhd.me/img/logo-phantomtv.png" alt="PhantomTV">
+                    </div>
+
+                    <h1 class="title-main">Teste Grátis IPTV</h1>
+                    <p class="subtitle">
+                        <i class="fas fa-clock"></i>
+                        Válido por 4 horas • Instantâneo
+                    </p>
+
+                    <form action="" method="POST" id="testeForm">
+                        <input type="hidden" name="CSRFToken" value="7511cc25e677e1b75329d016878305c54cd96163595e0798197fb647bb5c6295">
+                        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="nome">
+                                <i class="fas fa-user"></i> Nome Completo
+                            </label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="nome" 
+                                   name="nome" 
+                                   placeholder="Digite seu nome completo" 
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                <i class="fas fa-envelope"></i> E-mail
+                            </label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required pattern="^[^\s@]+@[^\s@]+\.(?!co$)[^\s@]{2,}$" title="Dados inválidos" autocomplete="email"
+                            inputmode="email" spellcheck="false">
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="lista">
+                                <i class="fas fa-tv"></i> Escolha o Pacote
+                            </label>
+                            <select class="form-select" id="lista" name="lista" required>
+                                <option value="" selected disabled hidden>Selecione seu pacote</option>
+                                <option value="35">SD + HD + FULL-HD + 4K</option><option value="36">SD + HD + FULL-HD + 4K + Adultos</option>                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-rocket"></i>
+                            Gerar Teste Grátis
+                        </button>
+                    </form>
+
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <strong>Instantâneo</strong>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <strong>Seguro</strong>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-star"></i>
+                            <strong>Qualidade HD</strong>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-headset"></i>
+                            <strong>Suporte 24/7</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+  (function () {
+    const form  = document.getElementById('testeForm');
+    const email = document.getElementById('email');
+    const btn   = document.querySelector('.btn-submit');
+    const btnHTML = btn.innerHTML;
+
+    // Sem .co no JS (o pattern do input já bloqueia)
+    const blockedExactDomains = new Set([]); // deixe vazio para não duplicar
+    const blockedSuffixDomains = [
+      'mailinator.com','tempmail.com','10minutemail.com','yopmail.com',
+      'guerrillamail.com','dispostable.com','sharklasers.com','getnada.com',
+      'dropmail.me','trashmail.com','fakeinbox.com'
+    ];
+    const blockedTlds = new Set([]); // vazio (pattern já trata .co)
+
+    function setLoading(on){
+      if(on){ btn.classList.add('loading'); btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando teste...'; }
+      else  { btn.classList.remove('loading'); btn.disabled = false; btn.innerHTML = btnHTML; }
+    }
+
+    function needsGenericBlock(value){
+      const v = (value || '').trim().toLowerCase();
+      if (!v) return false;
+      if (/\s/.test(v)) return true;               // espaços
+      // Se quiser permitir unicode no local-part, remova a linha abaixo
+      if (/[^ -~]/.test(v)) return true;           // unicode no e-mail
+      const parts = v.split('@');
+      if (parts.length !== 2) return false;        // deixa HTML5 tratar
+      const [local, domain] = parts;
+      if (!domain) return true;
+      if (/\.\./.test(v)) return true;             // pontos duplos
+      if (domain.startsWith('-') || domain.endsWith('-')) return true;
+      if (local.startsWith('.') || local.endsWith('.')) return true;
+      const tld = domain.split('.').pop() || '';
+      if (blockedTlds.has(tld)) return true;       // atualmente nenhum
+      if (blockedExactDomains.has(domain)) return true;
+      for (const bad of blockedSuffixDomains){
+        if (domain.endsWith(bad)) return true;
+      }
+      return false;
+    }
+
+    form.addEventListener('submit', function(e){
+      email.setCustomValidity('');
+
+      // 1) Regras extras genéricas (descartáveis, etc.)
+      if (needsGenericBlock(email.value)) {
+        e.preventDefault();
+        email.setCustomValidity('Dados inválidos');
+        email.reportValidity();
+        setLoading(false);
+        return;
+      }
+
+      // 2) Regras nativas HTML5 (type/required/pattern do input)
+      if (!email.checkValidity()) {
+        e.preventDefault();
+        email.reportValidity(); // balão nativo
+        setLoading(false);
+        return;
+      }
+
+      setLoading(true);
+    });
+
+    email.addEventListener('input', function(){
+      email.setCustomValidity('');
+      setLoading(false);
+    });
+  })();
+</script>
+<footer style="position:fixed;left:0;right:0;bottom:0;z-index:9999;text-align:center;padding:9px 16px;background:rgba(11,11,20,.6);color:#e9e9f1;font-size:12px;font-family:Arial,Helvetica,sans-serif;">
+  Quer mais uma op&ccedil;&atilde;o de teste? Conhe&ccedil;a o <a href="https://teste.iptvphantom.com/" style="color:#c4b5ff;text-decoration:underline;font-weight:600;">IPTV Phantom &mdash; teste gr&aacute;tis de IPTV em HD e 4K</a>.
+</footer>
+</body>
+</html>

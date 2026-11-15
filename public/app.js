@@ -22,6 +22,7 @@ function escapeHtml(value = "") {
 }
 
 function buildStreamUrl(source) {
+  if (/^\/local-hls\/ufc-[23]\/live\.m3u8$/.test(source.url) && ['localhost', '127.0.0.1'].includes(location.hostname)) return source.url;
   const params = new URLSearchParams({ url: source.url });
   if (source.referer) params.set("referer", source.referer);
   if (source.userAgent) params.set("ua", source.userAgent);
