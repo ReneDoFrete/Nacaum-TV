@@ -18,6 +18,27 @@
         "referer": "",
         "userAgent": "",
         "key": ""
+      },
+	  {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/fa89fbb07d899d942dde1ed08b5fed99/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globorj/index.m3u8",
+        "quality": "FHD",
+        "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/2dfa1439076de62d55e7a66a7b6cc1ac/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
