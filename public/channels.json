@@ -11,6 +11,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "http://138.204.86.4:8080/GLOBO_HD/index.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "",
+        "userAgent": "",
+        "key": ""
       }
     ]
   },
@@ -31,6 +38,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globorj/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/2dfa1439076de62d55e7a66a7b6cc1ac/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -55,6 +69,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b54963d8d8554e4710c3cff094f2a7cb/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -66,6 +87,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/9d461f9dc941c9786fe4f575458f6924/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/2d616840ce1558a03e839e244216f828/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -100,6 +128,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f28ca1906f5a524596244a752101bfe2/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -120,6 +155,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globodf/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f96e98d1c28569581cd34e5169e5a961/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -144,6 +186,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/37204935af15fa4011e1b87235add4bd/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -155,6 +204,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/62da6ed531eeef92a96d05c7a1f7a2f0/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/df85e5e0a411c2aff7ed685152c86d5b/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -181,6 +237,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/6ba5995430a1722bc4e8b86a35adfaf3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -196,6 +259,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/bca4fada4b0678b517a9243084f89a61/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -207,6 +277,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/ea0d908a864c061e06016e89c73bc0df/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/8999c0917a23b0388a64c87858a19447/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -233,6 +310,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/9f7af172f7df0e772b619e3120774dab/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -251,6 +335,13 @@
       },
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/d8e31479bb404fc389e68362c8d61a19/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/8f7f0b18172324461685f3913d004013/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -300,6 +391,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0a0495a912a74fca61d4695f39f0f99a/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -320,6 +418,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recordmg/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/4811c5dceb7cb7bf2b5ddf68b29936f4/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -344,6 +449,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/26c2beadae5fab9d38f048cf859a8858/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -364,6 +476,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/recordsp/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/ffa6a440c9d2db46ef4e216e281ee12d/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -410,6 +529,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0e9a7833198521dbeff9c0e2038a667e/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -430,6 +556,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sbtsp/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/e5fb6c323a992988136edd17e6ac37e5/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -476,6 +609,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/bb8c0713f12c99939d3a10893f2c36ff/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -496,6 +636,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/bandsp/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b0302c8a8845910bd52b338c5ae32018/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -576,6 +723,20 @@
         "quality": "FHD · 1920x1080",
         "referer": "",
         "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/8160796a28be5c8e2de472bbfd485771/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8",
+        "quality": "FHD · 1920x1080",
+        "referer": "https://meufut.top/rede-tv",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
     ]
@@ -789,6 +950,13 @@
         "referer": "",
         "userAgent": "",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/7a1545e58e96301599f9cd1ba0b7942e/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -853,6 +1021,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tvaparecida/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b09e689b733830ea1f4f9082afd2d337/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -941,6 +1116,13 @@
         "quality": "FHD · 1920x1080",
         "referer": "",
         "userAgent": "",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/607d31208ec1d37697e6e9a0d063959f/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
     ]
@@ -1059,6 +1241,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/13c70968eee7f46471addbc5855b7964/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1117,6 +1306,13 @@
         "referer": "",
         "userAgent": "",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/d79f50ca92c57848c4f332cf1b4727be/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1159,6 +1355,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globonews/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/362a79b2f64bc8d70acfde8784875b89/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -1261,6 +1464,13 @@
         "referer": "",
         "userAgent": "",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b60efa04c1626d9faeea26028119dca1/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1354,6 +1564,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/amazonprimevideo02/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/1fa661098b4069efcf56b19ca3198970/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -1489,6 +1706,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/649eafe26d2962e9468252f108e8ebd4/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1533,6 +1757,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0653e61212a5b3396b6fed73a21d07c3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1562,6 +1793,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0197e4f7ccf66ec054e8e21ebe3d38df/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1582,6 +1820,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cazetv2/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f7b76c8affee853f3d7f376de8379051/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -1634,6 +1879,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/combate/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/cedf1514f11ee74686f86a02e4558bee/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -1814,6 +2066,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0d6d2f213fc2f13d13d421851a19466e/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1841,6 +2100,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn2/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f461df3463d87dacaa0188af4f49f8b3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -1877,6 +2143,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn3/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/20ef32cf5f040691b9ad69bc0be95387/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -1929,6 +2202,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/7060623b71935144957cbca8725a4679/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1958,6 +2238,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/ac741344d8008bd23e087abdc9c79337/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -1985,6 +2272,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/espn6/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/574295649c01ca3269d2831f035732c9/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2088,6 +2382,13 @@
         "referer": "",
         "userAgent": "",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/a1c812b7610abd8f87a475373af24ba3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2185,6 +2486,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/bdb1b725129f2fff8dd31cc02f84ef36/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2244,6 +2552,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/93cf8a87b969fd42be9bc8973b61d5b6/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2264,6 +2579,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere2/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/47d04c676b3501321b9321a5ce41694e/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2288,6 +2610,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/962a4b2cf755c354f64ae884a57f4f61/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2310,6 +2639,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/1627e936dd900a97d8d2cb2427eff5d0/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2330,6 +2666,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/premiere5/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/2dccd12f047b9012349b874ebeba2726/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2413,6 +2756,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/5abb6e6af3679a58b6fdbe0cdac912ad/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2424,6 +2774,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/7982d0da42a930932ca833ef916d7683/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/31d477879eb6a84b01a99ed25873ad86/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2443,6 +2800,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/a68efb3eafa6443b7243f9ef14131750/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2454,6 +2818,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/515ed9c708e4e03bffa680f6375ddb53/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/4c5f506f34ce1c44ef3074a73aee33fa/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2473,6 +2844,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/2ef23de7d156f4bd701e0624b911c8b7/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2484,6 +2862,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/88156017b6954d7af53e7d75b6c3cec6/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/68ac4b7a78ee2f8ed06dba03b603d655/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2503,6 +2888,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0b8e67e22a5aa47ac8948bcc829612cf/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2514,6 +2906,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/80b9691ebf4e371131831ba9c89da3f8/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/298cdd1a9f9d4ee8194ef3f78f2387c6/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2533,6 +2932,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/7a6086716314f468ea98cf26787d8f9a/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2544,6 +2950,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/9a83331ccfe80e0cd25d12cddd5a3814/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/3444baa2ba3b4834230f939125a61c0c/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2563,6 +2976,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/1aaade6e52394fe77e4f7c89dcc094da/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2578,6 +2998,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/9e36caa34ff40816b768768a8d3ef577/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2589,6 +3016,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/a0ce772f6ab69840d7f941e80ba9c859/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/cd2158e5cff0e9a08f5f053200ada0f8/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2613,6 +3047,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportv/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/44dc9e1543292b279f2103b1f68fa796/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2644,6 +3085,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/a5d70403274bb2aa99754b165ac3afd7/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2673,6 +3121,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/a43a8da8da22a9ece220bacb4d9680ba/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2693,6 +3148,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportynet/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/9f6b262e91d8f83f05eec3fe54b40eda/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2717,6 +3179,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/38f9c771d7e97c342866871884481641/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2739,6 +3208,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/3b4a754ab2c24f620346fcd6fb94b240/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2759,6 +3235,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sportynet3/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/6987c37457cb25f6be9c2b68ace338f9/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2805,6 +3288,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/eca0f2b2fd66f2d476e4fd7bf16b9189/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2825,6 +3315,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/aee/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/59201e3e2b3d73bd69c07ec89758de00/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2849,6 +3346,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/73eeacd5f2b14160a1c78567cd942a1b/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2860,6 +3364,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/1edee0c421ae094efbf917053494c5d3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/55ecc2bdf0c5dc66b0f09d3c55edf635/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2893,6 +3404,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/854c4b9acf103229d55c0e0b29d1bc86/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2920,6 +3438,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryhh/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/353589c721583cfe6219dc065583fb90/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -2958,6 +3483,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f1fc13a9f99e12f15e052dd096c88f9b/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -2985,6 +3517,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryscience/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/9a0fe346e573a1d4148e8e4034fbb78b/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3021,6 +3560,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoverytheater/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/c2461c2a650012dd68811b9db65d5f9a/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3066,6 +3612,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/e99eaa27df284c6f7f7a580bba96148b/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3100,6 +3653,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoveryworld/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/e33bb0448071fea3823c662c0b8779ee/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3145,6 +3705,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/1ce3021f5934b7960262416a2825a44a/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3165,6 +3732,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/history2/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b4050f8947fd3f9d5e2494f5069c5594/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3194,6 +3768,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/amc/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0b8b262f7bf1ddb168f3e5e1a6ed114e/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3254,6 +3835,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/88a48b865b4960bcef4bf20fb8f4bf25/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3290,6 +3878,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/172325546451095e0652b00e885ea8fc/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3320,6 +3915,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/22aff3479c834940fe5e774e9bf8ab1f/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3340,6 +3942,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/globoplaynovelas/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/439c59059b7eb157154692a377a59149/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3371,6 +3980,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/d361c9f760998a9682ef79f16f78ed86/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3398,6 +4014,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbofamily/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/e859fc6625e54c78463bb71ede5a74cc/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3429,6 +4052,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/ef997c6ec417f028eebc996140f3a8c8/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3456,6 +4086,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hboplus/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/e3bc4dfa43b4668c900888edef9c2cd7/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3492,6 +4129,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/hbopop/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/8621f8145850d0e5cad3f311b12b28da/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3545,6 +4189,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/ab25156a6f10775bca86d0a251fb9356/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3581,6 +4232,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/26376d9bc80f9f287663ac13b1275670/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3592,6 +4250,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/6c5663e32e53b410de0566a03700e1b9/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/c40bcdd6550415a05e092a3fe47591fa/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -3618,6 +4283,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/fe3690b3bba667c46165be668df717db/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3638,6 +4310,13 @@
         "url": "https://d1-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/max03/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/bf01a95699fda57ecdd63afa65c89baf/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3667,6 +4346,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/megapix/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f94c59930168fec750783008d0dd3b62/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3710,6 +4396,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/65e6b078b336259accc20ede5a5214c8/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/bdb1b725129f2fff8dd31cc02f84ef36/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -3771,6 +4464,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/sonychannel/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0f4871b2271dba3a47c8a27834e1335b/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3839,6 +4539,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/cfa0de0a46250d4baf2ec498b8b1f9ef/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3861,6 +4568,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/cddec0731c9ce944c52eb19ae67024d7/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3872,6 +4586,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/e392ff80efb1b87181cf23332d729724/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/94e11307aa38ddacc97c6ee91c1a7d75/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -3905,6 +4626,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f2ca6d8a1be888c76ab8c4c0ff376550/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3932,6 +4660,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tccult/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b8342422627ec3e4055ce66dc1c5e848/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -3963,6 +4698,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0638b7f3e8881fed5a7eedd8ff18ff97/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -3992,6 +4734,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/7477ff554e1d45b23f7df4f38c5a6cd9/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4014,6 +4763,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f1220725d56dc00dff289bad1e7d7257/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4034,6 +4790,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tctouch/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/25cdce629c7f0acf2a4029dd2a3e9a1c/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -4072,6 +4835,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/9ea02d6c806065bdbdf1f23de69fad9e/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4094,6 +4864,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/080d824806b1c2b8b21ac6098d4633b9/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4114,6 +4891,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/tntseries/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/63de0129d71a8069ac3a94aa5565e407/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -4175,6 +4959,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f4bb279971a22bde2bb43bd6378f0aa3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4210,6 +5001,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/warner/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/f8e3df4b390141dbd99d7920edea6e36/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -4256,6 +5054,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/bd1fdd50f44c62b4105fe51a099aa617/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4283,6 +5088,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/cartoonito/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/55dcda0a65cc1828029a6dca34a1fdb3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -4319,6 +5131,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/discoverykids/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/5cc97655584a6849ed3354a98ef36337/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -4385,6 +5204,13 @@
         "url": "https://d2-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/gloob/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/137e3f974776c24f28621559169ceb1a/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -4655,6 +5481,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0b85b252b071b5ccf51e5dd03a326646/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4692,6 +5525,13 @@
         "referer": "",
         "userAgent": "",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/8d8e738b479aaccb339ab14e58b78206/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4710,6 +5550,13 @@
       },
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/2cc666f9542c5fa7ede051c98bbcbc47/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/683c876a1ab6d0ee47a7a75a0bb65cc6/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -4846,6 +5693,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/55f9d410aeb4a776f0deb93acd12f9b5/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4875,6 +5729,13 @@
         "referer": "https://playerembedcanais.site/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/5e5d0e9de9360a1548554b40cea0b7ed/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4886,6 +5747,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/562604fb538855ce642ff5739ab3a215/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/138f4c37a85a308de6ae8ff3b27dc905/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -4927,6 +5795,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/e20eb506ff6c06c369bee6f59b2533b8/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -4947,6 +5822,13 @@
         "url": "https://d3-ywppjexvlyulasvmgzjdftfjikth0711oq80soveui6lkbi2iza2zf.cdn8embed.xyz/multishow/index.m3u8",
         "quality": "FHD",
         "referer": "https://playerembedcanais.site/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/a4e07b4a531323bce6cc13b634592298/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
       }
@@ -5041,6 +5923,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/93127de9e32b726e8296f47ad6ad0ac8/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/50e76eba3f0e7d2266e3319bae7f8024/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -5168,6 +6057,13 @@
         "referer": "",
         "userAgent": "",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/24690f9b8e6b56abe4189f864b0532cc/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5243,6 +6139,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/398a1664a4675d00cbaf470441762527/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5258,6 +6161,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/51c9b316990e53beaa22742bd5e2fb9d/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5269,6 +6179,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/23841c90386b218b7013df6410bb51e8/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/d2faf2ec8baa14df9c8372698d73da26/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -5295,6 +6212,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/dc2d17cfbdfd0d242f0f53cf95341e9a/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5306,6 +6230,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/ae00eb7ade7a51fe64e971a9b7e17f85/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/51eb0a936a10aafb12a317a577a281ca/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -5340,6 +6271,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/3db7bf91a8670dbfa6631fc4e57361a3/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5351,6 +6289,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b31a4759ff2796b132aa05d3437d3ecc/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/b8220ae85f92976937332ad8b7bee950/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -5385,6 +6330,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/df5d9b1500e2d3f4d155ebbc78f07626/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5396,6 +6348,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/5354f804d197644061a01b6d8dee26a1/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/5dd60e0f4c9f7639ba7cb4c779099de7/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -5415,6 +6374,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/5225654e8acf7662c26a4912a3545286/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5430,6 +6396,13 @@
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/5851fceefef1ee4edef361551d19bb48/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
       }
     ]
   },
@@ -5441,6 +6414,13 @@
     "sources": [
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/69458f636c195efe863c3ab003952922/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/4025dad49e0876eacf71c253bc3faf48/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -5464,6 +6444,13 @@
       },
       {
         "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/8ed30fb65e011d19401878f7e4b21938/error.txt",
+        "quality": "HD · 1280x720",
+        "referer": "https://ww0.embedtv.cc/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "key": ""
+      },
+      {
+        "url": "https://908485dfcfcc6d43ee34661e0249105e.s25-cloudfront-net.lat/stream/0e66622d502f73a4713dc88b4e68f674/error.txt",
         "quality": "HD · 1280x720",
         "referer": "https://ww0.embedtv.cc/",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
