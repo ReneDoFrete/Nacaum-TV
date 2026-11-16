@@ -5455,7 +5455,7 @@
     "logo": "https://img.faz-o-eli.online/ufcfightpass.png",
     "sources": [
       {
-        "url": "https://specified-farming-incorporated-limits.trycloudflare.com/streams/ufc2/live.m3u8",
+        "url": "https://specified-farming-incorporated-limits.trycloudflare.com/ufc2/live.m3u8",
         "quality": "Servidor 2 · HLS Azure"
       },
       {
