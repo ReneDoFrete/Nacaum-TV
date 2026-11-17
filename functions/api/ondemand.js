@@ -5,9 +5,22 @@ const clean=s=>String(s||'').trim();
 const safeId=s=>/^[0-9]+$/.test(String(s||''))?String(s):null;
 const normalize=s=>clean(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 const isUrl=s=>/^https?:\/\//i.test(s);
+// Converte identificadores compactos do catálogo em URLs reproduzíveis.
+function expandSources(raw,kind){
+ const base=kind==='series'?'https://nixplay.lat/series/saimo-vods/221097/':'https://nixplay.lat/movie/saimo-vods/221097/';
+ const parts=String(raw||'').split(',').map(s=>s.trim());
+ const primary=[],secondary=[];
+ for(const part of parts){
+  const m=part.match(kind==='series'?/^19:(\d+\/\d+\/\d+)(?:\.mp4(?:\?[^,]*)?)?$/:/^18:(\d+)(?:\.mp4(?:\?[^,]*)?)?$/);
+  if(m)primary.push(base+m[1]);
+  else if(/^https?:\/\//i.test(part))secondary.push(part);
+ }
+ return [...new Set([...primary,...secondary])];
+}
+
 function movieLine(line,i){
  const [title,...fields]=line.split('\t');if(!clean(title)||title.startsWith('#'))return null;
- const sources={dub:[],leg:[]};for(const f of fields){const m=f.match(/^(dub|leg)=(.*)$/i);if(m)sources[m[1].toLowerCase()].push(...m[2].split(',').map(clean).filter(isUrl));}
+ const sources={dub:[],leg:[]};for(const f of fields){const m=f.match(/^(dub|leg)=(.*)$/i);if(m)sources[m[1].toLowerCase()].push(...expandSources(m[2],'movie'));}
  const match=fields.join(' ').match(/[?&]id=(\d+)/);return {key:`movie-${i}`,title:clean(title),tmdbId:match?Number(match[1]):null,type:'movie',hasDub:!!sources.dub.length,hasLeg:!!sources.leg.length,sources};
 }
 function seriesLine(line,i){
@@ -23,7 +36,7 @@ function episodeRows(raw){
   const season=Number(f[0]),episode=Number(f[1]),lang=clean(f[2]).toLowerCase(),url=clean(f.slice(3).join('\t'));
   if(!Number.isInteger(season)||!Number.isInteger(episode)||!['dub','leg'].includes(lang)||!url)continue;
   let ep=current.episodes.find(x=>x.season===season&&x.episode===episode);
-  if(!ep){ep={season,episode,sources:{dub:[],leg:[]}};current.episodes.push(ep)}ep.sources[lang].push(...url.split(',').map(clean).filter(isUrl));
+  if(!ep){ep={season,episode,sources:{dub:[],leg:[]}};current.episodes.push(ep)}ep.sources[lang].push(...expandSources(url,'series'));
  }
  return groups;
 }
@@ -86,21 +99,24 @@ export async function onRequestGet({request,env={}}){
     const year=clean(p.get('year'));const validYear=/^(?:19|20)\d{2}$/.test(year)?year:'';
     const initial=clean(title).normalize('NFD').replace(/[\u0300-\u036f]/g,'').charAt(0).toUpperCase();
     const bucket=/^[A-Z]$/.test(initial)?initial:'%23';
-    // Procura em 0..11, interrompendo ao encontrar o título exato.
-    // Cache HTTP reduz novas consultas ao catálogo remoto.
+    // O índice informa diretamente a página em que a série está.
+    let page=null;
+    try{
+      const indexRaw=await fetchTxt(`series-${bucket}.txt`);
+      const indexed=indexRaw.split(/\r?\n/).map(line=>line.split('\t'));
+      const exact=indexed.find(f=>normalize(f[0])===normalize(title) && (!validYear||!f[1]||f[1]===validYear))
+        ||indexed.find(f=>normalize(f[0])===normalize(title));
+      if(exact&&/^\d+$/.test(clean(exact[2])))page=Number(exact[2]);
+    }catch(e){console.warn('[Índice séries]',e)}
     let match=null;const target=normalize(title);const datedTarget=validYear?normalize(`${title} ${validYear}`):null;
-    let datedMatch=null;
-    for(let n=0;n<=11;n++){
+    const pages=page!==null?[page]:Array.from({length:12},(_,n)=>n);
+    for(const n of pages){
       let raw;
       try{raw=await fetchTxt(`series-${bucket}-${n}.txt`)}catch(e){continue}
       const groups=episodeRows(raw);
-      // Primeiro, título exato. Caso não exista, tenta título + ano,
-      // como 'Lupin' no índice e '@Lupin 2021' no arquivo de episódios.
-      match=groups.find(g=>normalize(g.title)===target);
+      match=groups.find(g=>normalize(g.title)===target || (datedTarget&&normalize(g.title)===datedTarget));
       if(match)break;
-      if(datedTarget&&!datedMatch)datedMatch=groups.find(g=>normalize(g.title)===datedTarget);
     }
-    match ||= datedMatch;
     return json({title,matchedTitle:match?.title||null,episodes:match?.episodes||[],found:!!match},200,900);
    }
    let raw,items=[];

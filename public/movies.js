@@ -63,7 +63,7 @@ function nextSource(reason){
  sourceChanging=true;
  if(proxyStage<2){
   const stage=proxyStage+1;
-  playerMessage(stage===1?'Tentando proxy do Naçaum TV…':'Tentando proxy alternativo…');
+  playerMessage(`Servidor ${sourceIndex+1} falhou, tentando fallback…`);
   playSource(sourceIndex,true,stage);
   return;
  }
@@ -88,7 +88,7 @@ function playSource(index,auto=false,stage=0){
  video.pause();video.removeAttribute('src');video.load();
  $('#sourceSelect').value=String(index);$('#sourceLabel').textContent=`Fonte ${index+1}/${st.sources.length}`;
  $('#cinema').classList.remove('player-exhausted');
- playerMessage(stage===1?'Carregando pelo proxy do Naçaum TV…':stage===2?'Carregando pelo proxy alternativo…':auto?`Tentando fonte ${index+1} de ${st.sources.length}…`:'Carregando vídeo…');
+ playerMessage(stage>0?`Servidor ${index+1} falhou, tentando fallback…`:auto?`Tentando servidor ${index+1} de ${st.sources.length}…`:'Carregando vídeo…');
  // O tempo limite só detecta falhas iniciais; buffering posterior é tratado pelo próprio player.
  sourceTimer=setTimeout(()=>{if(attempt===sourceAttempt&&!sourceStarted)nextSource('timeout')},16000);
  if(/\.m3u8(?:\?|$)/i.test(url)&&window.Hls?.isSupported()){
