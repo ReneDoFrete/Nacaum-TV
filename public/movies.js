@@ -50,14 +50,26 @@ async function renderEpisodes(){const season=Number($('#seasonSelect').value),ep
 function closeModal(){st.selected=null;$('#movieModal').hidden=true;document.body.style.overflow=''}
 function formatTime(s){if(!Number.isFinite(s))return '--:--';const n=Math.floor(s);return `${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`}
 let sourceTimer=null,sourceAttempt=0,sourceIndex=0,sourceStarted=false,sourceChanging=false;
+let proxyStage=0;
+function playbackUrl(original,stage){
+ if(stage===0)return original;
+ const base=stage===1?'/api/proxy':'https://saimo-tv.pages.dev/api/proxy';
+ return `${base}?${new URLSearchParams({url:original}).toString()}`;
+}
 function playerMessage(message){$('#moviePlayerMsg').textContent=message||'';$('#cinema').classList.toggle('has-player-message',!!message)}
 function clearSourceTimer(){if(sourceTimer){clearTimeout(sourceTimer);sourceTimer=null}}
 function nextSource(reason){
  if($('#cinema').hidden||sourceChanging)return;
  sourceChanging=true;
+ if(proxyStage<2){
+  const stage=proxyStage+1;
+  playerMessage(stage===1?'Tentando proxy do Naçaum TV…':'Tentando proxy alternativo…');
+  playSource(sourceIndex,true,stage);
+  return;
+ }
  const next=sourceIndex+1;
- if(next<st.sources.length){playerMessage(`Fonte ${sourceIndex+1} indisponível. Tentando fonte ${next+1}…`);playSource(next,true)}
- else{clearSourceTimer();playerMessage('Não foi possível reproduzir este título. Todas as fontes apresentaram falha.');$('#cinema').classList.add('player-exhausted')}
+ if(next<st.sources.length){playerMessage(`Fonte ${sourceIndex+1} indisponível. Tentando fonte ${next+1}…`);playSource(next,true,0)}
+ else{clearSourceTimer();playerMessage('Não foi possível reproduzir este título. Todas as fontes e proxies apresentaram falha.');$('#cinema').classList.add('player-exhausted')}
 }
 function openPlayer(sources,label){
  st.sources=sources.filter(u=>/^https?:\/\//.test(u));
@@ -68,15 +80,15 @@ function openPlayer(sources,label){
  $('#sourceSelect').innerHTML=st.sources.map((_,j)=>`<option value="${j}">Fonte ${j+1}</option>`).join('');
  $('#cinema').classList.remove('player-exhausted');playSource(0);
 }
-function playSource(index,auto=false){
+function playSource(index,auto=false,stage=0){
  if(index<0||index>=st.sources.length)return;
- sourceAttempt++;const attempt=sourceAttempt;sourceChanging=false;sourceStarted=false;sourceIndex=index;clearSourceTimer();
- const url=st.sources[index],video=$('#movieVideo');
+ sourceAttempt++;const attempt=sourceAttempt;sourceChanging=false;sourceStarted=false;sourceIndex=index;proxyStage=stage;clearSourceTimer();
+ const originalUrl=st.sources[index],url=playbackUrl(originalUrl,stage),video=$('#movieVideo');
  if(st.hls){st.hls.destroy();st.hls=null}
  video.pause();video.removeAttribute('src');video.load();
  $('#sourceSelect').value=String(index);$('#sourceLabel').textContent=`Fonte ${index+1}/${st.sources.length}`;
  $('#cinema').classList.remove('player-exhausted');
- playerMessage(auto?`Tentando fonte ${index+1} de ${st.sources.length}…`:'Carregando vídeo…');
+ playerMessage(stage===1?'Carregando pelo proxy do Naçaum TV…':stage===2?'Carregando pelo proxy alternativo…':auto?`Tentando fonte ${index+1} de ${st.sources.length}…`:'Carregando vídeo…');
  // O tempo limite só detecta falhas iniciais; buffering posterior é tratado pelo próprio player.
  sourceTimer=setTimeout(()=>{if(attempt===sourceAttempt&&!sourceStarted)nextSource('timeout')},16000);
  if(/\.m3u8(?:\?|$)/i.test(url)&&window.Hls?.isSupported()){
@@ -111,7 +123,7 @@ $('#playPause').onclick=()=>{const v=$('#movieVideo');v.paused?v.play().catch(()
 $('#rewind').onclick=()=>{const v=$('#movieVideo');v.currentTime=Math.max(0,v.currentTime-10)};
 $('#forward').onclick=()=>{const v=$('#movieVideo');if(Number.isFinite(v.duration))v.currentTime=Math.min(v.duration,v.currentTime+10)};
 $('#mute').onclick=()=>{const v=$('#movieVideo');v.muted=!v.muted;$('#mute').innerHTML=v.muted?'<i data-lucide="volume-x"></i>':'<i data-lucide="volume-2"></i>';window.lucide?.createIcons()};
-$('#sourceSelect').onchange=e=>playSource(Number(e.target.value));
+$('#sourceSelect').onchange=e=>playSource(Number(e.target.value),false,0);
 $('#fullscreen').onclick=()=>{const c=$('#cinema');document.fullscreenElement?document.exitFullscreen?.():c.requestFullscreen?.().catch(()=>{})};
 $('#pip').onclick=()=>$('#movieVideo').requestPictureInPicture?.().catch(()=>{});
 $('#movieVideo').onloadedmetadata=()=>{const v=$('#movieVideo');const entry=window.NacaumContinue?.read().find(x=>x.title===st.selected?.title&&x.type===(st.selected?.type||'movie')&&(st.currentEpisode?.episode==null||x.episode===st.currentEpisode.episode&&x.season===st.currentEpisode.season));if(entry?.position>0&&Number.isFinite(v.duration)&&entry.position<v.duration-15){try{v.currentTime=entry.position}catch{}}};

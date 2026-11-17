@@ -18,6 +18,8 @@ export async function onRequest(context) {
       'Accept': '*/*',
       'User-Agent': ua || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     });
+    const range = context.request.headers.get('Range');
+    if (range) headers.set('Range', range);
     if (referer) {
       headers.set('Referer', referer);
       try { headers.set('Origin', new URL(referer).origin); } catch {}
@@ -31,8 +33,13 @@ export async function onRequest(context) {
       const contentType = (response.headers.get('content-type') || '').toLowerCase();
       const resHeaders = new Headers({
         'Access-Control-Allow-Origin': '*',
-        'Content-Type': contentType || 'video/mp2t'
+        'Access-Control-Expose-Headers': 'Content-Length, Content-Range, Accept-Ranges',
+        'Content-Type': contentType || (new URL(finalUrl).pathname.toLowerCase().endsWith('.mp4') ? 'video/mp4' : 'application/octet-stream')
       });
+      for (const key of ['Content-Length', 'Content-Range', 'Accept-Ranges', 'ETag', 'Last-Modified']) {
+        const value = response.headers.get(key);
+        if (value) resHeaders.set(key, value);
+      }
 
       if (finalUrl.includes('.m3u8') || contentType.includes('mpegurl')) {
         const text = await response.text();
@@ -62,7 +69,7 @@ export async function onRequest(context) {
       }
 
       // Faz stream direto do vídeo sem carregar tudo na RAM antes
-      return new Response(response.body, { headers: resHeaders });
+      return new Response(response.body, { status: response.status, headers: resHeaders });
     } catch (e) {
       return new Response('Erro no proxy', { status: 502 });
     }
