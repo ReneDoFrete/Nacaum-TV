@@ -71,6 +71,12 @@ function nextSource(reason){
  if(next<st.sources.length){playerMessage(`Fonte ${sourceIndex+1} indisponível. Tentando fonte ${next+1}…`);playSource(next,true,0)}
  else{clearSourceTimer();playerMessage('Não foi possível reproduzir este título. Todas as fontes e proxies apresentaram falha.');$('#cinema').classList.add('player-exhausted')}
 }
+function sortedPlayableEpisodes(){return [...st.episodes].filter(ep=>ep.sources?.dub?.length||ep.sources?.leg?.length).sort((a,b)=>a.season-b.season||a.episode-b.episode)}
+function episodeLanguage(){return st.playLanguage||'dub'}
+function startEpisode(ep){if(!ep)return;const lang=episodeLanguage(),sources=ep.sources?.[lang]?.length?ep.sources[lang]:ep.sources?.[lang==='dub'?'leg':'dub']||[];if(!sources.length)return;st.currentEpisode=ep;openPlayer(sources,`${st.selected.title} · T${ep.season} E${ep.episode}`)}
+function moveEpisode(delta){const eps=sortedPlayableEpisodes(),i=eps.findIndex(ep=>ep.season===st.currentEpisode?.season&&ep.episode===st.currentEpisode?.episode);if(i<0||!eps[i+delta])return;startEpisode(eps[i+delta])}
+function updateEpisodeControls(){const series=!!st.currentEpisode,cinema=$('#cinema');cinema.classList.toggle('is-series',series);const eps=sortedPlayableEpisodes(),i=eps.findIndex(ep=>ep.season===st.currentEpisode?.season&&ep.episode===st.currentEpisode?.episode);$('#previousEpisode').disabled=!series||i<=0;$('#nextEpisode').disabled=!series||i<0||i===eps.length-1;$('#toggleEpisodeDrawer').disabled=!series;if(!series){cinema.classList.remove('drawer-open');$('#cinemaEpisodeDrawer').hidden=true;return}$('#drawerSeriesTitle').textContent=st.selected?.title||'Série';const seasons=[...new Set(eps.map(ep=>ep.season))];const select=$('#drawerSeason'),selected=Number(select.value);select.innerHTML=seasons.map(n=>`<option value="${n}">Temporada ${n}</option>`).join('');select.value=String(seasons.includes(selected)&&!$('#cinemaEpisodeDrawer').hidden?selected:st.currentEpisode.season);renderDrawerEpisodes()}
+function renderDrawerEpisodes(){const season=Number($('#drawerSeason').value);$('#drawerEpisodeList').innerHTML=sortedPlayableEpisodes().filter(ep=>ep.season===season).map(ep=>`<button class="drawer-episode-item ${ep.season===st.currentEpisode?.season&&ep.episode===st.currentEpisode?.episode?'active':''}" data-drawer-season="${ep.season}" data-drawer-episode="${ep.episode}"><span class="ep-number">${ep.episode}</span><span><strong>Episódio ${ep.episode}</strong><small>${ep.season===st.currentEpisode?.season&&ep.episode===st.currentEpisode?.episode?'Reproduzindo':`${(ep.sources?.dub?.length||0)+(ep.sources?.leg?.length||0)} fontes`}</small></span></button>`).join('')}
 function openPlayer(sources,label){
  st.sources=sources.filter(u=>/^https?:\/\//.test(u));
  if(!st.sources.length){alert('Não há uma fonte HTTPS disponível para este conteúdo. Consulte o provedor para uma URL compatível com navegador.');return}
@@ -78,7 +84,7 @@ function openPlayer(sources,label){
  $('#cinemaTitle').textContent=label;
  window.NacaumContinue?.start({title:st.selected?.title||label,type:st.selected?.type||'movie',category:st.selected?.category||(['anime','dorama'].includes(st.category)?st.category:st.selected?.type==='movie'?'movie':'series'),tmdbId:st.selected?.tmdbId||st.detail?.id||null,poster_path:st.detail?.poster_path||st.selected?.poster_path||'',episodeLabel:label.includes(' · T')?label.split(' · ').slice(1).join(' · '):'',season:st.currentEpisode?.season,episode:st.currentEpisode?.episode});$('#cinemaSub').textContent=st.category==='movie'?'Filme':st.category==='anime'?'Anime':st.category==='dorama'?'Dorama':'Série';
  $('#sourceSelect').innerHTML=st.sources.map((_,j)=>`<option value="${j}">Fonte ${j+1}</option>`).join('');
- $('#cinema').classList.remove('player-exhausted');playSource(0);
+ $('#cinema').classList.remove('player-exhausted');updateEpisodeControls();playSource(0);
 }
 function playSource(index,auto=false,stage=0){
  if(index<0||index>=st.sources.length)return;
@@ -106,7 +112,7 @@ function closeCinema(){
  sourceAttempt++;clearSourceTimer();const v=$('#movieVideo');v.pause();v.removeAttribute('src');v.load();
  if(st.hls){st.hls.destroy();st.hls=null}
  if(document.fullscreenElement=== $('#cinema'))document.exitFullscreen?.().catch(()=>{});
- $('#cinema').hidden=true;document.body.classList.remove('watching-movie');document.body.style.overflow='';playerMessage('');
+ $('#cinema').hidden=true;$('#cinemaEpisodeDrawer').hidden=true;$('#cinema').classList.remove('drawer-open');document.body.classList.remove('watching-movie');document.body.style.overflow='';playerMessage('');
 }
 function bindGrid(grid){grid.addEventListener('click',e=>{const b=e.target.closest('[data-key]');if(!b)return;const i=st.items.find(x=>x.key===b.dataset.key);if(i)openItem(i)})}
 ['#moviesGrid','#homeGrid','#trendingGrid'].forEach(s=>{const el=$(s);if(el)bindGrid(el)});
@@ -117,12 +123,20 @@ if($('#movieSearch')) $('#movieSearch').oninput=e=>{clearTimeout(searchTimer);co
 
 if($('#movieSort')) $('#movieSort').onchange=e=>{st.sort=e.target.value;if(st.category!=='home')render(true)};
 if($('#moreMovies')) $('#moreMovies').onclick=()=>render();
-$('#movieModal').onclick=e=>{if(e.target.closest('[data-close]'))closeModal();const p=e.target.closest('[data-play]');if(p&&st.selected){st.currentEpisode=null;openPlayer(st.selected.sources[p.dataset.play]||[],st.detail?.title||st.selected.title)}if(e.target.closest('#favoriteItem')&&st.selected){const k=favKey({...st.selected,tmdbId:st.selected.tmdbId||st.detail?.id});st.selected.tmdbId ||= st.detail?.id;favorites.has(k)?favorites.delete(k):favorites.add(k);updateFavoriteStore(st.selected,st.detail);$('#favoriteItem').textContent=favorites.has(k)?'♥ Favoritado':'♡ Favoritar'}if(e.target.closest('#watchFirst')&&st.episodes.length){const ep=st.episodes[0];st.currentEpisode=ep;openPlayer([...ep.sources.dub,...ep.sources.leg],`${st.selected.title} · T${ep.season} E${ep.episode}`)}const epBtn=e.target.closest('[data-episode]');if(epBtn){const ep=st.episodes.find(x=>x.season===Number(epBtn.dataset.season)&&x.episode===Number(epBtn.dataset.episode));const lang=$('#langSelect')?.value||'dub';if(ep){st.currentEpisode=ep;openPlayer(ep.sources[lang].length?ep.sources[lang]:ep.sources[lang==='dub'?'leg':'dub'],`${st.selected.title} · T${ep.season} E${ep.episode}`)}}};
+$('#movieModal').onclick=e=>{if(e.target.closest('[data-close]'))closeModal();const p=e.target.closest('[data-play]');if(p&&st.selected){st.currentEpisode=null;openPlayer(st.selected.sources[p.dataset.play]||[],st.detail?.title||st.selected.title)}if(e.target.closest('#favoriteItem')&&st.selected){const k=favKey({...st.selected,tmdbId:st.selected.tmdbId||st.detail?.id});st.selected.tmdbId ||= st.detail?.id;favorites.has(k)?favorites.delete(k):favorites.add(k);updateFavoriteStore(st.selected,st.detail);$('#favoriteItem').textContent=favorites.has(k)?'♥ Favoritado':'♡ Favoritar'}if(e.target.closest('#watchFirst')&&st.episodes.length){const ep=st.episodes[0];st.playLanguage=ep.sources.dub.length?'dub':'leg';startEpisode(ep)}const epBtn=e.target.closest('[data-episode]');if(epBtn){const ep=st.episodes.find(x=>x.season===Number(epBtn.dataset.season)&&x.episode===Number(epBtn.dataset.episode));const lang=$('#langSelect')?.value||'dub';if(ep){st.playLanguage=lang;startEpisode(ep)}}};
 $('#backCinema').onclick=closeCinema;
 $('#playPause').onclick=()=>{const v=$('#movieVideo');v.paused?v.play().catch(()=>{}):v.pause()};
 $('#rewind').onclick=()=>{const v=$('#movieVideo');v.currentTime=Math.max(0,v.currentTime-10)};
 $('#forward').onclick=()=>{const v=$('#movieVideo');if(Number.isFinite(v.duration))v.currentTime=Math.min(v.duration,v.currentTime+10)};
-$('#mute').onclick=()=>{const v=$('#movieVideo');v.muted=!v.muted;$('#mute').innerHTML=v.muted?'<i data-lucide="volume-x"></i>':'<i data-lucide="volume-2"></i>';window.lucide?.createIcons()};
+$('#previousEpisode').onclick=()=>moveEpisode(-1);
+$('#nextEpisode').onclick=()=>moveEpisode(1);
+$('#toggleEpisodeDrawer').onclick=()=>{const drawer=$('#cinemaEpisodeDrawer');drawer.hidden=!drawer.hidden;$('#cinema').classList.toggle('drawer-open',!drawer.hidden);if(!drawer.hidden)updateEpisodeControls()};
+$('#closeEpisodeDrawer').onclick=()=>{$('#cinemaEpisodeDrawer').hidden=true;$('#cinema').classList.remove('drawer-open')};
+$('#drawerSeason').onchange=renderDrawerEpisodes;
+$('#drawerEpisodeList').onclick=e=>{const b=e.target.closest('[data-drawer-episode]');if(!b)return;const ep=st.episodes.find(ep=>ep.season===Number(b.dataset.drawerSeason)&&ep.episode===Number(b.dataset.drawerEpisode));if(ep)startEpisode(ep)};
+const volumeSlider=$('#volumeSlider');volumeSlider.oninput=e=>{const v=$('#movieVideo');v.volume=Number(e.target.value)/100;v.muted=v.volume===0;syncVolumeIcon()};
+function syncVolumeIcon(){const v=$('#movieVideo');$('#mute').innerHTML=v.muted||v.volume===0?'<i data-lucide="volume-x"></i>':'<i data-lucide="volume-2"></i>';volumeSlider.value=String(Math.round(v.volume*100));window.lucide?.createIcons()}
+$('#mute').onclick=()=>{const v=$('#movieVideo');v.muted=!v.muted;syncVolumeIcon()};
 $('#sourceSelect').onchange=e=>playSource(Number(e.target.value),false,0);
 $('#fullscreen').onclick=()=>{const c=$('#cinema');document.fullscreenElement?document.exitFullscreen?.():c.requestFullscreen?.().catch(()=>{})};
 $('#pip').onclick=()=>$('#movieVideo').requestPictureInPicture?.().catch(()=>{});
