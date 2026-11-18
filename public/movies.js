@@ -52,24 +52,18 @@ function formatTime(s){if(!Number.isFinite(s))return '--:--';const n=Math.floor(
 let sourceTimer=null,sourceAttempt=0,sourceIndex=0,sourceStarted=false,sourceChanging=false;
 let proxyStage=0;
 function playbackUrl(original,stage){
- if(stage===0)return original;
- const base=stage===1?'/api/proxy':'https://saimo-tv.pages.dev/api/proxy';
- return `${base}?${new URLSearchParams({url:original}).toString()}`;
+ const endpoint=stage===0?'/api/proxy':'/api/proxy2';
+ return `${endpoint}?${new URLSearchParams({url:original}).toString()}`;
 }
 function playerMessage(message){$('#moviePlayerMsg').textContent=message||'';$('#cinema').classList.toggle('has-player-message',!!message)}
 function clearSourceTimer(){if(sourceTimer){clearTimeout(sourceTimer);sourceTimer=null}}
 function nextSource(reason){
  if($('#cinema').hidden||sourceChanging)return;
  sourceChanging=true;
- if(proxyStage<2){
-  const stage=proxyStage+1;
-  playerMessage(`Servidor ${sourceIndex+1} falhou, tentando fallback…`);
-  playSource(sourceIndex,true,stage);
-  return;
- }
  const next=sourceIndex+1;
- if(next<st.sources.length){playerMessage(`Fonte ${sourceIndex+1} indisponível. Tentando fonte ${next+1}…`);playSource(next,true,0)}
- else{clearSourceTimer();playerMessage('Não foi possível reproduzir este título. Todas as fontes e proxies apresentaram falha.');$('#cinema').classList.add('player-exhausted')}
+ if(next<st.sources.length){playerMessage(`Servidor ${sourceIndex+1} falhou. Tentando próximo servidor…`);playSource(next,true,proxyStage);return;}
+ if(proxyStage===0){playerMessage('Proxies principais indisponíveis. Tentando proxy2…');playSource(0,true,1);return;}
+ clearSourceTimer();playerMessage('Não foi possível reproduzir este título. Todos os servidores e proxies falharam.');$('#cinema').classList.add('player-exhausted');
 }
 function sortedPlayableEpisodes(){return [...st.episodes].filter(ep=>ep.sources?.dub?.length||ep.sources?.leg?.length).sort((a,b)=>a.season-b.season||a.episode-b.episode)}
 function episodeLanguage(){return st.playLanguage||'dub'}
@@ -94,7 +88,7 @@ function playSource(index,auto=false,stage=0){
  video.pause();video.removeAttribute('src');video.load();
  $('#sourceSelect').value=String(index);$('#sourceLabel').textContent=`Fonte ${index+1}/${st.sources.length}`;
  $('#cinema').classList.remove('player-exhausted');
- playerMessage(stage>0?`Servidor ${index+1} falhou, tentando fallback…`:auto?`Tentando servidor ${index+1} de ${st.sources.length}…`:'Carregando vídeo…');
+ playerMessage(stage>0?`Proxy2: tentando servidor ${index+1}/${st.sources.length}…`:auto?`Proxy principal: servidor ${index+1}/${st.sources.length}…`:'Carregando vídeo…');
  // O tempo limite só detecta falhas iniciais; buffering posterior é tratado pelo próprio player.
  sourceTimer=setTimeout(()=>{if(attempt===sourceAttempt&&!sourceStarted)nextSource('timeout')},16000);
  if(/\.m3u8(?:\?|$)/i.test(url)&&window.Hls?.isSupported()){

@@ -207,7 +207,7 @@ app.get('/api/channels',(_req,res)=>{
 });
 
 // Proxy HLS para injetar Referer/User-Agent e evitar erro de CORS/HTTP
-app.get('/api/proxy', async (req, res) => {
+app.get(['/api/proxy', '/api/proxy2'], async (req, res) => {
   const { url, referer, ua } = req.query;
   if (!url) return res.status(400).send('URL ausente');
 
@@ -233,7 +233,7 @@ app.get('/api/proxy', async (req, res) => {
         const params = new URLSearchParams({ url: absoluteUrl });
         if (referer) params.set('referer', referer);
         if (ua) params.set('ua', ua);
-        return `/api/proxy?${params.toString()}`;
+        return `${req.path === '/api/proxy2' ? '/api/proxy2' : '/api/proxy'}?${params.toString()}`;
       }).join('\n');
 
       res.setHeader('Content-Type', 'application/vnd.apple.mpegurl');

@@ -7,7 +7,8 @@ export async function onRequest(context) {
   }
 
   // Rota: /api/proxy
-  if (urlObj.pathname.endsWith('/proxy')) {
+  if ((urlObj.pathname.endsWith('/proxy') || urlObj.pathname.endsWith('/proxy2'))) {
+    const proxyRoute = urlObj.pathname.endsWith('/proxy2') ? '/api/proxy2' : '/api/proxy';
     const targetUrl = urlObj.searchParams.get('url');
     const referer = urlObj.searchParams.get('referer');
     const ua = urlObj.searchParams.get('ua');
@@ -54,14 +55,14 @@ export async function onRequest(context) {
               const p = new URLSearchParams({ url: abs });
               if (referer) p.set('referer', referer);
               if (ua) p.set('ua', ua);
-              return `URI="/api/proxy?${p.toString()}"`;
+              return `URI="${proxyRoute}?${p.toString()}"`;
             });
           }
           const abs = new URL(trimmed, baseUrl).href;
           const p = new URLSearchParams({ url: abs });
           if (referer) p.set('referer', referer);
           if (ua) p.set('ua', ua);
-          return `/api/proxy?${p.toString()}`;
+          return `${proxyRoute}?${p.toString()}`;
         }).join('\n');
 
         resHeaders.set('Content-Type', 'application/vnd.apple.mpegurl');
