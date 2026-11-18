@@ -48,23 +48,77 @@ async function sofaJson(env,url) {
   api.searchParams.set('url',url);
   return getJson(api.toString());
 }
+// SofaScore complementa o FotMob: nunca apaga canais de outras emissoras.
+// IDs adicionais podem ser cadastrados em SOFA_CHANNEL_IDS no Cloudflare.
+const tvFamily = c => /^premiere(?: [1-8])?$/i.test(c) ? 'Premiere'
+  : /^sportv(?: [1-4])?$/i.test(c) ? 'SporTV' : null;
+function mergeTvChannels(original, found) {
+  const result=[...new Set(original)];
+  const valid=[...new Set(found.map(channelName).filter(Boolean))];
+  for(const family of ['Premiere','SporTV']) {
+    const specific=valid.filter(c=>tvFamily(c)===family && c!==family);
+    if(specific.length) {
+      const idx=result.indexOf(family);
+      if(idx>=0) result.splice(idx,1);
+      for(const c of specific) if(!result.includes(c)) result.push(c);
+    } else if(valid.includes(family) && !result.some(c=>tvFamily(c)===family)) result.push(family);
+  }
+  // Outros canais que o SofaScore identifica não substituem os do FotMob.
+  for(const c of valid) if(!tvFamily(c)&&!result.includes(c))result.push(c);
+  return result;
+}
+function sofaEntities(data) {
+  return (data?.results||[]).map(r=>r?.entity||r).filter(Boolean);
+}
+function sofaCandidate(m,event) {
+  const home=m.homeTeam?.name||'', away=m.awayTeam?.name||'';
+  const expected=Date.parse(event.utcTime);
+  const time=Number(m.startTimestamp)*1000;
+  const match=teamSimilarity(home,event.home)>=.75&&teamSimilarity(away,event.away)>=.75;
+  return match && Number.isFinite(time) && Math.abs(time-expected)<=6*3600000;
+}
+async function findSofaEvent(env,event) {
+  // A pesquisa pode devolver eventos ou apenas equipes.
+  const search=await sofaJson(env,`https://www.sofascore.com/api/v1/search/all?q=${encodeURIComponent(event.home+' '+event.away)}&page=0`);
+  const entries=sofaEntities(search);
+  const direct=entries.find(m=>m.id&&sofaCandidate(m,event));
+  if(direct)return direct;
+  const teamSearch=await sofaJson(env,`https://www.sofascore.com/api/v1/search/all?q=${encodeURIComponent(event.home)}&page=0`);
+  const teams=sofaEntities(teamSearch).filter(e=>e.id&&
+    (e.type==='team'||e.sport?.slug==='football'||e.name)&&
+    teamSimilarity(e.name,event.home)>=.75);
+  for(const team of teams.slice(0,2)) {
+    for(const period of ['next','last']) {
+      const data=await sofaJson(env,`https://www.sofascore.com/api/v1/team/${team.id}/events/${period}/0`);
+      const match=(data?.events||[]).find(m=>sofaCandidate(m,event));
+      if(match)return match;
+    }
+  }
+  return null;
+}
 async function enrichSofa(env,event) {
-  const broad = event.channels.some(c => /^(SporTV|Premiere)$/.test(c));
-  if (!broad) return event;
+  if(!env.SCRAPERAPI_KEY||!event.channels.some(c=>c==='SporTV'||c==='Premiere'))return event;
   try {
-    const q = encodeURIComponent(`${event.home} - ${event.away}`);
-    const search = await sofaJson(env,`https://www.sofascore.com/api/v1/search/all?q=${q}&page=0`);
-    const expected = new Date(event.utcTime).getTime();
-    const matches = (search?.results || []).map(x=>x.entity).filter(x=>x?.id && x?.startTimestamp && Math.abs(x.startTimestamp*1000-expected)<24*3600000);
-    const exact = matches.find(x=>normalize(x.homeTeam?.name)===normalize(event.home) && normalize(x.awayTeam?.name)===normalize(event.away));
-    if (!exact) return event;
-    const data = await sofaJson(env,`https://www.sofascore.com/api/v1/tv/event/${exact.id}/country-channels`);
-    const ids = data?.countryChannels?.BR || [];
-    const mapping = sofaMap(env);
-    const precise = ids.map(id=>channelName(mapping[id]) || mapping[id]).filter(Boolean);
-    if (precise.length) event.channels = [...new Set([...event.channels.filter(c=>!['SporTV','Premiere'].includes(c)),...precise])];
-  } catch(e) {console.warn('[EVENTS SOFA]',e.message);}
+    const match=await findSofaEvent(env,event);
+    if(!match)return event;
+    const data=await sofaJson(env,`https://www.sofascore.com/api/v1/tv/event/${match.id}/country-channels`);
+    const country=data?.countryChannels?.BR||data?.countryChannels?.br||[];
+    const ids=Array.isArray(country)?country:[];
+    const mapping=sofaMap(env);
+    const precise=ids.map(item=>{
+      const id=typeof item==='object'?(item.id??item.channelId):item;
+      const name=typeof item==='object'?(item.name||item.channelName):null;
+      return channelName(name||mapping[id]);
+    }).filter(Boolean);
+    event.channels=mergeTvChannels(event.channels,precise);
+  }catch(e){console.warn('[EVENTS SOFA]',event.home,event.away,e.message);}
   return event;
+}
+async function enrichMany(env,events) {
+  const queue=events.filter(e=>e.channels.some(c=>c==='SporTV'||c==='Premiere'));
+  await Promise.all(Array.from({length:Math.min(3,queue.length)},async()=>{
+    while(queue.length)await enrichSofa(env,queue.shift());
+  }));
 }
 function flatten(data,date) {
   const result=[];
@@ -90,7 +144,7 @@ async function fetchFotmob(env) {
 async function snapshot(env,date) {
   const data=await fetchFotmob(env);
   const events=flatten(data,date);
-  for (const e of events) await enrichSofa(env,e);
+  await enrichMany(env,events);
   await env.DB.prepare('INSERT INTO event_snapshots (day,events,updated_at) VALUES (?,?,?) ON CONFLICT(day) DO UPDATE SET events=excluded.events, updated_at=excluded.updated_at').bind(date,JSON.stringify(events),Date.now()).run();
   return events;
 }
@@ -212,17 +266,18 @@ export async function onRequestGet({env}) {
     const saved=JSON.parse(row.events);
     // Corrige os nomes de canais já gravados no D1, sem perder status ou placares.
     for(const e of saved){e.channels=[...new Set((e.channels||[]).map(c=>channelName(c)||c))];}
-    const refreshDue=saved.some(e=>!e._tvNamesV2||!e._tvCheckedAt||Date.now()-e._tvCheckedAt>6*3600000);
+    const refreshDue=saved.some(e=>!e._tvNamesV3||!e._tvCheckedAt||Date.now()-e._tvCheckedAt>6*3600000);
     if(refreshDue){
       try {
         const fresh=flatten(await fetchFotmob(env),day);
         const byId=new Map(fresh.map(e=>[String(e.id),e]));
         for(const e of saved){
           const current=byId.get(String(e.id));
-          if(current)e.channels=[...new Set([...(e.channels||[]),...current.channels])];
-          e._tvNamesV2=true;
+          if(current)e.channels=mergeTvChannels(current.channels,e.channels);
+          e._tvNamesV3=true;
           e._tvCheckedAt=Date.now();
         }
+        await enrichMany(env,saved);
       }catch(error){console.warn('[EVENTS TV CHANNEL REFRESH]',error.message);}
     }
     const events=await monitor(saved);

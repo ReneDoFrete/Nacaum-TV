@@ -44,3 +44,23 @@ body:has(.events-main) .events-section{margin-left:clamp(16px,3vw,48px);margin-r
   body:has(.events-main) .events-hero .hero-crest-home { left: 27%; }
   body:has(.events-main) .events-hero .hero-crest-away { left: 73%; }
 }
+
+/* Melhor contraste dos escudos somente no celular; desktop preservado. */
+@media (max-width: 800px) {
+  body:has(.events-main) .events-hero .hero-crest {
+    opacity: .48 !important;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.45)) !important;
+  }
+  body:has(.events-main) .events-hero::after {
+    background: linear-gradient(180deg, rgba(8,12,20,.56) 0%, rgba(8,12,20,.42) 48%, rgba(8,12,20,.70) 100%) !important;
+  }
+}
+@media (max-width: 600px) {
+  body:has(.events-main) .events-hero .hero-crest {
+    width: min(53vw, 240px) !important;
+    height: min(53vw, 240px) !important;
+    top: 48% !important;
+  }
+  body:has(.events-main) .events-hero .hero-crest-home { left: 27% !important; }
+  body:has(.events-main) .events-hero .hero-crest-away { left: 75% !important; }
+}
