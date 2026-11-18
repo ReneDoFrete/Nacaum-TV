@@ -1,0 +1,9 @@
+name = "nacaum-tv-events-cron"
+main = "worker.js"
+compatibility_date = "2026-11-18"
+
+[triggers]
+crons = ["0 * * * *"]
+
+[vars]
+EVENTS_SITE_URL = "https://nacaumtv.pages.dev"

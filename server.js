@@ -81,11 +81,12 @@ app.post('/api/online', express.json({ limit: '1kb' }), (req, res) => {
 });
 
 // API local de eventos: arquivo persistente no Node (em produção use D1).
-import { onRequestGet as eventsHandler } from './functions/api/events.js';
+import { onRequestGet as eventsHandler, ensureDailySnapshot } from './functions/api/events.js';
 const snapshotsPath=path.resolve('data/event-snapshots.json');
 let snapshotStore={};try{snapshotStore=JSON.parse(fs.readFileSync(snapshotsPath,'utf8'))}catch{}
 const localDb={prepare(sql){let args=[];return {bind(...a){args=a;return this},async first(){return snapshotStore[args[0]]?{events:snapshotStore[args[0]]}:null},async run(){if(sql.startsWith('INSERT'))snapshotStore[args[0]]=args[1];else if(sql.startsWith('UPDATE'))snapshotStore[args[1]]=args[0];fs.writeFileSync(snapshotsPath,JSON.stringify(snapshotStore));return {success:true}}}}};
-app.get('/api/events',async(req,res)=>{const response=await eventsHandler({env:{DB:localDb,SCRAPERAPI_KEY:process.env.SCRAPERAPI_KEY,SOFA_CHANNEL_IDS:process.env.SOFA_CHANNEL_IDS}});res.status(response.status).json(await response.json())});
+const eventsEnv=()=>({DB:localDb,SCRAPERAPI_KEY:process.env.SCRAPERAPI_KEY,SOFA_CHANNEL_IDS:process.env.SOFA_CHANNEL_IDS});
+app.get('/api/events',async(req,res)=>{const response=await eventsHandler({env:eventsEnv()});res.status(response.status).json(await response.json())});
 
 // SEO e miniaturas: URLs absolutas para WhatsApp e mecanismos de busca.
 const seoPages = new Set(['/', '/index.html', '/live.html', '/eventos.html', '/movies.html', '/favorites.html']);
@@ -248,4 +249,28 @@ app.get('/api/proxy', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
+// Inicialização e virada do dia: independentes de visitas ao /eventos.
+let snapshotBusy=false;
+async function ensureLocalDaily(){
+  if(snapshotBusy)return;
+  snapshotBusy=true;
+  try {const result=await ensureDailySnapshot(eventsEnv());console.log('[EVENTS LOCAL DAILY]',JSON.stringify(result));}
+  catch(e){console.warn('[EVENTS LOCAL DAILY ERROR]',e.message);}
+  finally{snapshotBusy=false;}
+}
+function scheduleMidnight(){
+  const now=new Date();
+  const dateParts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+  const [year,month,day]=dateParts.split('-').map(Number);
+  // Brasil (São Paulo) usa UTC-3 atualmente. Recalcular o agendamento após cada execução.
+  const target=Date.UTC(year,month-1,day+1,3,0,0);
+  const delay=Math.max(1000,target-Date.now());
+  setTimeout(async()=>{await ensureLocalDaily();scheduleMidnight();},delay);
+}
+app.listen(3000, () => {
+  console.log('Servidor rodando na porta 3000');
+  ensureLocalDaily();
+  scheduleMidnight();
+  // Recupera automaticamente caso o agendamento anterior tenha falhado.
+  setInterval(ensureLocalDaily,15*60*1000);
+});

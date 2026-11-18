@@ -1,3 +1,4 @@
+import { SOFASCORE_CHANNELS } from './sofascore-channels.js';
 
 // API de eventos: snapshots no D1, canais FotMob e placares Futbol24.
 const TZ = 'America/Sao_Paulo';
@@ -15,7 +16,8 @@ function channelName(raw) {
   if (s.includes('paramount')) return 'Paramount+';
   if (s === 'hbo max' || s === 'max') return 'HBO Max';
   if (/^sportv(?: [1-9])?$/.test(s)) return s === 'sportv' ? 'SporTV' : `SporTV ${s.split(' ')[1]}`;
-  if (/^premiere(?: [1-9])?$/.test(s)) return s === 'premiere' ? 'Premiere' : `Premiere ${s.split(' ')[1]}`;
+  if (s === 'premiere fc' || s === 'premiere clubes') return 'Premiere';
+  if (/^premiere(?: [1-9]| 10)?$/.test(s)) return s === 'premiere' ? 'Premiere' : `Premiere ${s.split(' ')[1]}`;
   if (/^espn(?: [1-9])?$/.test(s)) return s.toUpperCase();
   if (s === 'xsports' || s === 'x sports') return 'X Sports';
   if (s === 'nsports' || s === 'n sports') return 'N Sports';
@@ -29,11 +31,13 @@ function channelName(raw) {
   if (s === 'sbt' || s === 'tv sbt') return 'SBT';
   if (s === 'redetv' || s === 'rede tv') return 'RedeTV!';
   if (/^(?:(?:tv|rede|canal) )?globo(?: (?:rj|sp|mg|df|rs|ba|pe|pr|sc|ce|am|pa|go|es|pb|rn|al|se|pi|ma|mt|ms|ro|rr|ap|ac|to|regional|nacional|brasil))?$/.test(s) || /^(?:rede globo de televisao|tv globo rede|globo tv|globoplay tv globo)$/.test(s)) return 'Globo';
+  if (s === 'sportv extra') return 'SporTV Extra';
+  if (s === 'sportv 4k') return 'SporTV 4K';
   if (s === 'tnt') return 'TNT';
   if (s === 'space') return 'Space';
   return null;
 }
-const sofaIds = {7213:'SporTV',7214:'SporTV 2',7215:'SporTV 3',5613:'Premiere',3182:'Premiere 5'};
+const sofaIds = SOFASCORE_CHANNELS;
 // SOFA_CHANNEL_IDS: JSON, por exemplo {"123":"Premiere 2"}.
 function sofaMap(env) {try {return {...sofaIds,...JSON.parse(env.SOFA_CHANNEL_IDS || '{}')};} catch {return sofaIds;}}
 async function getJson(url, headers = {}) {
@@ -42,15 +46,18 @@ async function getJson(url, headers = {}) {
   return r.json();
 }
 async function sofaJson(env,url) {
-  if (!env.SCRAPERAPI_KEY) return null;
+  if (!env.SCRAPERAPI_KEY) throw new Error('SCRAPERAPI_KEY ausente no ambiente de produção');
   const api = new URL('https://api.scraperapi.com/');
   api.searchParams.set('api_key',env.SCRAPERAPI_KEY);
   api.searchParams.set('url',url);
-  return getJson(api.toString());
+  // Não incluir URL com chave nos logs de erro.
+  const r=await fetch(api.toString(),{signal:AbortSignal.timeout(14000)});
+  if(!r.ok)throw new Error(`ScraperAPI HTTP ${r.status} ao consultar SofaScore`);
+  try{return await r.json();}catch{throw new Error('Resposta não JSON do SofaScore');}
 }
 // SofaScore complementa o FotMob: nunca apaga canais de outras emissoras.
 // IDs adicionais podem ser cadastrados em SOFA_CHANNEL_IDS no Cloudflare.
-const tvFamily = c => /^premiere(?: [1-8])?$/i.test(c) ? 'Premiere'
+const tvFamily = c => /^premiere(?: (?:[1-9]|10))?$/i.test(c) ? 'Premiere'
   : /^sportv(?: [1-4])?$/i.test(c) ? 'SporTV' : null;
 function mergeTvChannels(original, found) {
   const result=[...new Set(original)];
@@ -71,53 +78,201 @@ function sofaEntities(data) {
   return (data?.results||[]).map(r=>r?.entity||r).filter(Boolean);
 }
 function sofaCandidate(m,event) {
-  const home=m.homeTeam?.name||'', away=m.awayTeam?.name||'';
-  const expected=Date.parse(event.utcTime);
-  const time=Number(m.startTimestamp)*1000;
-  const match=teamSimilarity(home,event.home)>=.75&&teamSimilarity(away,event.away)>=.75;
-  return match && Number.isFinite(time) && Math.abs(time-expected)<=6*3600000;
+  const home=m.homeTeam?.name||'',away=m.awayTeam?.name||'';
+  const expected=Date.parse(event.utcTime),time=Number(m.startTimestamp)*1000;
+  return teamSimilarity(home,event.home)>=.75&&teamSimilarity(away,event.away)>=.75&&
+    Number.isFinite(time)&&Math.abs(time-expected)<=6*3600000;
 }
 async function findSofaEvent(env,event) {
-  // A pesquisa pode devolver eventos ou apenas equipes.
-  const search=await sofaJson(env,`https://www.sofascore.com/api/v1/search/all?q=${encodeURIComponent(event.home+' '+event.away)}&page=0`);
-  const entries=sofaEntities(search);
-  const direct=entries.find(m=>m.id&&sofaCandidate(m,event));
-  if(direct)return direct;
-  const teamSearch=await sofaJson(env,`https://www.sofascore.com/api/v1/search/all?q=${encodeURIComponent(event.home)}&page=0`);
-  const teams=sofaEntities(teamSearch).filter(e=>e.id&&
-    (e.type==='team'||e.sport?.slug==='football'||e.name)&&
-    teamSimilarity(e.name,event.home)>=.75);
-  for(const team of teams.slice(0,2)) {
-    for(const period of ['next','last']) {
-      const data=await sofaJson(env,`https://www.sofascore.com/api/v1/team/${team.id}/events/${period}/0`);
-      const match=(data?.events||[]).find(m=>sofaCandidate(m,event));
-      if(match)return match;
+  const queries=[`${event.home} ${event.away}`,event.home];
+  for(const q of queries){
+    const search=await sofaJson(env,`https://www.sofascore.com/api/v1/search/all?q=${encodeURIComponent(q)}&page=0`);
+    const entries=sofaEntities(search);
+    const direct=entries.find(m=>m.id&&sofaCandidate(m,event));
+    if(direct)return direct;
+    const teams=entries.filter(e=>e.id&&teamSimilarity(e.name,event.home)>=.75&&
+      (e.type==='team'||e.sport?.slug==='football'||e.name));
+    for(const team of teams.slice(0,2)){
+      for(const period of ['next','last']){
+        try{
+          const data=await sofaJson(env,`https://www.sofascore.com/api/v1/team/${team.id}/events/${period}/0`);
+          const match=(data?.events||[]).find(m=>sofaCandidate(m,event));
+          if(match)return match;
+        }catch(err){console.warn('[EVENTS SOFA TEAM]',period,err.message);}
+      }
     }
   }
   return null;
 }
-async function enrichSofa(env,event) {
-  if(!env.SCRAPERAPI_KEY||!event.channels.some(c=>c==='SporTV'||c==='Premiere'))return event;
+function extractBrazilChannels(data) {
+  const cc=data?.countryChannels;
+  let raw=cc?.BR??cc?.br??cc?.Brazil??data?.channels??[];
+  if(Array.isArray(cc)){
+    const br=cc.find(c=>['BR','br','Brazil'].includes(c.countryCode||c.country||c.code));
+    raw=br?.channels??br?.channelIds??raw;
+  }
+  if(!Array.isArray(raw)&&raw&&typeof raw==='object')raw=raw.channels??raw.ids??[];
+  return Array.isArray(raw)?raw:[];
+}
+function extractChannel(item,mapping){
+  if(typeof item==='string'&& !/^\d+$/.test(item))return channelName(item);
+  const id=typeof item==='object'?(item.id??item.channelId??item.tvChannelId):item;
+  const name=typeof item==='object'?(item.name||item.channelName||item.tvChannel?.name||item.channel?.name):null;
+  return channelName(name||mapping[id]);
+}
+// Busca por programa, sem varrer todas as grades. Resultados sao reutilizados
+// entre partidas da mesma requisicao e entre requisicoes do mesmo worker.
+const guideSearchCache = new Map();
+const guideProxyBase = env => (env.GUIDE_PROXY_ORIGIN || 'https://nacaumtv.pages.dev').replace(/\/$/, '');
+function decodeGuide(s) {
+  return String(s||'').replace(/&(?:nbsp|#160);/gi,' ').replace(/&amp;/gi,'&')
+    .replace(/&(?:times|#215);/gi,' x ').replace(/&quot;/gi,'"')
+    .replace(/&#(?:x([0-9a-f]+)|(\d+));/gi,(_,h,d)=>String.fromCodePoint(parseInt(h||d,h?16:10)))
+    .replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+}
+function guideSearchPrograms(html) {
+  const results=[];
+  // O Guia retorna cada programa como link /programa/... seguido do link /canal/...
+  const re=/<a\b[^>]*href=["']([^"']*\/programa\/[^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  let m;
+  while((m=re.exec(html))) {
+    const title=decodeGuide(m[2]);
+    const next=html.slice(re.lastIndex,re.lastIndex+1800);
+    const channel=next.match(/<a\b[^>]*href=["']([^"']*\/canal\/([a-z0-9-]+)[^"']*)["'][^>]*>/i);
+    if(!channel)continue;
+    const slug=channel[2].toLowerCase();
+    const name=channelName(slug.replace(/-/g,' '));
+    if(!name)continue;
+    // O horario aparece antes do link do programa, normalmente junto do "Ao vivo".
+    const before=decodeGuide(html.slice(Math.max(0,m.index-550),m.index));
+    const times=[...before.matchAll(/\b([01]?\d|2[0-3]):([0-5]\d)\b/g)];
+    const last=times.at(-1);
+    const minute=last?Number(last[1])*60+Number(last[2]):null;
+    const live=/\bao vivo\b/i.test(before.slice(-90));
+    results.push({title,channel:name,slug,minute,live});
+  }
+  return results;
+}
+function guideTeamKey(raw) {
+  return normalize(raw).replace(/\bathletico(?: paranaense| pr)?\b/g,'athletico')
+    .replace(/\batletico pr\b/g,'athletico')
+    .replace(/\b(?:fc|sc|ec|clube|club|futebol|de|do|da|pr|rj|sp|rs|mg|ba|pe|ce|go)\b/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+function guideSameTeam(a,b) {
+  const x=guideTeamKey(a),y=guideTeamKey(b);
+  if(!x||!y)return false;
+  if(x===y)return true;
+  const xw=x.split(' ').filter(w=>w.length>=4),yw=y.split(' ').filter(w=>w.length>=4);
+  return xw.some(w=>yw.includes(w)) && (xw.length===1||yw.length===1||teamSimilarity(a,b)>=.75);
+}
+function guideProgramMatches(program,event) {
+  const title=normalize(program.title);
+  if(/\b(vt|reprise|melhores momentos|compacto|melhores gols|pre jogo|pre hora|aquecimento)\b/.test(title))return false;
+  // "Hoje a partir das 21:30 - ..." e "Dia 23/11 - ..." sao anuncios,
+  // nao a transmissao ao vivo; nao os usamos como confirmacao.
+  if(/^(?:hoje a partir|dia \d{1,2}|amanha a partir)/.test(title))return false;
+  const parts=program.title.replace(/[×]/g,' x ').split(/\s+x\s+/i);
+  if(parts.length!==2)return false;
+  const left=parts[0].replace(/^.*?:\s*/,'').trim();
+  const right=parts[1].replace(/\s+ao vivo.*$/i,'').trim();
+  if(!((guideSameTeam(left,event.home)&&guideSameTeam(right,event.away)) ||
+        (guideSameTeam(left,event.away)&&guideSameTeam(right,event.home))))return false;
+  const expected=new Date(event.utcTime).toLocaleTimeString('pt-BR',{timeZone:TZ,hour:'2-digit',minute:'2-digit'});
+  const minute=Number(expected.slice(0,2))*60+Number(expected.slice(3));
+  // O horario da busca e a partida devem coincidir. Se o HTML nao expuser
+  // o horario, so aceitamos quando o resultado estiver marcado Ao vivo.
+  return program.minute===null?program.live:Math.abs(program.minute-minute)<=30;
+}
+function guideQueries(event) {
+  const h=guideTeamKey(event.home),a=guideTeamKey(event.away);
+  const terms=[`${h} x ${a}`,h,a];
+  // Busca progressiva: nome completo, nome curto, prefixos maiores primeiro.
+  for(const name of [h,a]) {
+    const first=name.split(' ')[0];
+    if(first&&first!==name)terms.push(first);
+    if(first.length>5)terms.push(first.slice(0,5));
+    if(first.length>4)terms.push(first.slice(0,4));
+    if(first.length>3)terms.push(first.slice(0,3));
+  }
+  return [...new Set(terms.filter(x=>x.length>=3))];
+}
+async function fetchGuideSearch(env,term) {
+  const key=normalize(term);
+  const cached=guideSearchCache.get(key);
+  if(cached&&Date.now()-cached.at<10*60*1000)return cached.programs;
+  const source=`https://www.guiadetv.com/busca?q=${encodeURIComponent(term)}`;
+  let error;
+  for(const route of ['/api/proxy','/api/proxy2']) {
+    try {
+      const url=`${guideProxyBase(env)}${route}?url=${encodeURIComponent(source)}`;
+      const r=await fetch(url,{signal:AbortSignal.timeout(12000)});
+      const html=await r.text();
+      if(!r.ok)throw Error(`HTTP ${r.status}`);
+      if(!/\/programa\/|programas encontrados|nenhum programa|nenhum resultado/i.test(html))throw Error('HTML da busca inesperado');
+      const programs=guideSearchPrograms(html);
+      console.log('[EVENTS GUIDE SEARCH RESPONSE]',JSON.stringify({query:term,route,status:r.status,bytes:html.length,parsed:programs.length,preview:programs.slice(0,15)}));
+      guideSearchCache.set(key,{at:Date.now(),programs});
+      if(guideSearchCache.size>100)guideSearchCache.delete(guideSearchCache.keys().next().value);
+      return programs;
+    }catch(e){error=e;console.warn('[EVENTS GUIDE SEARCH ERROR]',term,route,e.message);}
+  }
+  throw error||Error('Busca indisponivel');
+}
+async function enrichGuideSearch(env,event) {
+  const required=['Premiere','SporTV'].filter(f=>event.channels.includes(f));
+  const found=new Set();
+  for(const query of guideQueries(event)) {
+    let programs;
+    try {programs=await fetchGuideSearch(env,query);}
+    catch(e){continue;}
+    const hits=programs.filter(p=>guideProgramMatches(p,event));
+    for(const hit of hits) {
+      if(required.includes(tvFamily(hit.channel)))found.add(hit.channel);
+    }
+    console.log('[EVENTS GUIDE SEARCH MATCH]',JSON.stringify({match:`${event.home} x ${event.away}`,query,hits,found:[...found]}));
+    if(required.every(f=>[...found].some(c=>tvFamily(c)===f)))break;
+  }
+  // Uma variante encontrada na busca e conclusiva para aquela familia.
+  // FotMob continua sendo a origem dos outros canais.
+  for(const family of required) {
+    const channels=[...found].filter(c=>tvFamily(c)===family);
+    if(channels.length) {
+      event.channels=event.channels.filter(c=>tvFamily(c)!==family);
+      event.channels.push(...channels);
+    }
+  }
+  console.log('[EVENTS GUIDE SEARCH RESULT]',JSON.stringify({match:`${event.home} x ${event.away}`,found:[...found],missing:required.filter(f=>![...found].some(c=>tvFamily(c)===f))}));
+  return required.filter(f=>![...found].some(c=>tvFamily(c)===f));
+}
+async function enrichSofa(env,event,missingFamilies=[]) {
+  if(!event.channels.some(c=>c==='SporTV'||c==='Premiere'))return event;
   try {
     const match=await findSofaEvent(env,event);
-    if(!match)return event;
+    if(!match){console.warn('[EVENTS SOFA NOT FOUND]',event.home,'x',event.away);return event;}
     const data=await sofaJson(env,`https://www.sofascore.com/api/v1/tv/event/${match.id}/country-channels`);
-    const country=data?.countryChannels?.BR||data?.countryChannels?.br||[];
-    const ids=Array.isArray(country)?country:[];
-    const mapping=sofaMap(env);
-    const precise=ids.map(item=>{
-      const id=typeof item==='object'?(item.id??item.channelId):item;
-      const name=typeof item==='object'?(item.name||item.channelName):null;
-      return channelName(name||mapping[id]);
-    }).filter(Boolean);
-    event.channels=mergeTvChannels(event.channels,precise);
-  }catch(e){console.warn('[EVENTS SOFA]',event.home,event.away,e.message);}
+    const raw=extractBrazilChannels(data),mapping=sofaMap(env);
+    const precise=raw.map(item=>extractChannel(item,mapping)).filter(Boolean);
+    const unknown=raw.filter(item=>!extractChannel(item,mapping)).map(item=>
+      typeof item==='object'?(item.id??item.channelId??item.name??'objeto'):item);
+    console.log('[EVENTS SOFA CHANNELS]',JSON.stringify({
+      match:`${event.home} x ${event.away}`,sofaEventId:match.id,
+      channelCount:raw.length,recognized:precise,unmapped:unknown
+    }));
+    // Nao sobrescreve canais que o Guia de TV ja confirmou.
+    const allowed=precise.filter(c=>!tvFamily(c)||missingFamilies.includes(tvFamily(c)));
+    event.channels=mergeTvChannels(event.channels,allowed);
+  }catch(e){console.warn('[EVENTS SOFA ERROR]',event.home,'x',event.away,e.message);}
   return event;
 }
 async function enrichMany(env,events) {
   const queue=events.filter(e=>e.channels.some(c=>c==='SporTV'||c==='Premiere'));
   await Promise.all(Array.from({length:Math.min(3,queue.length)},async()=>{
-    while(queue.length)await enrichSofa(env,queue.shift());
+    while(queue.length) {
+      const event=queue.shift();
+      const missing=await enrichGuideSearch(env,event);
+      if(missing.length&&env.SCRAPERAPI_KEY)await enrichSofa(env,event,missing);
+    }
   }));
 }
 function flatten(data,date) {
@@ -147,6 +302,17 @@ async function snapshot(env,date) {
   await enrichMany(env,events);
   await env.DB.prepare('INSERT INTO event_snapshots (day,events,updated_at) VALUES (?,?,?) ON CONFLICT(day) DO UPDATE SET events=excluded.events, updated_at=excluded.updated_at').bind(date,JSON.stringify(events),Date.now()).run();
   return events;
+}
+
+// Executado por agendamento independente da página /eventos.
+export async function ensureDailySnapshot(env) {
+  if (!env.DB) throw new Error('DB (D1) não configurado');
+  const day=today();
+  const existing=await env.DB.prepare('SELECT events FROM event_snapshots WHERE day=?').bind(day).first();
+  if (existing) return {day,created:false,count:JSON.parse(existing.events).length};
+  const events=await snapshot(env,day);
+  console.log('[EVENTS DAILY SNAPSHOT]',JSON.stringify({day,created:true,count:events.length}));
+  return {day,created:true,count:events.length};
 }
 
 // Futbol24: placar em tempo real, com busca quando o jogo não aparece no in_play.
@@ -262,19 +428,19 @@ export async function onRequestGet({env}) {
   try {
     const day=today();
     let row=await env.DB.prepare('SELECT events FROM event_snapshots WHERE day=?').bind(day).first();
-    if(!row){const events=await snapshot(env,day);row={events:JSON.stringify(events)};}
+    if(!row){await ensureDailySnapshot(env);row=await env.DB.prepare('SELECT events FROM event_snapshots WHERE day=?').bind(day).first();}
     const saved=JSON.parse(row.events);
     // Corrige os nomes de canais já gravados no D1, sem perder status ou placares.
     for(const e of saved){e.channels=[...new Set((e.channels||[]).map(c=>channelName(c)||c))];}
-    const refreshDue=saved.some(e=>!e._tvNamesV3||!e._tvCheckedAt||Date.now()-e._tvCheckedAt>6*3600000);
+    const refreshDue=saved.some(e=>!e._tvNamesV7||!e._tvCheckedAt||Date.now()-e._tvCheckedAt>6*3600000);
     if(refreshDue){
       try {
         const fresh=flatten(await fetchFotmob(env),day);
         const byId=new Map(fresh.map(e=>[String(e.id),e]));
         for(const e of saved){
           const current=byId.get(String(e.id));
-          if(current)e.channels=mergeTvChannels(current.channels,e.channels);
-          e._tvNamesV3=true;
+          if(current)e.channels=current.channels;
+          e._tvNamesV7=true;
           e._tvCheckedAt=Date.now();
         }
         await enrichMany(env,saved);
