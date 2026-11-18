@@ -141,6 +141,7 @@ function selectChannel(id) {
   const channel = state.channels.find((c) => c.id === id);
   if (!channel) return;
   state.selected = id;
+  showSportsChannelNotice(channel);
   localStorage.setItem("nacaum-last-channel", id);
   state.sourceIndex = 0;
   state.retrying = false;
@@ -351,3 +352,44 @@ setInterval(()=>{
 setInterval(async()=>{
  try{const r=await fetch('/api/guide',{cache:'no-store'});if(!r.ok)return;const guide=await r.json();if(!guide||guide.error)return;state.guide=guide;renderChannels();const c=state.channels.find(x=>x.id===state.selected);if(c)updateProgramGuide(c);document.dispatchEvent(new Event('nacaum-guide-updated'))}catch{}
 },5*60000);
+
+// Aviso discreto para streams esportivos com múltiplos canais numerados.
+let sportsNoticeTimer = null;
+function showSportsChannelNotice(channel) {
+  const existing = document.getElementById('sports-channel-notice');
+  if (existing) existing.remove();
+  if (sportsNoticeTimer) clearTimeout(sportsNoticeTimer);
+  const raw = String(channel?.name || '');
+  const normalized = raw.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  let provider = '';
+  let examples = '';
+  if (/apple\s*tv/.test(normalized)) { provider = 'Apple TV'; examples = 'Apple TV 01 a 06'; }
+  else if (/amazon|prime\s*video/.test(normalized)) { provider = 'Amazon Prime Video'; examples = 'Prime Video 01, 02 e outros disponíveis'; }
+  else if (/disney\s*\+|disney\s*plus/.test(normalized)) { provider = 'Disney+'; examples = 'Disney+ 01 a 08'; }
+  else if (/paramount/.test(normalized)) { provider = 'Paramount+'; examples = 'Paramount+ (Jogo 1, 2, 3...)'; }
+  else if (/(?:^|[^a-z])(?:hbo\s*)?max(?:[^a-z]|$)/.test(normalized)) { provider = 'Max'; examples = 'Max 01, 02, 03, 04, 05, 06...'; }
+  if (!provider) return;
+
+  if (!document.getElementById('sports-channel-notice-style')) {
+    const css = document.createElement('style');
+    css.id = 'sports-channel-notice-style';
+    css.textContent = `#sports-channel-notice{position:fixed;right:16px;bottom:88px;z-index:99999;max-width:min(380px,calc(100vw - 32px));display:flex;gap:12px;align-items:flex-start;padding:14px 14px 14px 16px;border:1px solid rgba(255,255,255,.18);border-left:3px solid #f59e0b;border-radius:12px;background:rgba(14,19,31,.94);color:#fff;box-shadow:0 12px 36px rgba(0,0,0,.38);font:14px/1.45 system-ui,-apple-system,sans-serif;backdrop-filter:blur(12px);animation:sportsNoticeIn .25s ease}#sports-channel-notice strong{display:block;font-size:14px;margin-bottom:4px}#sports-channel-notice p{margin:0;color:#d5d9e2;font-size:13px}#sports-channel-notice button{border:0;background:transparent;color:#cbd5e1;cursor:pointer;font-size:21px;line-height:1;padding:0 2px}#sports-channel-notice button:hover{color:white}@keyframes sportsNoticeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@media(max-width:600px){#sports-channel-notice{left:12px;right:12px;bottom:76px;max-width:none}}`;
+    document.head.appendChild(css);
+  }
+  const box = document.createElement('aside');
+  box.id = 'sports-channel-notice';
+  box.setAttribute('role', 'status');
+  box.setAttribute('aria-live', 'polite');
+  const content = document.createElement('div');
+  const title = document.createElement('strong');
+  title.textContent = '⚠️ Aviso sobre ' + provider;
+  const desc = document.createElement('p');
+  desc.textContent = 'Se este canal não estiver passando o jogo, teste os outros canais da mesma plataforma (' + examples + '). O jogo pode estar em outra opção.';
+  content.append(title, desc);
+  const close = document.createElement('button');
+  close.type = 'button'; close.textContent = '×'; close.setAttribute('aria-label', 'Fechar aviso');
+  close.addEventListener('click', () => { box.remove(); clearTimeout(sportsNoticeTimer); });
+  box.append(content, close);
+  document.body.appendChild(box);
+  sportsNoticeTimer = setTimeout(() => box.remove(), 11000);
+}
