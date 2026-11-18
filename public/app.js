@@ -335,3 +335,19 @@ function updateProgramGuide(channel){
  if(!relevant.length)root.textContent='Sem próximos programas disponíveis.';
  if(data.description){const p=document.createElement('p');p.textContent=data.description;root.append(p)}
 }
+
+// Mantém o programa "Agora" sincronizado enquanto o visitante assiste.
+setInterval(()=>{
+ const channel=state.channels.find(c=>c.id===state.selected);
+ if(!channel)return;
+ const entry=state.guide[channel.id];
+ if(entry?.schedule?.length){
+  const now=Date.now(),current=entry.schedule.find(p=>p.start<=now&&p.end>now);
+  const label=current?.title||'Programação indisponível';
+  const playing=document.getElementById('playingCategory');if(playing)playing.textContent=label;
+  updateProgramGuide(channel);
+ }
+},60000);
+setInterval(async()=>{
+ try{const r=await fetch('/api/guide',{cache:'no-store'});if(!r.ok)return;const guide=await r.json();if(!guide||guide.error)return;state.guide=guide;renderChannels();const c=state.channels.find(x=>x.id===state.selected);if(c)updateProgramGuide(c);document.dispatchEvent(new Event('nacaum-guide-updated'))}catch{}
+},5*60000);
