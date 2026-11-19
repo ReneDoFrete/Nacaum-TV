@@ -84,21 +84,32 @@ function findSpecializedEpisodes(raw,title,year,id){
 }
 const fetchTxt=async(path)=>{const r=await fetch(`${ORIGIN}/${path}`,{cf:{cacheTtl:1200,cacheEverything:true}});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);const raw=await r.text();if(/^\s*</.test(raw))throw new Error(`${path}: HTML inesperado`);return raw};
 const paths={anime:'redeflix/links-animes.txt',series:'redeflix/links-series.txt',dorama:'redeflix/links-doramas.txt'};
+// Categorias do Saimo: incluem filmes e séries, sem remover títulos de suas seções originais.
+const categoryCache=new Map();
+async function categoryRows(env){
+ const cached=categoryCache.get('rows');if(cached&&Date.now()-cached.at<20*60*1000)return cached.rows;
+ let rows=[];
+ try{const raw=await fetchTxt('categorias.txt');for(const line of raw.split(/\r?\n/)){const f=line.split('\t');if(!['f','s'].includes(f[0])||f.length<3)continue;const tags=f[2].split(',').map(x=>x.trim().toLowerCase()).filter(x=>['anime','dorama','kids','novela'].includes(x));if(tags.length)rows.push({kind:f[0],title:f[1].trim(),tags});}}catch(error){console.warn('[Categorias remotas]',error)}
+ if(!rows.length&&env.ASSETS){const r=await env.ASSETS.fetch('https://local.invalid/vod-category-snapshot.json');if(r.ok){const d=await r.json();rows=d.categories.map(([kind,title,tags])=>({kind,title,tags}));}}
+ if(!rows.length)throw Error('Lista de categorias indisponível');categoryCache.set('rows',{at:Date.now(),rows});return rows;
+}
+async function classifiedItems(env,category){const rows=(await categoryRows(env)).filter(r=>r.tags.includes(category));return rows.map((r,n)=>({key:`${category}-${n}`,title:r.title,type:r.kind==='f'?'movie':'tv',category,sourceCategory:r.kind==='f'?'movie':'series',sources:{dub:[],leg:[]},hasDub:false,hasLeg:false}));}
 export async function onRequestGet({request,env={}}){
  const u=new URL(request.url),p=u.searchParams;const key=env.TMDB_API_KEY,token=env.TMDB_READ_TOKEN;
  try{
+  if(p.get('counts')==='1'){const rows=await categoryRows(env);const counts={anime:0,dorama:0,kids:0,novela:0,movie:0,series:0};for(const row of rows)for(const tag of row.tags)counts[tag]++;try{const raw=await fetchTxt('busca.txt');for(const line of raw.split(/\r?\n/)){const f=line.split('\t');if(f[1]==='f')counts.movie++;else if(f[1]==='s')counts.series++;}}catch(e){console.warn('[Contagens busca]',e);if(env.ASSETS){const r=await env.ASSETS.fetch('https://local.invalid/vod-category-snapshot.json');if(r.ok){const data=await r.json();counts.movie=data.counts.movie;counts.series=data.counts.series;}}}return json({counts},200,1200);}
   if(p.has('letter')||p.has('category')||p.has('episodes')){
    const letter=clean(p.get('letter')||'A').toUpperCase();const category=clean(p.get('category')||'movie').toLowerCase();
    if(!/^(?:[A-Z]|#)$/.test(letter))return json({error:'Letra inválida'},400);
-   if(!['movie','series','anime','dorama'].includes(category))return json({error:'Categoria inválida'},400);
-   if(category==='anime'||category==='dorama'){
+   if(!['movie','series','anime','dorama','kids','novela'].includes(category))return json({error:'Categoria inválida'},400);
+   if(['anime','dorama','kids','novela'].includes(category)){
     if(p.has('episodes')){
      const title=clean(p.get('episodes'));const year=clean(p.get('year'));const id=safeId(p.get('tmdbId'));
      const raw=await fetchTxt(`redeflix/links-${category==='anime'?'animes':'doramas'}.txt?v=29908719`);
      const found=findSpecializedEpisodes(raw,title,year,id);
      return json({title,matchedTitle:found?.title||null,episodes:found?.episodes||[],found:!!found},200,600);
     }
-    const items=await specializedCatalog(category);
+    const items=await classifiedItems(env,category);
     return json({category,count:items.length,items},200,900);
    }
    if(p.has('episodes')){

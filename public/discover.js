@@ -7,8 +7,9 @@ const catalog=()=>catalogPromise??=fetch('/catalog-index.json').then(r=>r.json()
 const highlights=()=>highlightsPromise??=fetch('/highlights.json').then(r=>r.json());
 function destination(item){let type=item.type==='movie'?'movie':item.type==='tv'?'series':item.type;let letter=/^[A-Z]$/.test(item.letter)?item.letter:'#';return `/movies.html?category=${encodeURIComponent(type)}&letter=${letter}&title=${encodeURIComponent(item.title)}`}
 function shelfCard(i){const title=safe(i.title),year=safe(i.year||'');return `<a class="discover-card nacaum-hover-card" href="${destination(i)}" data-movie-title="${title}" data-movie-type="${safe(i.type)}" title="${title}"><span class="discover-cover">${img(i.poster_path)?`<img loading="lazy" decoding="async" src="${img(i.poster_path)}" alt="">`:''}<span class="hover-play">▶</span></span><strong>${title}</strong><small>${year}</small></a>`} 
-function shelf(name,items){const id='rail-'+Math.random().toString(36).slice(2);return `<section class="discover-section"><div class="discover-heading"><h2>${safe(name)}</h2></div><div class="vod-rail-shell"><button type="button" class="vod-arrow prev" data-scroll="${id}" data-dir="-1" aria-label="Voltar em ${safe(name)}">‹</button><div class="discover-rail" id="${id}">${items.slice(0,28).map(shelfCard).join('')}</div><button type="button" class="vod-arrow next" data-scroll="${id}" data-dir="1" aria-label="Avançar em ${safe(name)}">›</button></div></section>`}
-function azSection(){return `<section class="discover-section vod-az"><h2>Explorar de A a Z</h2><div class="az-categories">${[['movie','Filmes'],['series','Séries'],['anime','Animes'],['dorama','Doramas']].map(([k,n])=>`<a href="/movies.html?category=${k}&letter=A">${n} de A a Z <span>›</span></a>`).join('')}</div></section>`}
+function uniqueVod(items){const seen=new Set();return items.filter(x=>{const key=(x.type==='movie'?'f':'s')+':'+norm(x.title).replace(/\s*\((?:19|20)\d{2}\)\s*$/,'').replace(/[^a-z0-9]+/g,' ').trim();if(seen.has(key))return false;seen.add(key);return true;});}
+function shelf(name,items){const id='rail-'+Math.random().toString(36).slice(2);return `<section class="discover-section"><div class="discover-heading"><h2>${safe(name)}</h2></div><div class="vod-rail-shell"><button type="button" class="vod-arrow prev" data-scroll="${id}" data-dir="-1" aria-label="Voltar em ${safe(name)}">‹</button><div class="discover-rail" id="${id}">${uniqueVod(items).slice(0,28).map(shelfCard).join('')}</div><button type="button" class="vod-arrow next" data-scroll="${id}" data-dir="1" aria-label="Avançar em ${safe(name)}">›</button></div></section>`}
+function azSection(){return `<section class="discover-section vod-az"><h2>Explorar de A a Z</h2><div class="az-categories">${[['movie','Filmes'],['series','Séries'],['anime','Animes'],['dorama','Doramas'],['kids','Kids'],['novela','Novelas']].map(([k,n])=>`<a href="/movies.html?category=${k}&letter=A">${n} de A a Z <span>›</span></a>`).join('')}</div></section>`}
 function updateVodArrows(home){home.querySelectorAll('.vod-rail-shell').forEach(shell=>{const rail=shell.querySelector('.discover-rail');if(!rail)return;const max=Math.max(0,rail.scrollWidth-rail.clientWidth);const prev=shell.querySelector('.vod-arrow.prev'),next=shell.querySelector('.vod-arrow.next');if(prev)prev.disabled=rail.scrollLeft<=2;if(next)next.disabled=rail.scrollLeft>=max-2})}
 function bindVodArrows(home){if(home.dataset.vodArrows)return;home.dataset.vodArrows='1';home.addEventListener('click',e=>{const btn=e.target.closest('.vod-arrow[data-scroll]');if(!btn||btn.disabled)return;const rail=document.getElementById(btn.dataset.scroll);if(rail)rail.scrollBy({left:Number(btn.dataset.dir)*Math.max(300,rail.clientWidth*.85),behavior:'smooth'})});home.addEventListener('scroll',e=>{if(e.target.classList?.contains('discover-rail'))updateVodArrows(home)},true);window.addEventListener('resize',()=>updateVodArrows(home));if('ResizeObserver' in window){const obs=new ResizeObserver(()=>updateVodArrows(home));obs.observe(home)}}
 let discoverView='home', discoverGeneration=0;
@@ -24,31 +25,31 @@ async function renderDiscover(view='home'){
    return;
   }
   const all=await catalog();if(generation!==discoverGeneration)return;
-  if(view==='anime'||view==='dorama'){
+  if(['anime','dorama','kids','novela'].includes(view)){
    const category=view;const remote=await fetch('/api/ondemand?category='+category).then(r=>{if(!r.ok)throw Error('Catálogo indisponível');return r.json()});
    if(generation!==discoverGeneration)return;
-   const metadataByTitle=new Map(all.filter(i=>i.type==='series'||i.type==='tv').map(i=>[norm(i.title).replace(/[^a-z0-9]+/g,' ').trim(),i]));
-   const selected=(remote.items||[]).map(i=>{
+   const metadataByTitle=new Map(all.map(i=>[norm(i.title).replace(/[^a-z0-9]+/g,' ').trim(),i]));
+   const selected=uniqueVod((remote.items||[]).map(i=>{
      const key=norm(i.title).replace(/[^a-z0-9]+/g,' ').trim();
      const meta=metadataByTitle.get(key)||metadataByTitle.get(key.replace(/\s+(?:19|20)\d{2}$/,''));
-     return {...meta,...i,type:category,poster_path:meta?.poster_path||i.poster_path||'',genres:meta?.genres||i.genres||[],year:i.year||meta?.year||'',tmdbId:i.tmdbId||meta?.tmdbId||null};
-   });
-   const featured=rows.find(r=>norm(r.name)===norm(category==='anime'?'Animes':'Doramas'))?.items||[];
+     return {...meta,...i,type:i.type==='movie'?'movie':category,sourceCategory:i.sourceCategory,poster_path:meta?.poster_path||i.poster_path||'',genres:meta?.genres||i.genres||[],year:i.year||meta?.year||'',tmdbId:i.tmdbId||meta?.tmdbId||null};
+   }));
+   const displayName={anime:'Animes',dorama:'Doramas',kids:'Kids',novela:'Novelas'}[category];const featured=rows.find(r=>norm(r.name)===norm(displayName))?.items||[];
    const current=selected.filter(i=>Number(i.year||0)>=2025);
    const popular=selected.filter(i=>i.poster_path).slice(0,28);
    const sections=[
-    [category==='anime'?'Animes em alta':'Doramas em alta',featured.length?featured.map(x=>({...x,type:category})):popular],
-    [category==='anime'?'Novos animes de 2026':'Novos doramas de 2026',selected.filter(i=>Number(i.year)===2026).slice(0,28)],
+    [displayName+' em alta',featured.length?featured.map(x=>({...x,type:category})):popular],
+    ['Novidades de 2026',selected.filter(i=>Number(i.year)===2026).slice(0,28)],
     ['Populares e em alta',popular],
     ['Lançamentos recentes',current.slice(0,28)]
    ];
-   const genreNames=category==='anime'?['Animação','Ação','Aventura','Fantasia','Comédia','Drama','Ficção científica','Mistério','Romance']:['Drama','Romance','Comédia','Ação','Mistério','Crime','Fantasia','Suspense'];
+   const genreNames=category==='anime'||category==='kids'?['Animação','Ação','Aventura','Fantasia','Comédia','Drama','Ficção científica','Mistério','Romance']:['Drama','Romance','Comédia','Ação','Mistério','Crime','Fantasia','Suspense'];
    for(const genre of genreNames){
      const matching=selected.filter(i=>(i.genres||[]).some(g=>norm(typeof g==='string'?g:g.name)===norm(genre)));
      if(matching.length)sections.push([genre,matching.slice(0,28)]);
    }
    home.innerHTML=sections.filter(([,items])=>items.length).map(([name,items])=>shelf(name,items)).join('')+
-    `<section class="discover-section vod-last-catalog"><div class="discover-heading"><h2>Catálogo de ${category==='anime'?'animes':'doramas'} de A a Z</h2></div><div class="vod-letter-buttons">${['#',...Array.from({length:26},(_,i)=>String.fromCharCode(65+i))].map(l=>`<button type="button" data-open-letter="${l}">${l}</button>`).join('')}</div>${shelf('Explorar '+(category==='anime'?'animes':'doramas'),selected.slice(0,28))}</section>`;
+    `<section class="discover-section vod-last-catalog"><div class="discover-heading"><h2>Catálogo de ${displayName.toLowerCase()} de A a Z</h2></div><div class="vod-letter-buttons">${['#',...Array.from({length:26},(_,i)=>String.fromCharCode(65+i))].map(l=>`<button type="button" data-open-letter="${l}">${l}</button>`).join('')}</div>${shelf('Explorar '+(displayName.toLowerCase()),selected.slice(0,28))}</section>`;
    bindVodArrows(home);requestAnimationFrame(()=>updateVodArrows(home));return;
   }
   if(view==='series'){
@@ -87,9 +88,9 @@ document.addEventListener('DOMContentLoaded',()=>{
  root.addEventListener('click',e=>{
   const letter=e.target.closest('[data-open-letter]');if(!letter)return;
   const l=letter.dataset.openLetter;
-  location.href=`/movies.html?category=${['series','anime','dorama'].includes(discoverView)?discoverView:'movie'}&letter=${encodeURIComponent(l)}&catalog=1`;
+  location.href=`/movies.html?category=${['series','anime','dorama','kids','novela'].includes(discoverView)?discoverView:'movie'}&letter=${encodeURIComponent(l)}&catalog=1`;
  });
- const params=new URLSearchParams(location.search);if(!document.getElementById('homeHero'))renderDiscover(['movie','series','anime','dorama'].includes(params.get('category'))&&!params.has('catalog')?params.get('category'):'home');
+ const params=new URLSearchParams(location.search);if(!document.getElementById('homeHero'))renderDiscover(['movie','series','anime','dorama','kids','novela'].includes(params.get('category'))&&!params.has('catalog')?params.get('category'):'home');
 });
 document.addEventListener('DOMContentLoaded',()=>{if(!document.querySelector("#homeHero"))initDiscover()});
 // Abre o mesmo modal de detalhes para os títulos exibidos nas prateleiras.
