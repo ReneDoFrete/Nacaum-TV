@@ -10,7 +10,7 @@ function updateFavoriteStore(i,detail){const key=favKey(i),storeKey='nacaum-vod-
 async function api(q){const r=await fetch('/api/ondemand?'+new URLSearchParams(q));if(!(r.headers.get('content-type')||'').includes('json'))throw Error(`API retornou HTTP ${r.status} em vez de JSON`);const data=await r.json();if(!r.ok)throw Error(data.error||'Erro na API');return data}
 function keyOf(i){return `${i.type}:${i.tmdbId||i.title}`}
 function getDetail(i){return cache.get(keyOf(i))||{}}
-function card(i){const d=getDetail(i),title=d.title||d.name||i.title,year=(d.release_date||d.first_air_date||i.year||i.title.match(/\((\d{4})\)/)?.[1]||'').slice(0,4);return `<button class="movie-card" data-key="${esc(i.key)}" title="${esc((d.genres||[]).map(g=>g.name||g).join(' · '))}"><div class="poster">${d.poster_path?`<img loading="lazy" src="${pic(d.poster_path)}" alt="">`:`<span class="no-poster">${esc(title)}</span>`}<span class="movie-badge">${i.type==='movie'?(i.hasDub?'DUB':i.hasLeg?'LEG':'FILME'):i.category==='anime'?'ANIME':i.category==='dorama'?'DORAMA':i.category==='kids'?'KIDS':i.category==='novela'?'NOVELA':'SÉRIE'}</span></div><strong>${esc(title)}</strong><small>${esc(year)}</small></button>`}
+function card(i){const d=getDetail(i),title=d.title||d.name||i.title,year=(d.release_date||d.first_air_date||i.year||i.title.match(/\((\d{4})\)/)?.[1]||'').slice(0,4);return `<button class="movie-card" data-key="${esc(i.key)}" data-movie-title="${esc(i.title)}" data-movie-type="${esc(i.type==='movie'?'movie':'tv')}" data-tmdb-id="${esc(i.tmdbId||d.id||'')}" title="${esc((d.genres||[]).map(g=>g.name||g).join(' · '))}"><div class="poster">${d.poster_path?`<img loading="lazy" src="${pic(d.poster_path)}" alt="">`:`<span class="no-poster">${esc(title)}</span>`}<span class="movie-badge">${i.type==='movie'?(i.hasDub?'DUB':i.hasLeg?'LEG':'FILME'):i.category==='anime'?'ANIME':i.category==='dorama'?'DORAMA':i.category==='kids'?'KIDS':i.category==='novela'?'NOVELA':'SÉRIE'}</span></div><strong>${esc(title)}</strong><small>${esc(year)}</small></button>`}
 function filtered(){let items=st.items.filter(i=>i.title.toLocaleLowerCase('pt-BR').includes(st.query));if(location.hash==='#favoritos')items=items.filter(i=>favorites.has(favKey(i)));if(st.sort==='year')items.sort((a,b)=>String(getDetail(b).release_date||getDetail(b).first_air_date||b.year||'').localeCompare(String(getDetail(a).release_date||getDetail(a).first_air_date||a.year||'')));else if(st.sort==='rating')items.sort((a,b)=>(getDetail(b).vote_average||0)-(getDetail(a).vote_average||0));else if(st.sort==='name')items.sort((a,b)=>a.title.localeCompare(b.title,'pt-BR'));return items}
 function render(reset=false){if(reset){st.shown=0;$('#moviesGrid').innerHTML=''}const list=filtered(),chunk=list.slice(st.shown,st.shown+36);$('#moviesGrid').insertAdjacentHTML('beforeend',chunk.map(card).join(''));st.shown+=chunk.length;$('#moreMovies').hidden=st.shown>=list.length;$('#statusText').textContent=`${list.length.toLocaleString('pt-BR')} títulos • ${st.category==='anime'||st.category==='dorama'?'Catálogo':`Letra ${st.letter}`}`;enrich(chunk)}
 async function enrich(chunk){const token=st.token;const candidates=[...new Map(chunk.filter(x=>!cache.has(keyOf(x))).map(x=>[keyOf(x),x])).values()].slice(0,24);let index=0;async function worker(){while(index<candidates.length){const i=candidates[index++];try{const d=i.tmdbId?await api({id:i.tmdbId,type:i.type==='movie'?'movie':'tv'}):(await api({search:i.title.replace(/\s*\(\d{4}\)\s*$/,''),type:i.type==='movie'?'movie':'tv'})).results?.[0]||{};cache.set(keyOf(i),d);if(token===st.token)document.querySelectorAll('.movie-card').forEach(el=>{const item=st.items.find(x=>x.key===el.dataset.key);if(item&&keyOf(item)===keyOf(i))el.outerHTML=card(item)})}catch{cache.set(keyOf(i),{})}}}await Promise.all(Array.from({length:3},worker))}
@@ -177,5 +177,18 @@ window.nacaumResume=async function(entry){
 
 // Contadores calculados do busca.txt (f/s) e categorias.txt (categorias sobrepostas).
 function paintCategoryCounts(d){for(const [cat,n] of Object.entries(d.counts||{})){const el=document.querySelector(`[data-count="${cat}"]`);if(el)el.textContent=Number(n).toLocaleString('pt-BR')+' títulos';}}
-fetch('/vod-category-snapshot.json').then(r=>r.json()).then(paintCategoryCounts).catch(console.warn);
-fetch('/api/ondemand?counts=1').then(r=>{if(!r.ok)throw Error('Contagens remotas indisponíveis');return r.json()}).then(paintCategoryCounts).catch(console.warn);
+// Mantém os totais do índice completo como base: a API pode retornar uma lista
+// parcial (busca.txt) e não deve sobrescrever uma contagem maior já exibida.
+const categoryCountBaseline = {};
+fetch('/vod-category-snapshot.json').then(r=>r.json()).then(d=>{
+  Object.assign(categoryCountBaseline,d.counts||{});
+  paintCategoryCounts(d);
+}).catch(console.warn);
+fetch('/api/ondemand?counts=1').then(r=>{if(!r.ok)throw Error('Contagens remotas indisponíveis');return r.json()}).then(d=>{
+  const counts={};
+  for(const [cat,n] of Object.entries(d.counts||{})){
+    const baseline=Number(categoryCountBaseline[cat]||0);
+    counts[cat]=Math.max(baseline,Number(n)||0);
+  }
+  paintCategoryCounts({counts});
+}).catch(console.warn);
