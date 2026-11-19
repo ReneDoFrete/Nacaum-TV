@@ -12,6 +12,7 @@ function channelName(raw) {
   const s = normalize(raw);
   if (!s) return null;
   if (s.includes('disney')) return 'Disney+';
+  if (s === 'apple tv' || s === 'apple tv plus' || s === 'mls season pass' || s === 'apple tv mls') return 'Apple TV';
   if (s.includes('amazon prime') || s.includes('prime video')) return 'Prime Video';
   if (s.includes('paramount')) return 'Paramount+';
   if (s === 'hbo max' || s === 'max') return 'HBO Max';

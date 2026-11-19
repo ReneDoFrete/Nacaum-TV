@@ -29,7 +29,7 @@ const prettyNames={
   'redetv':'RedeTV!','rede tv':'RedeTV!',
   'ge tv':'GE TV','getv':'GE TV',
   'cazetv':'CazéTV','caze tv':'CazéTV',
-  'sportv':'SporTV','premiere':'Premiere'
+  'sportv':'SporTV','premiere':'Premiere','apple tv':'Apple TV'
 };
 
 const channelKey=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
@@ -42,6 +42,7 @@ const channelSlugs={
   'sportynet':'sportynet','sporty net':'sportynet',
   'band':'band','band tv':'band',
   'bandsports':'bandsports','band sports':'bandsports',
+  'apple tv':'apple-tv-01',
   'redetv':'redetv','rede tv':'redetv'
 };
 

@@ -13,3 +13,7 @@ para a mesma data, e o site tambem cria snapshot na primeira visita se necessari
 
 No npm start: inicializa snapshot ao subir, agenda meia-noite e revalida a cada 15 min.
 OBS: O site Pages nao executa npm start; para producao, publique o Worker cron.
+
+Apple TV: eventos identificados como Apple TV no FotMob aparecem no site;
+o atalho abre Apple TV 01. Se o jogo estiver em outro canal numerado,
+selecione a fonte correspondente na pagina Ao vivo.
