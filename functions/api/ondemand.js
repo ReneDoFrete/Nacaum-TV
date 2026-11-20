@@ -8,20 +8,23 @@ const isUrl=s=>/^https?:\/\//i.test(s);
 // Converte identificadores compactos do catálogo em URLs reproduzíveis.
 function expandSources(raw,kind){
  const base=kind==='series'?'https://nixplay.lat/series/saimo-vods/221097/':'https://nixplay.lat/movie/saimo-vods/221097/';
- // Cada entrada separada por vírgula é uma fonte independente.
- // Mantém .mp4 e ?lang=leg, inclusive quando não há vírgula final.
- const parts=String(raw||'').split(',').map(s=>s.trim()).filter(Boolean);
  const direct=[],compact=[];
- for(const part of parts){
+ for(const item of String(raw||'').split(',')){
+  const part=item.trim().replace(/\\:/g,':');
+  if(!part)continue;
   if(/^https?:\/\//i.test(part)){
    direct.push(part);
    continue;
   }
-  const m=part.match(kind==='series'?/^19:(\d+\/\d+\/\d+(?:\.mp4)?(?:\?[^,\s]*)?)$/:/^18:(\d+(?:\.mp4)?(?:\?[^,\s]*)?)$/);
-  if(m)compact.push(base+m[1]);
+  const prefix=kind==='series'?'19:':'18:';
+  if(!part.startsWith(prefix))continue;
+  const path=part.slice(prefix.length).trim();
+  // Preserva extensão, query string e identificadores sem extensão.
+  // Impede caminhos externos e espaços sem restringir formatos de mídia.
+  if(!path||/[\s\\#]/.test(path)||path.startsWith('/')||path.includes('..')||/^[a-z]+:\/\//i.test(path))continue;
+  compact.push(base+path);
  }
- // Servidores HTTP diretos primeiro, identificadores Nixplay depois.
- // O player já aplica fallback de proxies para CADA URL.
+ // Fontes diretas são prioritárias; mantém o fallback de proxy do player.
  return [...new Set([...direct,...compact])];
 }
 
