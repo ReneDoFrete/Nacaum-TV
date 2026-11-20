@@ -59,7 +59,8 @@
 
   function same(a, b) {
     return norm(a.title) === norm(b.title) &&
-      kind(a) === kind(b);
+      kind(a) === kind(b) &&
+      (kind(a) === 'movie' || (Number(a.season || 0) === Number(b.season || 0) && Number(a.episode || 0) === Number(b.episode || 0)));
   }
 
   function save(entry) {
