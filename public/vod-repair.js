@@ -68,7 +68,8 @@
    btn.style.backgroundPosition=`center,${covers.map((_,i)=>`${covers.length===1?0:i*100/(covers.length-1)}% center`).join(',')}`;
    btn.style.backgroundRepeat='no-repeat';
    btn.style.setProperty('--cover-count',covers.length);
-   if(k==='movie'||k==='series'){const small=btn.querySelector('small');if(small)small.textContent=`${items.length.toLocaleString('pt-BR')} títulos`;} // anime/dorama: contagem real vem da API
+   // As capas usam a lista deduplicada; as contagens são gerenciadas por movies.js
+   // a partir do snapshot completo, sem substituí-las por uma lista parcial.
   }
   // Mantém a página e suas fileiras originais; apenas adiciona hover ao banner.
   home.addEventListener('pointerover',e=>{const card=e.target.closest('.discover-card');if(!card||card===home._last)return;home._last=card;const label=card.querySelector('strong')?.textContent||'';const item=all.find(x=>norm(x.title)===norm(label))||byTitle.get(norm(label));if(item)renderHero(item)});
