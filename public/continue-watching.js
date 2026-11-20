@@ -136,13 +136,37 @@
   function filtered() {
     const category = currentCategory();
 
-    return read().filter(entry =>
+    return displayItems(read().filter(entry =>
       entry.title &&
       (
         category === 'home' ||
         kind(entry) === category
       )
-    );
+    ));
+  }
+
+  // Um card por titulo; o episodio mais avancado prevalece, mesmo
+  // quando o usuario volta a assistir episodios anteriores.
+  function displayItems(items) {
+    const groups = new Map();
+    for (const entry of items) {
+      const key = kind(entry) + ':' + norm(entry.title);
+      const existing = groups.get(key);
+      if (!existing) {
+        groups.set(key, entry);
+        continue;
+      }
+      if (kind(entry) !== 'movie') {
+        const seasonDiff = Number(entry.season || 0) - Number(existing.season || 0);
+        const episodeDiff = Number(entry.episode || 0) - Number(existing.episode || 0);
+        if (seasonDiff > 0 || (seasonDiff === 0 && episodeDiff > 0)) {
+          groups.set(key, entry);
+        }
+      } else if (Number(entry.updatedAt || 0) > Number(existing.updatedAt || 0)) {
+        groups.set(key, entry);
+      }
+    }
+    return [...groups.values()].sort((a, b) => Number(b.updatedAt || 0) - Number(a.updatedAt || 0));
   }
 
   // ==========================================
@@ -258,7 +282,8 @@
         const item = filtered()[index];
 
         if (item) {
-          removeEntry(item);
+          if (kind(item) === 'movie') removeEntry(item);
+          else remove(item.title, item.type);
         }
 
         return;
